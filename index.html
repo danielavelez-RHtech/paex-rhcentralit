@@ -496,7 +496,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
   <div class="main">
     <div class="kpi-row">
       <div class="kpi"><div class="kpi-val" style="color:var(--m1)">~1.800</div><div class="kpi-lbl">colaboradores em 12 estados</div></div>
-      <div class="kpi"><div class="kpi-val" style="color:var(--m2)">5</div><div class="kpi-lbl">metas BSC 2026</div></div>
+      <div class="kpi"><div class="kpi-val" style="color:var(--m2)">4</div><div class="kpi-lbl">metas BSC 2026</div></div>
       <div class="kpi"><div class="kpi-val" style="color:var(--m3)">16</div><div class="kpi-lbl">projetos e programas ativos</div></div>
       <div class="kpi"><div class="kpi-val" style="color:var(--fdc)">6/6</div><div class="kpi-lbl">variáveis FDC endereçadas</div></div>
       <div class="kpi"><div class="kpi-val" style="color:var(--m3)">4</div><div class="kpi-lbl">agentes cognitivos (ago)</div></div>
@@ -576,7 +576,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
     <div class="t-stats">
       <div class="t-stat"><div class="t-stat-val">19</div><div class="t-stat-lbl">Projetos</div></div>
       <div class="t-stat"><div class="t-stat-val">200</div><div class="t-stat-lbl">Ações</div></div>
-      <div class="t-stat"><div class="t-stat-val">5</div><div class="t-stat-lbl">Metas</div></div>
+      <div class="t-stat"><div class="t-stat-val">4</div><div class="t-stat-lbl">Metas</div></div>
       <div class="t-stat"><div class="t-stat-val">10</div><div class="t-stat-lbl">Pessoas</div></div>
       <div class="t-stat"><div class="t-stat-val teal" id="stat-feito">0</div><div class="t-stat-lbl">Concluídas</div></div>
     </div>
@@ -800,7 +800,7 @@ const GANTT_DATA = [
   {label:"CitElas v3",sub:"Equidade de gênero",id:"citelas",bars:[{s:2,d:1,c:"pink",fdc:true,t:"Diagnóstico"},{s:3,d:5,c:"pink",t:"Ações equidade"},{s:8,d:1,c:"pink",t:"Board"}]},
   {label:"De Mãos Dadas",sub:"Lançamento Jul · pais Nov",id:"dmd",bars:[{s:0,d:1,c:"cor",t:"Levantamento"},{s:3,d:1,c:"cor",t:"Lançamento"},{s:4,d:2,c:"cor",t:"Piloto fases 2,3,4"},{s:6,d:1,c:"cor",t:"Avaliação"},{s:7,d:1,c:"cor",t:"Pais+parceiros"},{s:8,d:1,c:"cor",t:"Relatório"}]},
   {label:"Cultura",sub:'"O Poder de Ser Central"',id:"cultura",bars:[{s:3,d:2,c:"cult",t:"Lançamento + sustentação"}]},
-  {label:"eNPS",sub:"3 rodadas",id:null,bars:[{s:1,d:1,c:"m4",t:"eNPS 1"},{s:5,d:1,c:"m4",t:"eNPS 2"},{s:9,d:1,c:"m4",t:"eNPS 3"}]},
+  {label:"eNPS",sub:"3 rodadas",id:null,bars:[{s:2,d:1,c:"m4",t:"eNPS 1 (Jun)"},{s:8,d:1,c:"m4",t:"eNPS 2 (Dez)"}]},
   {sec:"M15 · Capital Organizacional",dot:"#534AB7"},
   {label:"LiderAI 2026",sub:"89 líderes · 11/Mai",id:"liderai",bars:[{s:1,d:1,c:"m2",t:"Kick-off"},{s:2,d:1,c:"m2",t:"P1 Letramento IA"},{s:3,d:2,c:"m2",t:"P2+P3+P4"},{s:5,d:2,c:"m2",t:"P3 IA + Pensamento"},{s:7,d:1,c:"m2",t:"P5 Pessoas"},{s:8,d:1,c:"m2",t:"Fórum LiderAI ✓"}]},
   {label:"Trilha IA e Dados",sub:"Toda empresa · Ago",id:"trilha-ia",bars:[{s:1,d:1,c:"m2c",t:"Estrutura"},{s:2,d:2,c:"m2c",t:"Validação+Gravações"},{s:4,d:1,c:"m2c",t:"Lançamento"},{s:5,d:3,c:"m2c",t:"Em andamento"},{s:8,d:1,c:"m2c",t:"≥80%"}]},
@@ -814,7 +814,7 @@ const GANTT_DATA = [
 
 const FDC_DATA = [
   {tipo:"PRIORIZAR",cor:"#A32D2D",bg:"#FCEBEB",vars:[
-    {var:"Estruturação da área de RH para os objetivos internos e organizacionais",pos:"Inferior",imp:"Alta",razao:"Para uma empresa de tecnologia que vende eficiência, ter um RH não estruturado é uma contradição estratégica.",acoes:["GP em Ação com 5 pilares e 3 ondas","Manuais Líder e Colaborador publicados digitalmente"],kpis:["100% chamados RH com rastreabilidade (abr)",""]},
+    {var:"Estruturação da área de RH para os objetivos internos e organizacionais",pos:"Inferior",imp:"Alta",razao:"Para uma empresa de tecnologia que vende eficiência, ter um RH não estruturado é uma contradição estratégica.",acoes:["GP em Ação com 5 pilares e 3 ondas","Manuais Líder e Colaborador publicados digitalmente"],kpis:["100% chamados RH com rastreabilidade (abr)"]},
     {var:"Definição, desenvolvimento e avaliação das competências por cargo",pos:"Inferior",imp:"Alta",razao:"Competências são o DNA operacional da estratégia. Sem elas, o RH não contrata, desenvolve nem avalia com critério.",acoes:["Descrições de Cargo: 4 blocos Abr→Ago","Framework: Jun → Set Gap → Dez","PDL: 5 meses para líderes internos · IA First","PDC: 90 dias para Comercial e CS","Trilha IA e Dados: lançamento Ago","Trilha Negócios e Accountability: lançamento Ago"],kpis:["100% cargos homologados (ago)","Competências validadas por ≥80% lideranças","Certificações PDL/PDC","Trilha IA ≥95% conclusão"]},
     {var:"Sistema eficaz de avaliação de desempenho",pos:"Similar",imp:"Alta",razao:"Sem sistema estruturado, decisões de promoção ficam à percepção do gestor — gera injustiças e perda de talentos.",acoes:["Avaliação 180°: 1º ciclo Set–Dez · IA anti-viés","PDIs automáticos validados pelo gestor"],kpis:["100% avaliados (out/nov)","PDIs para 100%"]},
     {var:"Comprometimento público da liderança em sustentabilidade",pos:"Inferior",imp:"Alta",razao:"Inclui equidade, saúde psicossocial e conformidade legal. Sem isso, a empresa perde marca empregadora, clientes ESG e conformidade.",acoes:["CitElas v3: política aprovada + Lei 14.611/2023","NR-1: liderança protagonista. ","'O Poder de Ser Central': cultura conduzida pela alta liderança"],kpis:["Zero autuações NR-1","Reporte Lei 14.611 entregue (ago)","PRATA Compras.gov.br"]}
@@ -828,10 +828,10 @@ const FDC_DATA = [
 ];
 
 const METAS_DATA = [
-  {num:"01",title:"Eficiência",agility:"https://itsmx.centralit.com.br/kanban/a/agility/workspaces/2350?embed=false",subtitle:"BI no Azul · gestão de custos",cor:"#854F0B",desc:"Aumentar nossa eficiência na gestão de custos e despesas.",programas:["Reviews mensais","Mid-year (jul)","Balanço anual com ROI (dez)"],kpis:["BI no Azul CR Gestão de Pessoas"]},
-  {num:"10",title:"Produtividade",subtitle:"4 agentes cognitivos · fazer mais com menos",cor:"#0F6E56",desc:"Buscar a excelência na gestão econômico-financeira.",programas:["Agentes Cognitivos — 4 em produção (ago)","Dashboard de Dimensionamento FT (set)"],kpis:["4 agentes em operação (dez)"]},
-    {num:"14",title:"Capital Humano",subtitle:"Marca empregadora · confiança · colaboração · resultados",cor:"#185FA5",desc:"Consolidar a empresa como um lugar sustentado por confiança, colaboração e resultados, reforçando sua marca empregadora.",programas:["GP em Ação (3 ondas)","NR-1 (3 fases)","Onboarding Digital","Manual do Líder + Colaborador","CitElas v3","De Mãos Dadas","Cultura: O Poder de Ser Central","eNPS (3 rodadas)"],kpis:["eNPS ≥ 75%","Zero autuações NR-1"]},
-  {num:"15",title:"Capital Organizacional",subtitle:"IA · dados · negócios · accountability · competências",cor:"#534AB7",desc:"Fortalecer competências em dados, IA, negócios e accountability.",programas:["PDL (5 meses)","PDC (90 dias)","Trilha IA e Dados (toda empresa)","Trilha Negócios e Accountability (toda empresa)","Descrições de Cargo (Abr→Ago)","Framework de Competências","Avaliação 180° (Set→Dez)"],kpis:["100% dos cargos atualizados","PDL e PDC — 100% dos líderes certificados","Trilhas IA, Dados e Negócios ≥ 80% concluída"]}
+  {num:"01",title:"Eficiência",agility:"https://itsmx.centralit.com.br/kanban/a/agility/workspaces/2350?embed=false",subtitle:"BI no Azul · gestão de custos",cor:"#854F0B",desc:"Aumentar nossa eficiência na gestão de custos e despesas.",programas:["Reviews mensais"],kpis:["BI no Azul CR Gestão de Pessoas"]},
+  {num:"10",title:"Produtividade",subtitle:"4 agentes cognitivos · fazer mais com menos",cor:"#0F6E56",desc:"Buscar a excelência na gestão econômico-financeira.",programas:["Agentes Cognitivos — 4 em produção (ago)"],kpis:["4 agentes em operação (dez)"]},
+    {num:"14",title:"Capital Humano",subtitle:"Marca empregadora · confiança · colaboração · resultados",cor:"#185FA5",desc:"Consolidar a empresa como um lugar sustentado por confiança, colaboração e resultados, reforçando sua marca empregadora.",programas:["GP em Ação (3 ondas)","NR-1 (3 fases)","Onboarding Digital","Manual do Líder + Colaborador","CitElas v3","De Mãos Dadas","Cultura: O Poder de Ser Central","eNPS (2 rodadas)"],kpis:["eNPS ≥ 75%","Zero autuações NR-1"]},
+  {num:"15",title:"Capital Organizacional",subtitle:"IA · dados · negócios · accountability · competências",cor:"#534AB7",desc:"Fortalecer competências em dados, IA, negócios e accountability.",programas:["PDL (5 meses)","PDC (90 dias)","Trilha IA e Dados (toda empresa)","Trilha Negócios e Accountability (toda empresa)","Descrições de Cargo (Abr→Ago)","Framework de Competências","Avaliação 180° (Set→Dez)"],kpis:["100% dos cargos atualizados","PDL e PDC — 100% dos líderes certificados","≥95% áreas internas e contratos","≥70% contratos de centrais de atendimento (MDS e Central DF)","NPS ≥75%"]}
 ];
 
 const DEPS_DATA = [
@@ -1130,7 +1130,7 @@ const TDATA = {projects:[
     {mes:"Nov",acao:"Ativação do público de pais e parceiros",responsavel:"Gabrielly",status:"planejado"},
     {mes:"Dez",acao:"Relatório anual De Mãos Dadas",responsavel:"Gabrielly",status:"planejado"}
   ]},
-  {id:"enps",name:"eNPS",meta:14,subtitle:"3 rodadas ao longo do ano",lead:"Gabrielly",support:"Kennedy",actions:[
+  {id:"enps",name:"eNPS",meta:14,subtitle:"2 rodadas ao longo do ano",lead:"Gabrielly",support:"Kennedy",actions:[
     {mes:"Jun",acao:"1ª rodada eNPS — toda a empresa (24-28/06)",responsavel:"Gabrielly+Kennedy",status:"planejado"},
     {mes:"Dez",acao:"2ª rodada eNPS — comparativo anual",responsavel:"Gabrielly+Kennedy",status:"planejado"}
   ]},
