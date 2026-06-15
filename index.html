@@ -1,0 +1,1619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel de Metas Estratégicas · Central IT</title>
+<style>
+:root{
+  --navy:#0A2540; --navy2:#0D2E4E; --navy3:#1A3A5C;
+  --teal:#1D9E75; --teal2:#16875F; --teal-l:#E1F5EE;
+  --blue:#185FA5; --blue-l:#E6F1FB;
+  --m1:#185FA5;--m1l:#E6F1FB;--m1t:#0C447C;
+  --m2:#534AB7;--m2l:#EEEDFE;--m2t:#3C3489;
+  --m2b:#6B5EC7;--m2bl:#DAD7FA;
+  --m2c:#8F80D9;--m2cl:#EDE9FB;--m2ct:#26215C;
+  --m3:#0F6E56;--m3l:#E1F5EE;--m3t:#085041;
+  --m3b:#0A5C44;--m3bl:#C8E8DC;
+  --m4:#854F0B;--m4l:#FAEEDA;--m4t:#633806;
+  --m5:#3B6D11;--m5l:#EAF3DE;--m5t:#27500A;
+  --mnl:#534AB7;--cult:#3C3489;--cultl:#DDDAFA;
+  --pink:#993556;--pinkl:#FBEAF0;
+  --coral:#993C1D;--corall:#FAECE7;
+  --fdc:#A32D2D;--fdcl:#FCEBEB;
+  --gray:#444441;--gray2:#F4F4F4;--gray3:#F8F8F8;
+  --white:#FFFFFF;--text:#1A1A1A;--text2:#555;--text3:#888;
+  --border:#E0E0E0;
+  --r:6px;--rl:10px;
+  --logo-url: url('data:image/webp;base64,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');
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#EEF3F8;color:var(--text);font-size:14px;line-height:1.5}
+
+/* HEADER */
+.site-header{background:var(--navy);position:sticky;top:0;z-index:200;border-bottom:2px solid var(--teal)}
+.h-inner{max-width:1400px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:14px;cursor:pointer}
+.brand-logo{background:var(--logo-url) center/contain no-repeat;width:62px;height:54px;text-indent:-9999px;overflow:hidden;filter:brightness(0) invert(1)}
+.brand-divider{width:1px;height:32px;background:rgba(255,255,255,.18)}
+.brand-text h1{font-size:14px;font-weight:600;color:#fff;line-height:1.2}
+.brand-text p{font-size:11px;color:#7FB8DD;margin-top:2px}
+.h-meta{font-size:11px;color:#7FB8DD;text-align:right}
+.h-meta strong{color:var(--teal);display:block;font-size:13px}
+.h-back{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:500}
+.h-back:hover{background:rgba(255,255,255,.15)}
+
+/* HOME */
+.home{max-width:1100px;margin:0 auto;padding:60px 24px}
+.home-hero{text-align:center;margin-bottom:48px}
+.home-eyebrow{display:inline-block;background:var(--teal-l);color:var(--teal2);font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.home-title{font-size:38px;font-weight:600;color:var(--navy);letter-spacing:-.02em;line-height:1.15;margin-bottom:14px}
+.home-sub{font-size:16px;color:var(--text2);max-width:680px;margin:0 auto;line-height:1.6}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px}
+.home-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:32px;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s;position:relative;overflow:hidden}
+.home-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(10,37,64,.12);border-color:var(--teal)}
+.home-card-bar{position:absolute;top:0;left:0;right:0;height:4px}
+.home-card-bar.estr{background:linear-gradient(90deg,var(--navy),var(--blue))}
+.home-card-bar.tat{background:linear-gradient(90deg,var(--teal2),var(--teal))}
+.home-card-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:26px}
+.home-card.estr .home-card-icon{background:var(--blue-l);color:var(--blue)}
+.home-card.tat .home-card-icon{background:var(--teal-l);color:var(--teal2)}
+.home-card-eyebrow{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.home-card.estr .home-card-eyebrow{color:var(--blue)}
+.home-card.tat .home-card-eyebrow{color:var(--teal2)}
+.home-card-title{font-size:22px;font-weight:600;color:var(--navy);margin-bottom:10px;letter-spacing:-.01em}
+.home-card-desc{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:18px}
+.home-card-list{list-style:none;padding:0;margin-bottom:22px}
+.home-card-list li{font-size:12px;color:var(--text2);padding:5px 0 5px 18px;position:relative;line-height:1.5;border-bottom:.5px solid #F4F4F4}
+.home-card-list li:last-child{border-bottom:none}
+.home-card-list li::before{content:'›';position:absolute;left:4px;top:5px;font-weight:700}
+.home-card.estr .home-card-list li::before{color:var(--blue)}
+.home-card.tat .home-card-list li::before{color:var(--teal2)}
+.home-card-cta{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.02em}
+.home-card.estr .home-card-cta{color:var(--blue)}
+.home-card.tat .home-card-cta{color:var(--teal2)}
+.home-card:hover .home-card-cta-arrow{transform:translateX(4px)}
+.home-card-cta-arrow{transition:transform .18s}
+.home-foot{text-align:center;font-size:12px;color:var(--text3);padding-top:24px;border-top:.5px solid var(--border)}
+
+/* MAIN container for views */
+.main{max-width:1400px;margin:0 auto;padding:24px}
+
+/* NAV PILLS (subnav inside views) */
+.nav-bar{background:#fff;border-bottom:2px solid var(--border);padding:6px 0 0;box-shadow:0 2px 8px rgba(15,39,70,.10);position:sticky;top:var(--header-h,58px);z-index:100}
+.nav-inner{max-width:1400px;margin:0 auto;padding:0 24px;display:flex;gap:6px;overflow-x:auto}
+.nav-btn{padding:10px 22px 13px;font-size:14px;font-weight:600;color:#5A7A9A;background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;letter-spacing:.01em;transition:color .18s,border-color .18s,background .18s;border-radius:6px 6px 0 0;display:inline-flex;align-items:center;gap:8px}
+.nav-btn:hover{color:#0F2746;background:#F0F4F8}
+.nav-btn.active{color:#0F2746;border-bottom-color:var(--teal);background:#E8F7F4;font-weight:700}
+.nav-dot{width:10px;height:10px;border-radius:3px;display:inline-block;flex-shrink:0;box-shadow:0 0 0 2px rgba(0,0,0,.06)}
+
+/* KPIs */
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:24px}
+.kpi{background:#fff;border:.5px solid var(--border);border-radius:var(--rl);padding:14px 16px}
+.kpi-val{font-size:28px;font-weight:600;line-height:1;margin-bottom:4px}
+.kpi-lbl{font-size:11px;color:var(--text3)}
+
+/* SECTIONS */
+.section{background:#fff;border:.5px solid var(--border);border-radius:var(--rl);margin-bottom:20px;overflow:hidden}
+.section-header{padding:14px 18px;border-bottom:.5px solid var(--border);display:flex;align-items:center;gap:10px}
+.section-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.section-title{font-size:14px;font-weight:600}
+.section-sub{font-size:11px;color:var(--text3);margin-left:auto}
+
+/* GANTT */
+.gantt-wrap{overflow-x:auto}
+.gantt{min-width:900px}
+.g-header{display:grid;grid-template-columns:180px repeat(10,1fr);border-bottom:.5px solid var(--border);background:#FAFAFA}
+.g-hlbl{font-size:11px;font-weight:500;color:var(--text3);padding:8px 10px}
+.g-hm{font-size:11px;font-weight:600;color:var(--text3);text-align:center;padding:8px 4px;letter-spacing:.03em}
+.g-hm.now{color:var(--teal);background:#F0FBF7}
+.g-row{display:grid;grid-template-columns:180px repeat(10,1fr);align-items:center;min-height:34px;border-bottom:.5px solid #F0F0F0}
+.g-row:hover{background:#FAFAFA}
+.g-label{font-size:11px;font-weight:500;color:var(--text2);padding:4px 10px;line-height:1.3}
+.g-label small{display:block;font-size:9.5px;color:var(--text3);font-weight:400;margin-top:1px}
+.g-cell{height:30px;position:relative;padding:0 1px}
+.bar{height:22px;border-radius:4px;display:flex;align-items:center;padding:0 7px;font-size:10px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:4px;cursor:pointer;transition:opacity .12s,transform .1s;border:.5px solid transparent}
+.bar:hover{opacity:.82;transform:translateY(-1px)}
+.fdc-badge{display:inline-flex;align-items:center;justify-content:center;background:#E24B4A;color:#fff;font-size:8px;font-weight:700;padding:1px 5px;border-radius:2px;margin-left:5px;flex-shrink:0}
+.sec-divider{background:#F4F6F9;border-bottom:.5px solid var(--border);padding:7px 10px;display:flex;align-items:center;gap:7px}
+.sec-divider-dot{width:8px;height:8px;border-radius:2px}
+.sec-divider-text{font-size:10px;font-weight:700;color:#444;letter-spacing:.06em;text-transform:uppercase}
+.legend{display:flex;flex-wrap:wrap;gap:10px;padding:12px 18px;border-bottom:.5px solid var(--border);background:#FAFAFA}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2)}
+.leg-dot{width:10px;height:10px;border-radius:2px}
+
+/* DRAWER */
+.drawer-overlay{display:none;position:fixed;inset:0;background:rgba(10,37,64,.45);z-index:200;align-items:flex-start;justify-content:flex-end}
+.drawer-overlay.open{display:flex}
+.drawer{background:#fff;width:min(520px,96vw);height:100vh;overflow-y:auto;border-left:.5px solid var(--border);display:flex;flex-direction:column}
+.drawer-top{padding:20px 22px 16px;border-bottom:.5px solid var(--border);position:sticky;top:0;background:#fff;z-index:1}
+.drawer-close{float:right;background:none;border:.5px solid var(--border);border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;color:var(--text2)}
+.drawer-close:hover{background:#F4F4F4}
+.drawer-meta{font-size:11px;color:var(--text3);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.drawer-meta-dot{width:8px;height:8px;border-radius:2px}
+.drawer-title{font-size:20px;font-weight:600;line-height:1.3;margin-bottom:6px}
+.drawer-period{font-size:12px;color:var(--text3)}
+.drawer-body{padding:20px 22px;flex:1}
+.drawer-section{margin-bottom:20px}
+.drawer-section-title{font-size:12px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:.5px solid var(--border)}
+.drawer-desc{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:14px}
+.item-list{list-style:none;padding:0}
+.item-list li{font-size:13px;color:var(--text2);padding:5px 0 5px 16px;border-bottom:.5px solid #F4F4F4;line-height:1.5;position:relative}
+.item-list li::before{content:'·';position:absolute;left:5px;color:#AAA}
+.item-list li:last-child{border-bottom:none}
+.fdc-block{background:var(--fdcl);border:.5px solid #F0BBBB;border-radius:var(--r);padding:12px 14px;margin-bottom:12px}
+.fdc-block-title{font-size:11px;font-weight:700;color:var(--fdc);letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.fdc-var{font-size:13px;color:#712020;line-height:1.5;margin-bottom:8px}
+.fdc-opp{display:inline-block;font-size:10px;font-weight:700;background:#E24B4A;color:#fff;border-radius:3px;padding:2px 8px;margin-bottom:8px}
+.fdc-razao{font-size:12px;color:var(--text2);line-height:1.6;font-style:italic;border-left:2px solid #E24B4A;padding-left:10px}
+.kpi-mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px;margin-top:8px}
+.kpi-mini-item{background:#F4F4F4;border-radius:6px;padding:8px 10px}
+.kpi-mini-lbl{font-size:10px;color:var(--text3)}
+.dtabs{display:flex;gap:0;border-bottom:.5px solid var(--border);margin-bottom:18px}
+.dtab{padding:8px 14px;font-size:12px;font-weight:500;color:var(--text3);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer}
+.dtab:hover{color:var(--text)}
+.dtab.active{color:var(--m1);border-bottom-color:var(--m1)}
+.dpanel{display:none}
+.dpanel.active{display:block}
+
+/* ==================== TÁTICA ==================== */
+.t-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:20px}
+.t-stat{background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center}
+.t-stat-val{font-size:24px;font-weight:600;color:var(--navy)}
+.t-stat-val.teal{color:var(--teal2)}
+.t-stat-lbl{font-size:11px;color:var(--text3);margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+
+.t-overall-card{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;border-radius:12px;padding:18px 22px;margin-bottom:20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.t-overall-info{flex:1;min-width:200px}
+.t-overall-eyebrow{font-size:10px;font-weight:600;color:rgba(255,255,255,.6);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.t-overall-title{font-size:16px;font-weight:600;margin-bottom:6px}
+.t-overall-sub{font-size:12px;color:rgba(255,255,255,.7)}
+.t-overall-bar-wrap{flex:2;min-width:280px}
+.t-overall-bar{height:14px;background:rgba(255,255,255,.12);border-radius:7px;overflow:hidden;margin-bottom:6px}
+.t-overall-bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),#27C893);transition:width .4s ease;border-radius:7px}
+.t-overall-bar-meta{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.7)}
+.t-overall-pct{font-size:32px;font-weight:700;color:var(--teal);line-height:1}
+
+.t-tabs{display:flex;gap:4px;margin-bottom:18px;border-bottom:1px solid var(--border)}
+.t-tab{padding:10px 18px;font-size:13px;font-weight:500;color:var(--text3);cursor:pointer;border-bottom:2px solid transparent;background:none;border-left:none;border-right:none;border-top:none}
+.t-tab:hover{color:var(--text)}
+.t-tab.active{color:var(--navy);border-bottom-color:var(--navy)}
+
+.t-tab-content{display:none}
+.t-tab-content.active{display:block}
+
+/* Visão por mês */
+.month-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:900px){.month-grid{grid-template-columns:1fr}}
+.month-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.month-card.is-now{border-color:var(--teal);box-shadow:0 4px 14px rgba(29,158,117,.12)}
+.month-hdr{padding:12px 16px;background:#F1EFE8;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.month-card.is-now .month-hdr{background:linear-gradient(135deg,var(--teal-l) 0%,#F0FBF7 100%)}
+.month-name{font-size:16px;font-weight:600;color:var(--navy)}
+.month-pill{font-size:10px;font-weight:600;color:var(--teal2);background:#fff;border:1px solid var(--teal);padding:2px 8px;border-radius:10px;letter-spacing:.04em;text-transform:uppercase}
+.month-count{font-size:11px;color:var(--text3)}
+.month-body{padding:10px 14px;max-height:340px;overflow-y:auto;flex:1}
+.m-action{padding:8px 0;border-bottom:1px solid #F1EFE8;font-size:12px;display:flex;gap:8px;align-items:flex-start}
+.m-action:last-child{border-bottom:none}
+.m-action.is-done{opacity:.6}
+.m-action.is-done .m-acao{text-decoration:line-through}
+.m-check{flex-shrink:0;width:18px;height:18px;border:1.5px solid #C0C0C0;border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:#fff;transition:all .15s;margin-top:1px}
+.m-check:hover{border-color:var(--teal)}
+.m-check.checked{background:var(--teal);border-color:var(--teal)}
+.m-check.checked::after{content:'✓';color:#fff;font-size:12px;font-weight:700}
+.m-check.locked{opacity:.5;cursor:not-allowed}
+.m-action-content{flex:1;min-width:0}
+.m-action-top{display:flex;gap:6px;align-items:center;margin-bottom:3px;flex-wrap:wrap}
+.m-meta{font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px}
+.m-meta-1{background:var(--m1l);color:var(--m1t)}
+.m-meta-2{background:var(--m2l);color:var(--m2t)}
+.m-meta-3{background:var(--m3l);color:var(--m3t)}
+.m-meta-4{background:var(--m4l);color:var(--m4t)}
+.m-meta-5{background:var(--m5l);color:var(--m5t)}
+.m-proj{font-size:11px;font-weight:500;color:var(--navy)}
+.m-acao{color:var(--text2);font-size:11.5px;line-height:1.4}
+.m-resp{font-size:10px;color:var(--text3);margin-top:3px}
+.m-status{display:inline-block;font-size:9px;font-weight:600;padding:1px 5px;border-radius:3px}
+.s-feito{background:var(--m5l);color:var(--m5t)}
+.s-em_andamento{background:var(--m4l);color:var(--m4t)}
+.s-planejado{background:#F1EFE8;color:#5F5E5A}
+.s-atrasado{background:var(--fdcl);color:var(--fdc)}
+.s-parcial{background:var(--corall);color:var(--coral)}
+
+.month-progress{padding:12px 16px;background:#FAFAFA;border-top:1px solid var(--border)}
+.mp-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.mp-label{font-size:11px;font-weight:600;color:var(--text2);letter-spacing:.03em;text-transform:uppercase}
+.mp-pct{font-size:14px;font-weight:700;color:var(--teal2)}
+.mp-bar{height:10px;background:#E8E8E8;border-radius:5px;overflow:hidden;position:relative}
+.mp-bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),#27C893);transition:width .35s ease;border-radius:5px}
+.mp-meta{font-size:10px;color:var(--text3);margin-top:4px}
+
+/* Visão por projeto */
+.filters{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.filter-chip{padding:5px 12px;font-size:12px;border:1px solid var(--border);border-radius:16px;background:#fff;cursor:pointer;user-select:none;transition:all .12s}
+.filter-chip:hover{border-color:var(--navy)}
+.filter-chip.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+.proj-row{background:#fff;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;overflow:hidden}
+.proj-row-hdr{padding:14px 16px;display:grid;grid-template-columns:60px 1fr 220px 200px;gap:12px;align-items:center;cursor:pointer}
+@media(max-width:900px){.proj-row-hdr{grid-template-columns:60px 1fr;gap:10px}.proj-resp,.proj-prog{display:none}}
+.proj-row-hdr:hover{background:#FAFAF7}
+.proj-meta-tag{font-size:11px;font-weight:600;padding:4px 8px;border-radius:4px;text-align:center}
+.proj-info-text{min-width:0}
+.proj-name{font-weight:600;color:var(--navy);font-size:14px}
+.proj-sub{font-size:11px;color:var(--text3);margin-top:2px}
+.proj-resp{font-size:11px;color:var(--text2);text-align:right}
+.proj-resp strong{color:var(--navy)}
+.proj-prog{display:flex;flex-direction:column;gap:4px}
+.proj-prog-bar{height:8px;background:#EEE;border-radius:4px;overflow:hidden}
+.proj-prog-fill{height:100%;background:linear-gradient(90deg,var(--teal),#27C893);transition:width .35s}
+.proj-prog-meta{font-size:10px;color:var(--text3);display:flex;justify-content:space-between}
+.proj-prog-pct{font-weight:700;color:var(--teal2)}
+
+.proj-detail{padding:14px 16px 18px;border-top:1px solid #F1EFE8;display:none;background:#FAFAFA}
+.proj-row.open .proj-detail{display:block}
+.proj-actions-list{margin-top:10px;display:flex;flex-direction:column;gap:6px}
+.pa-row{background:#fff;padding:10px 12px;border-radius:6px;border:1px solid var(--border);display:flex;gap:10px;align-items:flex-start}
+.pa-mes{font-size:10px;font-weight:700;color:var(--navy);background:#F1EFE8;padding:3px 8px;border-radius:4px;flex-shrink:0;letter-spacing:.04em}
+.pa-content{flex:1;min-width:0}
+.pa-text{font-size:12px;color:var(--text);line-height:1.5}
+.pa-row.is-done .pa-text{text-decoration:line-through;color:var(--text3)}
+.pa-foot{font-size:10px;color:var(--text3);margin-top:3px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+/* Por responsável */
+.resp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:900px){.resp-grid{grid-template-columns:1fr}}
+.resp-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px}
+.resp-hdr{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid #F1EFE8}
+.resp-avatar{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;flex-shrink:0}
+.resp-info{flex:1;min-width:0}
+.resp-name{font-size:14px;font-weight:600;color:var(--navy)}
+.resp-role{font-size:11px;color:var(--text3)}
+.resp-load{font-size:10px;padding:3px 8px;border-radius:4px;font-weight:600;white-space:nowrap}
+.load-leve{background:var(--m5l);color:var(--m5t)}
+.load-medio{background:var(--m4l);color:var(--m4t)}
+.load-alto{background:var(--fdcl);color:var(--fdc)}
+.resp-mini-prog{margin-bottom:10px}
+.resp-mini-prog .mp-bar{height:6px}
+.resp-mini-prog .mp-top{margin-bottom:4px}
+.resp-mini-prog .mp-label{font-size:10px}
+.resp-mini-prog .mp-pct{font-size:12px}
+.resp-actions{display:flex;flex-direction:column;gap:5px;max-height:240px;overflow-y:auto}
+.resp-action{font-size:11px;padding:5px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:.5px solid #F4F4F4}
+.resp-action:last-child{border-bottom:none}
+.resp-action.is-done{opacity:.55}
+.resp-action.is-done .resp-text{text-decoration:line-through}
+.resp-mes{font-weight:700;color:var(--navy);min-width:32px;font-size:10px;background:#F1EFE8;padding:2px 6px;border-radius:3px;text-align:center;flex-shrink:0}
+.resp-text{color:var(--text2);flex:1;line-height:1.4}
+.resp-text strong{color:var(--navy);font-weight:600}
+
+/* Kennedy */
+.ken-hero{background:linear-gradient(135deg,var(--blue-l) 0%,#fff 100%);border:1px solid #85B7EB;border-radius:12px;padding:20px;margin-bottom:24px}
+.ken-title{font-size:18px;font-weight:600;color:#042C53;margin-bottom:6px}
+.ken-sub{font-size:13px;color:var(--blue)}
+.ken-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
+@media(max-width:900px){.ken-grid{grid-template-columns:1fr}}
+.ken-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px}
+.ken-card h3{font-size:12px;font-weight:600;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #F1EFE8}
+.ken-list{list-style:none}
+.ken-list li{padding:5px 0;font-size:12px;color:var(--text2);padding-left:18px;position:relative;line-height:1.5}
+.ken-list li::before{content:'→';position:absolute;left:0;color:var(--blue);font-weight:600}
+.ken-table{width:100%;border-collapse:collapse;font-size:11px;margin-top:10px}
+.ken-table th{padding:8px;text-align:left;font-weight:600;color:var(--text3);border-bottom:1px solid var(--border);font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+.ken-table td{padding:8px;border-bottom:1px solid #F1EFE8;color:var(--text);font-size:11px;line-height:1.5;vertical-align:top}
+.ken-table tr:last-child td{border-bottom:none}
+
+.ken-banner{background:#FFF4DC;border:1px solid #F4D58D;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:12px;color:#6B4A0F;display:flex;gap:10px;align-items:flex-start}
+.ken-banner b{color:#854F0B}
+
+/* footer */
+.site-footer{background:var(--navy);border-top:2px solid var(--teal);margin-top:40px;padding:22px 24px;color:#7FB8DD;font-size:11px}
+.f-inner{max-width:1400px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.f-inner a{color:var(--teal);text-decoration:none}
+
+@media(max-width:640px){
+  .home-grid{grid-template-columns:1fr}
+  .home-title{font-size:28px}
+  .h-inner{flex-direction:column;align-items:flex-start}
+  .kpi-row,.t-stats{grid-template-columns:repeat(2,1fr)}
+}
+
+/* META */
+.meta-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin-bottom:14px;overflow:hidden}
+.meta-card-head{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;margin-bottom:14px}
+.meta-num-badge{width:54px;height:54px;border-radius:12px;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.meta-num-badge .lbl{font-size:8px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;opacity:.85;line-height:1}
+.meta-num-badge .num{font-size:22px;font-weight:700;line-height:1.1;letter-spacing:-.02em}
+.meta-info{min-width:0}
+.meta-title{font-size:18px;font-weight:600;color:var(--navy);letter-spacing:-.01em}
+.meta-sub{font-size:11px;color:var(--text3);margin-top:3px;line-height:1.4}
+.meta-desc{font-size:12px;color:var(--text2);margin-top:6px;line-height:1.55;font-style:italic}
+.meta-action-btns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.meta-agility-link,.meta-evidencias-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;text-decoration:none;letter-spacing:.02em;border:1.5px solid;border-radius:5px;padding:5px 12px;transition:background .15s,color .15s}
+.meta-agility-link{color:var(--teal);border-color:var(--teal)}
+.meta-agility-link:hover{background:var(--teal);color:#fff}
+.meta-evidencias-link{color:#534AB7;border-color:#534AB7}
+.meta-evidencias-link:hover{background:#534AB7;color:#fff}
+.meta-pct{font-size:32px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.meta-progress-wrap{margin-bottom:18px}
+.meta-progress-bar{height:10px;background:#EEE;border-radius:5px;overflow:hidden}
+.meta-progress-fill{height:100%;border-radius:5px;transition:width .35s ease}
+.meta-summary{font-size:11px;color:var(--text3);margin-top:6px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.meta-summary b{color:var(--navy);font-weight:600}
+.meta-projects{border-top:1px solid #F1EFE8;padding-top:14px}
+.meta-projects-title{font-size:10px;font-weight:700;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.meta-proj{display:grid;grid-template-columns:1fr 220px;gap:18px;align-items:center;padding:9px 0;border-bottom:.5px solid #F4F4F4}
+.meta-proj:last-child{border-bottom:none}
+@media(max-width:720px){.meta-proj{grid-template-columns:1fr;gap:6px}}
+.meta-proj-name{font-size:13px;font-weight:500;color:var(--navy);line-height:1.4}
+.meta-proj-sub{font-size:10.5px;color:var(--text3);margin-top:2px;line-height:1.4}
+.meta-proj-stat{display:flex;flex-direction:column;gap:4px}
+.meta-proj-bar{height:5px;background:#EFEFEF;border-radius:3px;overflow:hidden}
+.meta-proj-fill{height:100%;border-radius:3px;transition:width .35s ease}
+.meta-proj-pct{font-size:10px;color:var(--text3);display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.meta-proj-pct b{color:var(--navy);font-weight:600}
+
+/* LOGIN */
+.login-overlay{position:fixed;inset:0;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);z-index:500;display:flex;align-items:center;justify-content:center;padding:20px}
+.login-overlay.hidden{display:none}
+.login-card{background:#fff;border-radius:14px;padding:36px 32px;width:100%;max-width:380px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.login-brand{text-align:center;margin-bottom:8px}
+.login-brand-logo{display:block;margin:0 auto 14px;background:var(--logo-url) center/contain no-repeat;width:96px;height:84px;text-indent:-9999px;overflow:hidden}
+.login-title{font-size:20px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.login-sub{font-size:12px;color:var(--text3)}
+.login-form{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.login-label{font-size:11px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px;display:block}
+.login-input{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:6px;font-size:13px;outline:none;transition:border-color .15s;font-family:inherit}
+.login-input:focus{border-color:var(--teal)}
+.login-btn{background:var(--navy);color:#fff;border:none;padding:11px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;margin-top:6px;letter-spacing:.02em;transition:background .15s}
+.login-btn:hover{background:var(--navy2)}
+.login-error{background:var(--fdcl);border:.5px solid #F0BBBB;color:var(--fdc);padding:8px 12px;border-radius:6px;font-size:12px;display:none}
+.login-error.show{display:block}
+.login-foot{text-align:center;font-size:10px;color:var(--text3);margin-top:20px;letter-spacing:.04em}
+</style>
+
+<script>
+(function(){
+  function fixStickyNav(){
+    var hdr = document.querySelector('.site-header');
+    if(!hdr) return;
+    var h = hdr.getBoundingClientRect().height;
+    document.documentElement.style.setProperty('--header-h', h + 'px');
+    document.documentElement.style.scrollPaddingTop = (h + 48) + 'px';
+  }
+  document.addEventListener('DOMContentLoaded', fixStickyNav);
+  window.addEventListener('resize', fixStickyNav);
+  // roda também após 300ms (caso o logo demore a renderizar e mude a altura)
+  setTimeout(fixStickyNav, 300);
+})();
+</script>
+</head>
+<body>
+
+<div id="login-overlay" class="login-overlay">
+  <div class="login-card">
+    <div class="login-brand">
+      <div class="login-brand-logo" role="img" aria-label="Central IT">Central IT</div>
+      <div class="login-title">Dashboard RH 2026</div>
+      <div class="login-sub">Acesso restrito · Diretoria de Pessoas</div>
+    </div>
+    <div class="login-form">
+      <div>
+        <label class="login-label" for="login-user">Usuário</label>
+        <input class="login-input" id="login-user" type="text" autocomplete="username" autofocus>
+      </div>
+      <div>
+        <label class="login-label" for="login-pass">Senha</label>
+        <input class="login-input" id="login-pass" type="password" autocomplete="current-password">
+      </div>
+      <div class="login-error" id="login-error">Usuário ou senha inválidos.</div>
+      <button class="login-btn" onclick="attemptLogin()">Entrar</button>
+    </div>
+    <div class="login-foot">Central IT · centralit.com.br</div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="h-inner">
+    <div class="brand" onclick="goHome()">
+      <div class="brand-logo" role="img" aria-label="Central IT">Central IT</div>
+      <div class="brand-divider"></div>
+      <div class="brand-text">
+        <h1>Dashboard RH 2026</h1>
+        <p id="brand-sub">Daniela Velez · CHRO / Diretora de Pessoas</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="h-meta" id="h-meta">
+        <strong>Abril 2026 → Janeiro 2027</strong>
+        4 Metas · 16 Projetos · 187 Ações
+      </div>
+      <button class="h-back" id="btn-back" onclick="goHome()" style="display:none">← home</button>
+      <button class="h-back" id="btn-logout" onclick="logout()" style="display:none">sair</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HOME ===================== -->
+<section id="view-home">
+  <div class="home">
+    <div class="home-hero">
+      <span class="home-eyebrow">Planejamento Estratégico de RH 2026</span>
+      <h1 class="home-title">Duas visões. Um plano.<br>Um único dashboard.</h1>
+      <p class="home-sub">A visão estratégica conecta o plano aos diagnósticos e metas do BSC. A visão tática traduz isso em 202 ações distribuídas entre o time. Escolha por onde começar.</p>
+    </div>
+
+    <div class="home-grid">
+      <div class="home-card estr" onclick="showView('strategic')">
+        <div class="home-card-bar estr"></div>
+        <div class="home-card-icon">◆</div>
+        <div class="home-card-eyebrow">Visão sistêmica</div>
+        <div class="home-card-title">Visão Estratégica</div>
+        <div class="home-card-desc">Roadmap integrado, BSC, metas, programas e correlações com o diagnóstico da Fundação Dom Cabral.</div>
+        <ul class="home-card-list">
+          <li>Roadmap Gantt interativo · clique nas barras para detalhe</li>
+          <li>Diagnóstico FDC × Plano de Ação 2026</li>
+          <li>4 Metas Estratégicas com programas e indicadores</li>
+          <li id="dep-criticas-item" style="display:none">Dependências críticas e cadeia de pré-requisitos</li>
+        </ul>
+        <div class="home-card-cta">Abrir visão estratégica <span class="home-card-cta-arrow">→</span></div>
+      </div>
+
+      <div class="home-card tat" onclick="showView('tactical')">
+        <div class="home-card-bar tat"></div>
+        <div class="home-card-icon">✓</div>
+        <div class="home-card-eyebrow">Execução · Agility</div>
+        <div class="home-card-title">Visão Tática</div>
+        <div class="home-card-desc">Acompanhamento mês a mês das 187 ações.</div>
+        <ul class="home-card-list">
+          <li>Visão por mês · com barra de progresso e checkboxes</li>
+          <li>Visão por projeto · timeline e ações detalhadas</li>
+          <li>Visão por responsável · carga e progresso individual</li>
+          <li>Compilado Kennedy · KPIs e alertas semanais</li>
+        </ul>
+        <div class="home-card-cta">Abrir visão tática <span class="home-card-cta-arrow">→</span></div>
+      </div>
+    </div>
+
+    <div class="home-foot">
+      <strong>Brasília, DF · Abril 2026</strong> · Daniela Velez · CHRO Central IT · <a href="https://www.centralit.com.br" target="_blank" style="color:var(--teal)">centralit.com.br</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STRATEGIC ===================== -->
+<section id="view-strategic" hidden>
+  <nav class="nav-bar">
+    <div class="nav-inner">
+      <button class="nav-btn s-nav active" onclick="showStrTab('gantt',this)"><span class="nav-dot" style="background:#185FA5"></span>Roadmap Gantt</button>
+      <button class="nav-btn s-nav" onclick="showStrTab('fdc',this)"><span class="nav-dot" style="background:#E24B4A"></span>Diagnóstico FDC</button>
+      <button class="nav-btn s-nav" onclick="showStrTab('metas',this)"><span class="nav-dot" style="background:#1D9E75"></span>4 Metas Estratégicas</button>
+      <button class="nav-btn s-nav" onclick="showStrTab('deps',this)"><span class="nav-dot" style="background:#EF9F27"></span>Dependências Críticas</button>
+    </div>
+  </nav>
+
+  <div class="main">
+    <div class="kpi-row">
+      <div class="kpi"><div class="kpi-val" style="color:var(--m1)">~1.800</div><div class="kpi-lbl">colaboradores em 12 estados</div></div>
+      <div class="kpi"><div class="kpi-val" style="color:var(--m2)">5</div><div class="kpi-lbl">metas BSC 2026</div></div>
+      <div class="kpi"><div class="kpi-val" style="color:var(--m3)">20+</div><div class="kpi-lbl">programas e frentes ativas</div></div>
+      <div class="kpi"><div class="kpi-val" style="color:var(--fdc)">6/6</div><div class="kpi-lbl">variáveis FDC endereçadas</div></div>
+      <div class="kpi"><div class="kpi-val" style="color:var(--m3)">4</div><div class="kpi-lbl">agentes cognitivos (ago)</div></div>
+      <div class="kpi"><div class="kpi-val" style="color:var(--m5)">1</div><div class="kpi-lbl">negócio a fechar (nov)</div></div>
+    </div>
+
+    <div id="str-tab-gantt">
+      <div class="section">
+        <div class="section-header">
+          <div class="section-dot" style="background:var(--navy)"></div>
+          <span class="section-title">Roadmap Integrado — Gantt Interativo</span>
+          <span class="section-sub">Clique em qualquer barra para ver detalhes</span>
+        </div>
+        <div class="legend">
+          <div class="leg-item"><div class="leg-dot" style="background:#854F0B"></div>M01 Eficiência</div>
+          <div class="leg-item"><div class="leg-dot" style="background:#0F6E56"></div>M10 Produtividade</div>
+          <div class="leg-item"><div class="leg-dot" style="background:#185FA5"></div>M14 Capital Humano</div>
+          <div class="leg-item"><div class="leg-dot" style="background:#534AB7"></div>M15 Capital Organizacional</div>
+          
+          <div class="leg-item"><div class="leg-dot" style="background:#8F80D9"></div>Trilhas Corporativas</div>
+          <div class="leg-item"><div class="leg-dot" style="background:#E24B4A"></div>Tag FDC</div>
+        </div>
+        <div class="gantt-wrap"><div class="gantt" id="gantt-root"></div></div>
+      </div>
+    </div>
+
+    <div id="str-tab-fdc" hidden>
+      <div class="section">
+        <div class="section-header"><div class="section-dot" style="background:var(--fdc)"></div><span class="section-title">Diagnóstico FDC × Plano de Ação 2026</span><span class="section-sub">Fundação Dom Cabral · Dimensão Pessoas</span></div>
+        <div style="padding:18px 20px" id="fdc-cards"></div>
+      </div>
+    </div>
+
+    <div id="str-tab-metas" hidden><div id="metas-cards"></div></div>
+
+    <div id="str-tab-deps" hidden>
+      <div class="section">
+        <div class="section-header"><div class="section-dot" style="background:#EF9F27"></div><span class="section-title">Dependências Críticas</span><span class="section-sub">Atrasos aqui impactam em cascata</span></div>
+        <div style="padding:18px 20px" id="deps-content"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TACTICAL ===================== -->
+<section id="view-tactical" hidden>
+  <nav class="nav-bar">
+    <div class="nav-inner">
+      <span style="display:inline-flex;align-items:center;padding:0 12px 0 4px;font-size:10px;font-weight:700;color:#9BB0C4;letter-spacing:.12em;text-transform:uppercase;border-right:1px solid #E0E8F0;margin-right:6px;align-self:center;padding-bottom:3px">Navegar por</span>
+      <button class="nav-btn t-nav active" onclick="showTatTab('mes',this)"><span class="nav-dot" style="background:#1D9E75"></span>Por mês</button>
+      <button class="nav-btn t-nav" onclick="showTatTab('meta',this)"><span class="nav-dot" style="background:linear-gradient(90deg,#185FA5,#534AB7,#0F6E56,#854F0B)"></span>Por meta</button>
+      <button class="nav-btn t-nav" onclick="showTatTab('proj',this)"><span class="nav-dot" style="background:#185FA5"></span>Por projeto</button>
+      <button class="nav-btn t-nav" onclick="showTatTab('resp',this)"><span class="nav-dot" style="background:#534AB7"></span>Por responsável</button>
+      <button id="btn-ken-tab" class="nav-btn t-nav" onclick="showTatTab('ken',this)"><span class="nav-dot" style="background:#EF9F27"></span>Compilado Kennedy</button>
+    </div>
+  </nav>
+
+  <div class="main">
+    <div class="ken-banner" id="kennedy-status">
+      <span style="font-size:18px">⚠</span>
+      <div><b>Carregando estado de execução…</b></div>
+    </div>
+
+    <div class="t-overall-card">
+      <div class="t-overall-info">
+        <div class="t-overall-eyebrow">Plano 2026 · execução geral</div>
+        <div class="t-overall-title">% de ações concluídas no ano</div>
+        
+      </div>
+      <div class="t-overall-bar-wrap">
+        <div class="t-overall-bar"><div class="t-overall-bar-fill" id="overall-fill" style="width:0%"></div></div>
+        <div class="t-overall-bar-meta"><span id="overall-count">0 de 202</span><span id="overall-meta">abril → janeiro</span></div>
+      </div>
+      <div class="t-overall-pct" id="overall-pct">0%</div>
+    </div>
+
+    <div class="t-stats">
+      <div class="t-stat"><div class="t-stat-val">19</div><div class="t-stat-lbl">Projetos</div></div>
+      <div class="t-stat"><div class="t-stat-val">200</div><div class="t-stat-lbl">Ações</div></div>
+      <div class="t-stat"><div class="t-stat-val">5</div><div class="t-stat-lbl">Metas</div></div>
+      <div class="t-stat"><div class="t-stat-val">10</div><div class="t-stat-lbl">Pessoas</div></div>
+      <div class="t-stat"><div class="t-stat-val teal" id="stat-feito">0</div><div class="t-stat-lbl">Concluídas</div></div>
+    </div>
+
+    <div id="t-tab-mes" class="t-tab-content active">
+      <div id="month-grid" class="month-grid"></div>
+    </div>
+
+    <div id="t-tab-meta" class="t-tab-content">
+      <div id="meta-grid"></div>
+    </div>
+
+    <div id="t-tab-proj" class="t-tab-content">
+      <div class="filters">
+        <div class="filter-chip active" data-meta="all" onclick="filterMeta('all',this)">Todas</div>
+        <div class="filter-chip" data-meta="1" onclick="filterMeta('1',this)">M01 Eficiência</div>
+        <div class="filter-chip" data-meta="10" onclick="filterMeta('10',this)">M10 Produtividade</div>
+        <div class="filter-chip" data-meta="14" onclick="filterMeta('14',this)">M14 Capital Humano</div>
+        <div class="filter-chip" data-meta="15" onclick="filterMeta('15',this)">M15 Cap. Organizacional</div>
+        
+      </div>
+      <div id="proj-list"></div>
+    </div>
+
+    <div id="t-tab-resp" class="t-tab-content">
+      <div id="resp-grid" class="resp-grid"></div>
+    </div>
+
+    <div id="t-tab-ken" class="t-tab-content">
+      <div class="ken-hero">
+        <div class="ken-title">Kennedy — Guardião dos Dados de RH</div>
+        <div class="ken-sub">Dashboard semanal · KPIs por projeto · alertas antes de virar gargalo</div>
+      </div>
+      <h2 style="font-size:14px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px">Escopo de monitoramento</h2>
+      <div class="ken-grid">
+        <div class="ken-card"><h3>Projetos e execução</h3><ul class="ken-list"><li>Planejado vs realizado por projeto/mês</li><li>Status semanal das 187 ações</li><li>Alertas de atraso > 1 semana</li><li>Marcos críticos por mês</li></ul></div>
+        <div class="ken-card"><h3>Pessoas e capacidade</h3><ul class="ken-list"><li>Carga por pessoa por mês</li><li>Ausências e afastamentos</li><li>Movimentações</li><li>Headcount atualizado</li></ul></div>
+        <div class="ken-card"><h3>Pesquisas e indicadores</h3><ul class="ken-list"><li>eNPS — 3 rodadas (mai, set, jan)</li><li>Pesquisa Pulso — 2 rodadas (abr, nov)</li><li>NPS por pilar do LiderAI</li><li>Adesão e conclusão UNICIT/PDL/PDC</li></ul></div>
+        
+      </div>
+
+      <h2 style="font-size:14px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin:24px 0 14px">Indicadores críticos por mês</h2>
+      <table class="ken-table"><thead><tr><th>Mês</th><th>Indicadores prioritários</th><th>Marcos a verificar</th></tr></thead><tbody id="ken-table-body"></tbody></table>
+
+      <h2 style="font-size:14px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin:24px 0 14px">Alertas que devem chegar para Dani</h2>
+      <div class="ken-grid">
+        <div class="ken-card"><h3>Crítico — escalar imediatamente</h3><ul class="ken-list"><li>Atraso PILAR (cascata até 180°)</li><li>Arquitetura CISSA não recebida em maio</li><li>Mayara com >7 streams ativos no mesmo mês</li><li>Larysa sem progresso semanal nos manuais</li></ul></div>
+        <div class="ken-card"><h3>Atenção — reportar semanal</h3><ul class="ken-list"><li>Adesão eNPS < 70%</li><li>Visitas a contratos atrasadas</li><li>Orçamento realizado > 100% em qualquer frente</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRAWER -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="if(event.target.id==='drawer-overlay')closeDrawer()">
+  <div class="drawer">
+    <div class="drawer-top">
+      <button class="drawer-close" onclick="closeDrawer()">fechar ×</button>
+      <div class="drawer-meta" id="d-meta"></div>
+      <div class="drawer-title" id="d-title"></div>
+      <div class="drawer-period" id="d-period"></div>
+    </div>
+    <div class="drawer-body" id="d-body"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="f-inner">
+    <div><b style="color:#fff">Central IT</b> · Dashboard RH 2026 · Daniela Velez · CHRO</div>
+    <div>Brasília, DF · Abril 2026 · <a href="https://www.centralit.com.br" target="_blank">centralit.com.br</a></div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+ * 🔐 CONFIGURAÇÃO DE USUÁRIOS — edite aqui
+ * ============================================================
+ * Formato: 'login': 'senha'
+ * Login não diferencia maiúsculas/minúsculas.
+ * Para adicionar uma pessoa: nova linha.
+ * Para remover: apague a linha.
+ *
+ * ⚠ ATENÇÃO: senhas em texto simples. Proteção LEVE
+ *    contra acesso casual — quem souber abrir o
+ *    código-fonte da página verá as senhas. Use isso
+ *    junto com o controle de acesso do Agility.
+ *    Lembre de TROCAR as senhas padrão antes de publicar.
+ * ============================================================ */
+const USERS = {
+  'dani':       'Allankardec01',
+  'kennedy':    'kenM4j8nR2',
+  'gabrielly':  'gabH9w3sL5',
+  'larysa':     'larB6t1vK8',
+  'mayara':     'mayN2y7zF4',
+  'luana':      'luaW8d4mJ6',
+  'bruna':      'bruZ5h9kT3',
+  'dionisia':   'dioG1f6bV2',
+  'renard':     'renQ4c8yM3',
+  'guilherme':  'guiF3p7nB9',
+  'jaime':      'jaiR8m2vH4',
+  'freitas':    'freK7x2pM9',
+  'emauri':     'emaT4n8wL5'
+};
+
+let currentUser = null;
+
+function attemptLogin(){
+  const u = (document.getElementById('login-user').value || '').trim().toLowerCase();
+  const p = document.getElementById('login-pass').value || '';
+  const err = document.getElementById('login-error');
+  if(USERS[u] !== undefined && USERS[u] === p){
+    currentUser = u;
+    // Dependências críticas: visível apenas para dani
+    const depItem = document.getElementById('dep-criticas-item');
+    if(depItem) depItem.style.display = (u === 'dani') ? '' : 'none';
+    // Compilado Kennedy: visível apenas para dani e kennedy
+    const kenBtn = document.getElementById('btn-ken-tab');
+    const kenTab = document.getElementById('t-tab-ken');
+    const canSeeKen = ['dani','kennedy'].includes(u);
+    if(kenBtn) kenBtn.style.display = canSeeKen ? '' : 'none';
+    if(kenTab && !canSeeKen) kenTab.style.display = 'none';
+    document.getElementById('login-overlay').classList.add('hidden');
+    document.getElementById('btn-logout').style.display='inline-block';
+    err.classList.remove('show');
+    document.getElementById('login-pass').value = '';
+  } else {
+    err.textContent = 'Usuário ou senha inválidos.';
+    err.classList.add('show');
+    document.getElementById('login-pass').focus();
+    document.getElementById('login-pass').select();
+  }
+}
+
+function logout(){
+  currentUser = null;
+  document.getElementById('login-overlay').classList.remove('hidden');
+  document.getElementById('btn-logout').style.display='none';
+  document.getElementById('btn-back').style.display='none';
+  document.getElementById('login-user').value='';
+  document.getElementById('login-pass').value='';
+  document.getElementById('login-error').classList.remove('show');
+  setTimeout(()=>document.getElementById('login-user').focus(),100);
+  document.getElementById('view-home').hidden=false;
+  document.getElementById('view-strategic').hidden=true;
+  document.getElementById('view-tactical').hidden=true;
+  document.getElementById('h-meta').style.display='block';
+  document.getElementById('brand-sub').textContent='Daniela Velez · CHRO / Diretora de Pessoas';
+}
+
+document.addEventListener('keydown', e=>{
+  if(e.key==='Enter' && !document.getElementById('login-overlay').classList.contains('hidden')){
+    e.preventDefault();
+    attemptLogin();
+  }
+});
+
+/* ============================================================
+ * NAVIGATION
+ * ============================================================ */
+function goHome(){
+  document.getElementById('view-home').hidden=false;
+  document.getElementById('view-strategic').hidden=true;
+  document.getElementById('view-tactical').hidden=true;
+  document.getElementById('btn-back').style.display='none';
+  document.getElementById('h-meta').style.display='block';
+  document.getElementById('brand-sub').textContent='Daniela Velez · CHRO / Diretora de Pessoas';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showView(v){
+  document.getElementById('view-home').hidden=true;
+  document.getElementById('view-strategic').hidden=(v!=='strategic');
+  document.getElementById('view-tactical').hidden=(v!=='tactical');
+  document.getElementById('btn-back').style.display='inline-block';
+  document.getElementById('h-meta').style.display='none';
+  document.getElementById('brand-sub').textContent = v==='strategic' ? 'Visão Estratégica · BSC + FDC + Roadmap' : 'Visão Tática · Execução das 187 ações';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ============================================================
+ * DADOS — VISÃO ESTRATÉGICA (do Portal RH 2026)
+ * ============================================================ */
+const MESES = ["Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez","Jan"];
+const C = {
+  m1:{s:"#185FA5",f:"#E6F1FB",t:"#0C447C"},m1b:{s:"#185FA5",f:"#D0E8F8",t:"#0C447C"},
+  m2:{s:"#534AB7",f:"#EEEDFE",t:"#3C3489"},m2b:{s:"#6B5EC7",f:"#DAD7FA",t:"#3C3489"},
+  m2c:{s:"#8F80D9",f:"#EDE9FB",t:"#26215C"},m3:{s:"#0F6E56",f:"#E1F5EE",t:"#085041"},
+  m3b:{s:"#0A5C44",f:"#C8E8DC",t:"#085041"},m4:{s:"#854F0B",f:"#FAEEDA",t:"#633806"},
+  m5:{s:"#3B6D11",f:"#EAF3DE",t:"#27500A"},mnl:{s:"#534AB7",f:"#F3F0FF",t:"#26215C"},
+  cult:{s:"#3C3489",f:"#DDDAFA",t:"#26215C"},pink:{s:"#993556",f:"#FBEAF0",t:"#72243E"},
+  cor:{s:"#993C1D",f:"#FAECE7",t:"#712B13"}
+};
+
+const DETAIL = {
+  "gp-acao":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"Gestão de Pessoas em Ação",period:"3 ondas: Abr/Mai · Jul/Ago · Out 2026",desc:"Programa de presença ativa do RH nas operações e contratos. Leva o RH até onde o trabalho acontece, criando espaços estruturados de escuta, diálogo, desenvolvimento e alinhamento estratégico.",pilares:["P1 Diagnóstico — 1ª Pesquisa Pulso (Abr/Mai) e 2ª (Nov)","P2 Colaboradores — 6 módulos UNICIT + Rodas de Conversa TEAMS","P3 Lideranças — 3 módulos NR-1 + Rodas Líder-Liderado","P4 Guardiões — Seleção · Formação · Reuniões mensais","P5 Clareza Organizacional — Comunicação Estratégica 2º ciclo","Onda 2 — Cases + Lançamento 'O Poder de Ser Central'","Onda 3 — Retorno presencial às operações"],indicadores:["100% dos contratos engajados","≥70% adesão às ações","Evolução Pesquisa Pulso Abr→Nov","Guardiões ativos em 100% dos contratos"],fdc:{var:"Estruturação da área de RH organizada e equipada",opp:"PRIORIZAR — Inferior / Alta",razao:"Uma área de RH não estruturada gera custo invisível. Para uma empresa de tecnologia que vende eficiência, ter um RH ineficiente é uma contradição estratégica."}},
+  "nr1":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"NR-1 — Sistema Integrado de Prevenção Psicossocial",period:"Fase 1 (Abr–Mai) · Fase 2 (Jun–Nov) · Fase 3 (Dez–Jan)",desc:"Programa fundamentado na NR-01 Portaria MTE 1.419/2024. Fiscalização punitiva a partir de maio/2026. Base científica: COPSOQ, HSE, TCC, ISO 45003:2021.",pilares:["P1 Diagnóstico — Pulses + PGR atualizado","P2 Colaboradores — UNICIT 6 módulos + Rodas TEAMS","P3 Lideranças — Fundamentos + Seg. Psicológica + Conversas Difíceis","P4 Guardiões — Seleção + Formação + Reuniões mensais","P5 Clareza Organizacional — Rodas Líder-Liderado","Mid-year NR-1 (Ago) — PGR revisado + CORA AI dashboard","2ª Pulso (Dez) + Relatório Board"],indicadores:["Conformidade NR-01 antes de junho/2026","PGR auditável","Zero autuações na fiscalização MTE","Guardiões: 1 por área/contrato","2ª Pulso com melhora vs baseline"],fdc:null},
+  "onboarding":{meta:"M14 · Capital Humano",dot:"#0F6E56",title:"Onboarding Digital — CISSA Redesenhada",period:"Abr/Mai → 11/Mai → Jun/Jul → Ago → Dez",desc:"Redesenho da jornada de onboarding via CISSA. Conecta com SmartOps P2: marcos automáticos, notificações ao gestor e relatório em tempo real.",pilares:["Abr/Mai — CISSA atualizada + design + gravações","11/Mai — Lançamento CITSmart X2","Jun/Jul — Acompanhamento + ajustes","Ago — Rollout total","Nov — Revisão 3 meses pós-rollout","Dez — Modelo documentado + NPS"],indicadores:["NPS onboarding","Redução do tempo para produtividade plena","100% colaboradores com jornada digital"],fdc:{var:"Estruturação da área de RH organizada e equipada",opp:"PRIORIZAR — Inferior / Alta",razao:"Onboarding estruturado é o primeiro momento em que o colaborador percebe se a empresa é organizada ou caótica. É a base da retenção e da produtividade nos primeiros 90 dias."}},
+  "cissa":{meta:"M14 · Capital Humano",dot:"#0F6E56",title:"CISSA — Agente Conversacional de Onboarding",period:"Abr → Mai → Jun (v1) → Jul (produção)",desc:"Agente conversacional via WhatsApp com 17 marcos. Acompanha o colaborador na jornada de onboarding. Parceria com TI. Lead: Gabrielly. Arquitetura: Daniela.",pilares:["Abr — Reunião com TI + trilhas atualizadas","Mai — META: receber arquitetura do TI + roteiros + gravações","Jun — Finalização gravações + arquitetura + dev","Jun — MARCO: CISSA v1 entregue","Jul — Em produção"],indicadores:["Arquitetura TI (mai)","CISSA v1 (jun)","Em produção (jul)","17 marcos ativos"],fdc:{var:"Estruturação da área de RH",opp:"PRIORIZAR — Inferior / Alta",razao:"CISSA garante uma jornada consistente e escalável para 1.800+ colaboradores em 12 estados."}},
+  "manual-lider":{meta:"M14 · Manuais",dot:"#534AB7",title:"Manual do Gestor + Guia do Gestor de Contrato",period:"Redação Mai → Validação Mai → Lançamento Jun",desc:"Documento unificado que orienta a liderança como principal alavanca de execução da estratégia, integrando o Manual do Gestor e o Guia do Gestor de Contrato.",pilares:["Orienta a liderança como tradutora da estratégia","GESTOR: equilibra resultado, pessoas e cultura","GESTOR DE CONTRATO: governança, controle e valor","Direcionadores do Gestor: performance + valores + desenvolvimento","Direcionadores do Gestor de Contrato: dados + integração + relacionamento","Visão sistêmica: colaborador → gestor → gestor de contrato","Alinhamento PDL (IA, Dados, Agentes) e SmartOps","Rituais: 1:1, feedback, clareza de metas","Papel no onboarding digital e NR-1","Publicação digital UNICIT + CITSmart People"],indicadores:["Publicação até final de maio","100% gestores com acesso digital","NPS ≥80%"],fdc:null},
+  "manual-colab":{meta:"M14 · Manuais",dot:"#534AB7",title:"Manual do Colaborador",period:"Redação Jun/Jul → Validação Jul → Lançamento Ago",desc:"Estabelece a base cultural e orienta a jornada do colaborador como protagonista na geração de valor.",pilares:["Indivíduo como agente ativo","Propósito, valores, pertencimento","Cultura: colaboração + autonomia + aprendizado","Carreira + performance + desenvolvimento","Mobilidade interna","Jornada de onboarding (CISSA, marcos)","Benefícios De Mãos Dadas","'O Poder de Ser Central'","Direitos e deveres NR-1 e CitElas v3","Publicação + kit boas-vindas"],indicadores:["Publicação até final de julho","100% acesso digital","Integrado ao onboarding"],fdc:null},
+  "citelas":{meta:"M14 · Capital Humano",dot:"#993556",title:"CitElas v3 — Política de Equidade de Gênero",period:"Jun (diagnóstico) → Ago (reporte legal) → Dez (Board)",desc:"Política aprovada pela Diretoria com base na Lei 14.611/2023. Plano Trienal 2025–2027 com 15 iniciativas em 3 eixos.",pilares:["Jun — Diagnóstico baseline 3 KPIs","Jun — Equidade salarial + R&S em plataformas femininas (gap atual ~14% → meta ≤10%)","Jul — Mentorias + PDIs","Ago — Treinamento viés inconsciente","Ago — Reporte Lei 14.611/2023","Set — Aceleração para mulheres técnicas","Dez — Relatório Board: ESG + GPTW + Compras.gov.br"],indicadores:["Gap salarial ≤10% em 2026","100% novas contratações com equidade na entrada","+5pp mulheres em liderança","Retenção pós-maternidade ≥90%","Nível PRATA Compras.gov.br","Zero autuações"],fdc:{var:"Comprometimento público da liderança em sustentabilidade",opp:"PRIORIZAR — Inferior / Alta",razao:"Sustentabilidade inclui equidade, saúde psicossocial e conformidade legal. Empresa de TI sem isso perde marca empregadora, clientes ESG e conformidade regulatória."}},
+  "dmd":{meta:"M14 · Capital Humano",dot:"#993C1D",title:"De Mãos Dadas — Maternidade, Pais e Parceiros",period:"Abr (levantamento) → Jul (lançamento) → Dez (relatório)",desc:"Programa de acompanhamento da jornada de maternidade, paternidade e adoção. Agente Digital de Cuidado ativo durante toda a experiência.",pilares:["Abr — Levantamento programas existentes","Jul — Materiais + kit boas-vindas + treinamento gestores","Jul — Lançamento + Fase 1 (Descoberta)","Ago — Piloto Fases 2 e 3 + Agente Digital","Set — Fase 4 (Licença)","Out — Avaliação + ajustes","Nov — Pais e parceiros"],indicadores:["NPS Maternidade ≥85%","Retorno pós-licença ≥90%","Participação ≥80%"],fdc:null},
+  "cultura":{meta:"M14 · Capital Humano",dot:"#3C3489",title:'"O Poder de Ser Central" — Programa de Cultura',period:"Lançamento Jul/Ago — Onda 2 GP em Ação",desc:"Programa de identidade e cultura organizacional, com a alta liderança como porta-voz. Sustenta todos os demais programas.",pilares:["Identidade: quem somos, como atuamos","Pertencimento: o que nos conecta","Propósito: Inspirar pessoas e impactar negócios","Rituais e símbolos a definir","Comunicação integrada com Manual + onboarding + NR-1"],indicadores:["≥80% engajamento (out)","eNPS Jan > Set","Menção espontânea na Pulso de Nov"],fdc:{var:"Comprometimento público da liderança em sustentabilidade",opp:"PRIORIZAR — Inferior / Alta",razao:"Cultura é o que resta quando as regras não estão olhando. Comprometimento público com identidade e propósito transforma clima em vantagem competitiva."}},
+  "liderai":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"LiderAI 2026 — PDL + PDC",period:"Kick-off 11/Mai → Fórum LiderAI Dez · 77 líderes",desc:"Programa unificado de desenvolvimento de líderes (PDL+PDC). 77 líderes. 5 pilares com Koru, Numera e Lalon.",pilares:["11/Mai — Kick-off oficial","Mai (2ª quinzena) → Ago (2ª quinzena) — P1 Vendas Consultivas (Lalon) · PDL SC + PDC","Ago — P2 Pessoas e Responsabilidades (Lalon)","Ago — P3 Letramento IA + Diagnóstico Maturidade Digital (Koru) + Pensamento Crítico (Numera, 3 turmas)","Set → Dez — P4 SmartOps + Agentes (Koru) · 4 meses · 2 frentes (internas + SC/Com)","Dez — P5 Fórum LiderAI + IA Day · celebração + certificação"],indicadores:["100% dos 77 líderes certificados","Projetos de transformação no Fórum","NPS ≥85%","Diagnóstico Maturidade Digital concluído"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"LiderAI é o braço operacional do framework de competências para liderança. Sem líderes em IA, dados e agentes, SmartOps e os 5 agentes não têm quem os adote."}},
+  "trilha-ia":{meta:"M15 · Trilha Corporativa",dot:"#8F80D9",title:"Trilha Corporativa — IA e Dados",period:"Estruturação Mai · Validação Jun · Gravações Jun/Jul · Lançamento Ago",desc:"Trilha para TODA a empresa. Desenvolve competências em IA e dados em todos os níveis hierárquicos.",pilares:["Mai — Dani estrutura conteúdo","Jun — Validação Board + UNICIT + instrutores + gravações","Jul — Finalização + Semana do Conhecimento","Ago — LANÇAMENTO","Set–Nov — Em andamento","Dez — META: ≥80% conclusão + NPS ≥80%","Formato: UNICIT assíncrono + TEAMS síncrono","Sincronizada com LiderAI e Agentes"],indicadores:["≥80% conclusão até dez","NPS ≥80%","≥60% demonstram uso no trabalho"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"Trilha IA e Dados leva o letramento a toda a empresa. Sem isso, IA First fica restrita às lideranças."}},
+  "trilha-neg":{meta:"M15 · Trilha Corporativa",dot:"#8F80D9",title:"Trilha Corporativa — Negócios e Accountability",period:"Conteúdo Mai · Lançamento Ago",desc:"Trilha para TODA a empresa. Desenvolve visão de negócios e cultura de accountability no novo posicionamento.",pilares:["Visão do negócio Central IT e cadeia de valor","Como o trabalho conecta-se à estratégia","Cultura de responsabilidade individual e coletiva","Protagonismo, autonomia, maturidade","Formato: UNICIT + Rodas TEAMS","Sincronizada com 'O Poder de Ser Central'"],indicadores:["≥80% adesão até nov","NPS ≥80%","Accountability mencionada no eNPS Jan"],fdc:null},
+  "desc-cargo":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"Descrições de Cargo — 100% Aprovadas",period:"4 blocos: Abr → Ago 2026",desc:"Pré-requisito do Framework de Competências e da Avaliação 180°. Metodologia com Elliott Jaques.",pilares:["Bloco 1 (Abr): C-Level + GP + Comercial + CS + Produtos","Bloco 2 (Mai): TD","Bloco 3 (Jun): CIOTI + Infraestrutura","Bloco 4 (Jul): Áreas internas + Contratos","Finalização (Ago): 100% aprovadas"],indicadores:["100% homologadas (ago)","Pré-req Framework (jun)","Pré-req 180° (set)"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"Sem descrições precisas, não há como definir competências, contratar com critério, desenvolver com foco nem avaliar com objetividade."}},
+  "competencias":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"Framework de Competências",period:"Jun (design) → Set (gap) → Dez (consolidado)",desc:"Design (Jun) → Mapeamento Analista→Diretor (Jul) → Validação workshops (Ago) → Gap (Set) → Plano T&D vinculado às trilhas.",pilares:["Core — todos os colaboradores","Liderança — por nível","Técnicas — por área","IA First transversal obrigatório","Validação em workshops"],indicadores:["Validado por ≥80% lideranças (ago)","Gap mapeado por área (set)","Plano T&D às trilhas UNICIT (out)"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"Framework é o DNA operacional da estratégia. Dá objetividade ao desenvolvimento, à avaliação e às decisões de promoção."}},
+  "av180":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"Avaliação 180° — 1º Ciclo",period:"Set (preparação) · Out (avaliação) · Nov (devolutivas) · Dez (Board)",desc:"1º ciclo formal de avaliação. IA reduz viés cognitivo. IDPs gerados automaticamente e validados pelo gestor.",pilares:["Set — Metodologia + capacitação","Out — Auto + gestor","Nov — Devolutivas + IDPs às trilhas","Dez — Board: Meta 15 ✓","SmartOps P4: coleta + calibração + IDP→trilha"],indicadores:["100% avaliados out/nov","IDPs para 100%","Percepção de justiça eNPS Jan > Set"],fdc:{var:"Sistema eficaz de avaliação",opp:"PRIORIZAR — Similar / Alta",razao:"Sem sistema estruturado, decisões ficam à percepção do gestor. Gera injustiças, perda de talentos e desconexão performance↔resultado."}},
+  "smartops":{meta:"M10 · Produtividade",dot:"#0A5C44",title:"SmartOps — Redesenho de Processos com IA",period:"Redesenho Abr/Jun → Sprints Jul→Out → Case Dez",desc:"Célula de Inovação que redesenha os 7 processos de RH como fluxos orquestrados: Humano · IA · Automação.",pilares:["Abr/Mai — Dani: redesenho dos 7 processos","Jun — Finaliza + handoff Mayara/Koru","Jul — Sprints 1–4 com Koru","Ago — Sprints 5–8: R&S + Onboarding","Set — Sprints 9–12: T&D + Avaliação + Clima","Out — Sprints 13–16: Offboarding · MARCO case","Dez — Case comercial consolidado"],indicadores:["7 processos redesenhados (dez)","Redução carga manual","Case replicável para clientes (dez)"],fdc:{var:"Estruturação da área de RH",opp:"PRIORIZAR — Inferior / Alta",razao:"SmartOps é a resposta definitiva para a lacuna de estruturação. Redesenha com inteligência: o que humano faz, o que IA faz e o que é automatizado."}},
+  "agentes":{meta:"M10 · Produtividade",dot:"#0F6E56",title:"Agentes Cognitivos — 3 agentes",period:"CISSA Jun → CORA Ago → PILAR Out → Portfólio Dez",desc:"3 agentes cognitivos próprios em produção com dados reais. Base para o case comercial.",pilares:["Mai — CISSA: arquitetura TI","Jun — CISSA v1 + CORA dev","Jul — CORA dev","Ago — CORA produção + PILAR dev","Set/Out — PILAR → v1","Nov — MARCO: 4 agentes em produção","Dez — Portfólio documentado"],indicadores:["CISSA v1 (jun)","CORA produção (ago)","PILAR v1 (out)","3 agentes (nov)","Portfólio precificado (dez)"],fdc:null},
+  "orcamento":{meta:"M01 · Eficiência",dot:"#854F0B",title:"BI no Azul — Gestão de Orçamento",period:"Reviews mensais · Mid-year Jul · Balanço Dez",desc:"Gestão rigorosa de custos com reviews mensais. Alerta automático se desvio >10%. ROI documentado por programa.",pilares:["Abr — Mapa orçamentário aprovado","Mai–Nov — Reviews mensais","Jul — Mid-year + realocação","Dez — Balanço + ROI"],indicadores:["Orçamento monitorado mensalmente","Zero surpresas no Board","ROI positivo por frente"],fdc:{var:"Indicadores de GP definidos e acompanhados",opp:"PROTEGER — Similar / Alta",razao:"Central IT já tem indicadores — é ponto forte. BI no Azul consolida e eleva: conecta indicadores à estratégia e garante que o Board receba dados de RH com rigor financeiro."}}
+};
+
+const GANTT_DATA = [
+  {sec:"M14 · Capital Humano — Marca Empregadora",dot:"#185FA5"},
+  {label:"GP em Ação",sub:"3 ondas",id:"gp-acao",bars:[{s:0,d:2,c:"m1",fdc:true,t:"Onda 1 — Fundação"},{s:3,d:2,c:"m1",t:"Onda 2 — Cases + Cultura"},{s:6,d:1,c:"m1",t:"Onda 3"}]},
+  {label:"NR-1",sub:"3 fases",id:"nr1",bars:[{s:0,d:2,c:"m1b",t:"Fase 1"},{s:2,d:6,c:"m1",t:"Fase 2 — Ação e Sustentabilidade"},{s:8,d:2,c:"m1b",t:"Fase 3"}]},
+  {label:"Onboarding digital",sub:"Lançamento 11/Mai",id:"onboarding",bars:[{s:0,d:1,c:"m3",fdc:true,t:"CISSA + design"},{s:1,d:1,c:"m3",t:"Lançamento 11/Mai"},{s:2,d:2,c:"m3",t:"Acompanhamento"},{s:4,d:1,c:"m3",t:"Rollout total"},{s:8,d:1,c:"m3",t:"Consolidado"}]},
+  {label:"CISSA",sub:"Agente · 17 marcos · Jun v1",id:"cissa",bars:[{s:0,d:1,c:"m3",t:"TI+trilhas"},{s:1,d:1,c:"m3",t:"Arquitetura"},{s:2,d:1,c:"m3",t:"v1 entregue"},{s:3,d:1,c:"m3",t:"Produção"}]},
+  {label:"Manual do Gestor",sub:"Pronto Mai · Lançamento Jun",id:"manual-lider",bars:[{s:0,d:2,c:"mnl",t:"Redação"},{s:2,d:1,c:"mnl",t:"Lançamento"}]},
+  {label:"Manual do Colaborador",sub:"Pronto Jul · Lançamento Ago",id:"manual-colab",bars:[{s:2,d:2,c:"mnl",t:"Redação"},{s:4,d:1,c:"mnl",t:"Lançamento"}]},
+  {label:"CitElas v3",sub:"Equidade de gênero",id:"citelas",bars:[{s:2,d:1,c:"pink",fdc:true,t:"Diagnóstico"},{s:3,d:5,c:"pink",t:"Ações equidade"},{s:8,d:1,c:"pink",t:"Board"}]},
+  {label:"De Mãos Dadas",sub:"Lançamento Jul · pais Nov",id:"dmd",bars:[{s:0,d:1,c:"cor",t:"Levantamento"},{s:3,d:1,c:"cor",t:"Lançamento"},{s:4,d:2,c:"cor",t:"Piloto fases 2,3,4"},{s:6,d:1,c:"cor",t:"Avaliação"},{s:7,d:1,c:"cor",t:"Pais+parceiros"},{s:8,d:1,c:"cor",t:"Relatório"}]},
+  {label:"Cultura",sub:'"O Poder de Ser Central"',id:"cultura",bars:[{s:3,d:2,c:"cult",t:"Lançamento + sustentação"}]},
+  {label:"eNPS",sub:"3 rodadas",id:null,bars:[{s:1,d:1,c:"m4",t:"eNPS 1"},{s:5,d:1,c:"m4",t:"eNPS 2"},{s:9,d:1,c:"m4",t:"eNPS 3"}]},
+  {sec:"M15 · Capital Organizacional",dot:"#534AB7"},
+  {label:"LiderAI 2026",sub:"89 líderes · 11/Mai",id:"liderai",bars:[{s:1,d:1,c:"m2",t:"Kick-off"},{s:2,d:1,c:"m2",t:"P1 Letramento IA"},{s:3,d:2,c:"m2",t:"P2+P3+P4"},{s:5,d:2,c:"m2",t:"P3 SmartOps"},{s:7,d:1,c:"m2",t:"P5 Pessoas"},{s:8,d:1,c:"m2",t:"Fórum LiderAI ✓"}]},
+  {label:"Trilha IA e Dados",sub:"Toda empresa · Ago",id:"trilha-ia",bars:[{s:1,d:1,c:"m2c",t:"Estrutura"},{s:2,d:2,c:"m2c",t:"Validação+Gravações"},{s:4,d:1,c:"m2c",t:"Lançamento"},{s:5,d:3,c:"m2c",t:"Em andamento"},{s:8,d:1,c:"m2c",t:"≥80%"}]},
+  {label:"Trilha Neg.+Account.",sub:"Toda empresa · Ago",id:"trilha-neg",bars:[{s:1,d:1,c:"m2c",t:"Estrutura"},{s:2,d:2,c:"m2c",t:"Validação+Gravações"},{s:4,d:1,c:"m2c",t:"Lançamento"},{s:5,d:3,c:"m2c",t:"Em andamento"},{s:8,d:1,c:"m2c",t:"≥80%"}]},
+  {label:"Descrições de cargo",sub:"FDC: Priorizar",id:"desc-cargo",bars:[{s:0,d:5,c:"m2",fdc:true,t:"4 blocos → 100%"}]},
+  {label:"Competências org.",sub:"FDC: Priorizar",id:"competencias",bars:[{s:2,d:5,c:"m2",fdc:true,t:"Design→Mapeamento→Validação→Gap"},{s:8,d:1,c:"m2",t:"Consolidado"}]},
+  {label:"Avaliação 180°",sub:"Inicia Set",id:"av180",bars:[{s:5,d:1,c:"m2",fdc:true,t:"Preparação"},{s:6,d:1,c:"m2",fdc:true,t:"1ª Avaliação"},{s:7,d:1,c:"m2",fdc:true,t:"Devolutivas"},{s:8,d:1,c:"m2",t:"Board ✓"}]},
+  {sec:"M10 · Produtividade — CSC · SmartOps · Agentes",dot:"#0F6E56"},
+    {label:"SmartOps",sub:"7 processos · Abr→Dez",id:"smartops",bars:[{s:0,d:2,c:"m3b",t:"Redesenho"},{s:3,d:2,c:"m3b",t:"Sprints 1–8"},{s:5,d:2,c:"m3b",t:"Sprints 9–12"},{s:6,d:2,c:"m3b",t:"Sprints 13–16"},{s:8,d:1,c:"m3b",t:"Case produto"}]},
+  {label:"Agentes Cognitivos",sub:"3 agentes",id:"agentes",bars:[{s:1,d:1,c:"m3",t:"CISSA"},{s:2,d:1,c:"m3",t:"v1+CORA"},{s:3,d:1,c:"m3",t:"CORA"},{s:4,d:1,c:"m3",t:"PILAR"},{s:5,d:2,c:"m3",t:"PILAR dev"},{s:7,d:1,c:"m3",t:"3 produção"},{s:8,d:1,c:"m3",t:"Portfólio"}]},
+  {sec:"M01 · Eficiência — BI no Azul",dot:"#854F0B"},
+  {label:"Reviews orçamento",sub:"Todo mês + mid-year Jul",id:"orcamento",bars:[{s:0,d:10,c:"m4",t:"Reviews mensais → Balanço Dez"}]},
+
+];
+
+const FDC_DATA = [
+  {tipo:"PRIORIZAR",cor:"#A32D2D",bg:"#FCEBEB",vars:[
+    {var:"Estruturação da área de RH para os objetivos internos e organizacionais",pos:"Inferior",imp:"Alta",razao:"Para uma empresa de tecnologia que vende eficiência, ter um RH não estruturado é uma contradição estratégica.",acoes:["SmartOps redesenha 7 processos com Humano · IA · Automação","GP em Ação com 5 pilares e 3 ondas","Manuais Líder e Colaborador publicados digitalmente"],kpis:["100% chamados RH com rastreabilidade (abr)","7 processos redesenhados (dez)"]},
+    {var:"Definição, desenvolvimento e avaliação das competências por cargo",pos:"Inferior",imp:"Alta",razao:"Competências são o DNA operacional da estratégia. Sem elas, o RH não contrata, desenvolve nem avalia com critério.",acoes:["Descrições de Cargo: 4 blocos Abr→Ago","Framework: Jun → Set Gap → Dez","PDL: 5 meses para líderes internos · IA First","PDC: 90 dias para Comercial e CS","Trilha IA e Dados: lançamento Ago","Trilha Negócios e Accountability: lançamento Ago"],kpis:["100% cargos homologados (ago)","Framework validado por ≥80% lideranças","Certificações PDL/PDC","Trilha IA ≥80% conclusão"]},
+    {var:"Sistema eficaz de avaliação de desempenho",pos:"Similar",imp:"Alta",razao:"Sem sistema estruturado, decisões de promoção ficam à percepção do gestor — gera injustiças e perda de talentos.",acoes:["Avaliação 180°: 1º ciclo Set–Dez · IA anti-viés","IDPs automáticos validados pelo gestor","SmartOps P4: fluxo orquestrado com calibração"],kpis:["100% avaliados (out/nov)","IDPs para 100%","Percepção de justiça eNPS Jan > Set"]},
+    {var:"Comprometimento público da liderança em sustentabilidade",pos:"Inferior",imp:"Alta",razao:"Inclui equidade, saúde psicossocial e conformidade legal. Sem isso, a empresa perde marca empregadora, clientes ESG e conformidade.",acoes:["CitElas v3: política aprovada + Lei 14.611/2023","NR-1: liderança protagonista. Conformidade antes mai/2026","'O Poder de Ser Central': cultura conduzida pela alta liderança"],kpis:["Zero autuações NR-1","Reporte Lei 14.611 entregue (ago)","PRATA Compras.gov.br"]}
+  ]},
+  {tipo:"PROTEGER",cor:"#27500A",bg:"#EAF3DE",vars:[
+    {var:"Indicadores de GP definidos e acompanhados",pos:"Similar",imp:"Alta",razao:"Central IT já tem indicadores — é ponto forte. O risco de PROTEGER é perder o que funciona. O plano não só mantém: eleva esse diferencial.",acoes:["BI no Azul: reviews mensais + alerta >10%","eNPS: 3 rodadas comparáveis","Pulso: 2 ciclos com CORA AI","Dashboard SmartOps em tempo real"],kpis:["Dashboard atualizado em tempo real","eNPS ≥75 nas 3 rodadas","PGR auditável"]}
+  ]},
+  {tipo:"NEUTRALIDADE",cor:"#444441",bg:"#F4F4F4",vars:[
+    {var:"Competências futuras · sucessão · gestão de conhecimento",pos:"Inferior",imp:"Baixa",razao:"Variáveis de baixa importância para resultados atuais. A base é criada agora. O aprofundamento acontece em 2027.",acoes:["Framework com IA First cria mapa futuro","Avaliação 180° + IDPs mapeiam pipeline","SmartOps codifica conhecimento tácito"],kpis:["Base criada em 2026","Sucessão e knowledge mgmt em 2027"]}
+  ]}
+];
+
+const METAS_DATA = [
+  {num:"01",title:"Eficiência",agility:"https://itsmx.centralit.com.br/kanban/a/agility/workspaces/2350?embed=false",subtitle:"BI no Azul · gestão de custos",cor:"#854F0B",desc:"Aumentar nossa eficiência na gestão de custos e despesas.",programas:["Reviews mensais","Mid-year (jul)","Balanço anual com ROI (dez)"],kpis:["Orçamento monitorado mensalmente","BI no Azul"]},
+  {num:"10",title:"Produtividade",subtitle:"4 agentes cognitivos · fazer mais com menos",cor:"#0F6E56",desc:"Buscar a excelência na gestão econômico-financeira.",programas:["SmartOps — 7 processos","Agentes Cognitivos — 4 em produção (ago)","Dashboard de Dimensionamento FT (set)"],kpis:["7 processos atualizados com metodologia SmartOps","4 agentes em produção"]},
+    {num:"14",title:"Capital Humano",subtitle:"Marca empregadora · confiança · colaboração · resultados",cor:"#185FA5",desc:"Consolidar a empresa como um lugar sustentado por confiança, colaboração e resultados, reforçando sua marca empregadora.",programas:["GP em Ação (3 ondas)","NR-1 (3 fases)","Onboarding Digital","Manual do Líder + Colaborador","CitElas v3","De Mãos Dadas","Cultura: O Poder de Ser Central","eNPS (3 rodadas)"],kpis:["eNPS ≥ 75%","Zero autuações NR-1"]},
+  {num:"15",title:"Capital Organizacional",subtitle:"IA · dados · negócios · accountability · competências",cor:"#534AB7",desc:"Fortalecer competências em dados, IA, negócios e accountability.",programas:["PDL (5 meses)","PDC (90 dias)","Trilha IA e Dados (toda empresa)","Trilha Negócios e Accountability (toda empresa)","Descrições de Cargo (Abr→Ago)","Framework de Competências","Avaliação 180° (Set→Dez)"],kpis:["100% dos cargos atualizados","PDL e PDC — 100% dos líderes certificados","Trilhas IA, Dados e Negócios ≥ 80% concluída"]}
+];
+
+const DEPS_DATA = [
+  {pre:"Diagnóstico CitElas v3 (baseline KPIs)",prazo:"Junho",destrava:"Reporte Lei 14.611/2023 em agosto",risco:"Sem baseline, reporte legal sem evidências — risco de multa"},
+  {pre:"Descrições de Cargo 100%",prazo:"Abr → Ago",destrava:"Framework de Competências + Avaliação 180°",risco:"180° não pode iniciar em set sem base de competências"},
+  {pre:"Framework validado",prazo:"Jun → Ago",destrava:"Avaliação 180° com critérios objetivos",risco:"Avaliação sem framework = avaliação por percepção"},
+  {pre:"4 Agentes em produção",prazo:"Agosto",destrava:"Case comercial",risco:"Pitch sem dados reais não é crível"},
+  {pre:"Case comercial maduro",prazo:"Outubro",destrava:"Fechamento do 1º negócio",risco:"Case comercial depende de evidência, não de promessa"}
+];
+
+/* ============================================================
+ * BUILD STRATEGIC
+ * ============================================================ */
+function buildGantt(){
+  const root=document.getElementById('gantt-root');root.innerHTML='';
+  const hdr=document.createElement('div');hdr.className='g-header';
+  hdr.innerHTML='<div class="g-hlbl">Frente</div>'+MESES.map((m,i)=>`<div class="g-hm${i===1?' now':''}">${m}</div>`).join('');
+  root.appendChild(hdr);
+  GANTT_DATA.forEach(item=>{
+    if(item.sec){
+      const d=document.createElement('div');d.className='sec-divider';
+      d.innerHTML=`<div class="sec-divider-dot" style="background:${item.dot}"></div><div class="sec-divider-text">${item.sec}</div>`;
+      root.appendChild(d);return;
+    }
+    const row=document.createElement('div');row.className='g-row';
+    const lbl=document.createElement('div');lbl.className='g-label';
+    lbl.innerHTML=`${item.label}${item.sub?'<small>'+item.sub+'</small>':''}`;row.appendChild(lbl);
+    const cells=Array.from({length:10},()=>{const c=document.createElement('div');c.className='g-cell';row.appendChild(c);return c;});
+    item.bars.forEach(bar=>{
+      const col=C[bar.c];const el=document.createElement('div');el.className='bar';
+      el.style.cssText=`background:${col.f};color:${col.t};border-color:${col.s}`;
+      if(bar.d>1){el.style.position='absolute';el.style.left='1px';el.style.zIndex='2';el.style.width=`calc(${bar.d*100}% - 2px)`;cells[bar.s].style.position='relative';cells[bar.s].style.overflow='visible';}
+      el.innerHTML=bar.t+(bar.fdc?'<span class="fdc-badge">FDC</span>':'');
+      el.title=bar.t+(bar.fdc?' — Variável FDC':'');
+      if(item.id){el.onclick=()=>openDrawer(item.id);el.style.cursor='pointer';}
+      cells[bar.s].appendChild(el);
+    });
+    root.appendChild(row);
+  });
+}
+function buildFDC(){
+  const root=document.getElementById('fdc-cards');root.innerHTML='';
+  FDC_DATA.forEach(grupo=>{
+    const gh=document.createElement('div');gh.style.marginBottom='28px';
+    gh.innerHTML=`<div style="margin-bottom:14px"><span style="display:inline-block;background:${grupo.cor};color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:4px;letter-spacing:.04em">${grupo.tipo}</span></div>`;
+    grupo.vars.forEach(v=>{
+      const card=document.createElement('div');
+      card.style.cssText=`background:${grupo.bg};border:.5px solid ${grupo.cor}33;border-radius:10px;margin-bottom:14px;overflow:hidden`;
+      card.innerHTML=`
+        <div style="padding:14px 16px;border-bottom:.5px solid ${grupo.cor}22">
+          <div style="display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:start">
+            <div style="font-size:13px;font-weight:500;color:${grupo.cor};line-height:1.45">${v.var}</div>
+            <div style="font-size:11px;color:${grupo.cor};background:#fff;padding:2px 8px;border-radius:4px;white-space:nowrap;border:.5px solid ${grupo.cor}44">${v.pos}</div>
+            <div style="font-size:11px;color:${grupo.cor};background:#fff;padding:2px 8px;border-radius:4px;white-space:nowrap;border:.5px solid ${grupo.cor}44">Imp ${v.imp}</div>
+          </div>
+          <div style="margin-top:10px;font-size:12px;color:#444;line-height:1.6;font-style:italic;border-left:2px solid ${grupo.cor};padding-left:10px">${v.razao}</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+          <div style="padding:12px 16px;border-right:.5px solid ${grupo.cor}22">
+            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px">Plano de ação 2026</div>
+            <ul style="list-style:none;padding:0">${v.acoes.map(a=>`<li style="font-size:12px;color:#444;padding:4px 0 4px 14px;position:relative;border-bottom:.5px solid rgba(0,0,0,.06);line-height:1.5"><span style="position:absolute;left:4px;color:#999">·</span>${a}</li>`).join('')}</ul>
+          </div>
+          <div style="padding:12px 16px">
+            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px">Indicadores de sucesso</div>
+            <ul style="list-style:none;padding:0">${v.kpis.map(k=>`<li style="font-size:12px;color:#444;padding:4px 0 4px 14px;position:relative;border-bottom:.5px solid rgba(0,0,0,.06);line-height:1.5"><span style="position:absolute;left:4px;color:#1D9E75;font-weight:700">✓</span>${k}</li>`).join('')}</ul>
+          </div>
+        </div>`;
+      gh.appendChild(card);
+    });
+    root.appendChild(gh);
+  });
+}
+function buildMetas(){
+  const root=document.getElementById('metas-cards');root.innerHTML='';
+  METAS_DATA.forEach(m=>{
+    const card=document.createElement('div');card.className='section';card.style.marginBottom='16px';
+    card.innerHTML=`<div style="display:grid;grid-template-columns:72px 1fr;align-items:stretch">
+      <div style="background:${m.cor};display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 8px;border-radius:10px 0 0 10px">
+        <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.06em;margin-bottom:4px">META</div>
+        <div style="font-size:32px;font-weight:700;color:#fff;line-height:1">${m.num}</div>
+      </div>
+      <div style="padding:16px 20px">
+        <div style="font-size:18px;font-weight:600;color:${m.cor};margin-bottom:3px">${m.title}</div>
+        <div style="font-size:12px;color:var(--text3);margin-bottom:10px">${m.subtitle}</div>
+        <div style="font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:14px">${m.desc}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div>
+            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.05em;text-transform:uppercase;margin-bottom:7px">Programas</div>
+            <ul style="list-style:none;padding:0">${m.programas.map(p=>`<li style="font-size:12px;color:var(--text2);padding:3px 0 3px 14px;position:relative;border-bottom:.5px solid var(--border);line-height:1.4"><span style="position:absolute;left:4px;color:${m.cor}">·</span>${p}</li>`).join('')}</ul>
+          </div>
+          <div>
+            <div style="font-size:10px;font-weight:700;color:#888;letter-spacing:.05em;text-transform:uppercase;margin-bottom:7px">Indicadores</div>
+            <ul style="list-style:none;padding:0">${m.kpis.map(k=>`<li style="font-size:12px;color:var(--text2);padding:3px 0 3px 14px;position:relative;border-bottom:.5px solid var(--border);line-height:1.4"><span style="position:absolute;left:4px;color:#1D9E75;font-weight:700">✓</span>${k}</li>`).join('')}</ul>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    root.appendChild(card);
+  });
+}
+function buildDeps(){
+  const root=document.getElementById('deps-content');
+  root.innerHTML=`<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;min-width:700px">
+    <thead><tr>
+      <th style="background:#0A2540;color:#fff;font-size:12px;font-weight:600;padding:10px 12px;text-align:left">Pré-requisito</th>
+      <th style="background:#0A2540;color:#fff;font-size:12px;font-weight:600;padding:10px 12px;text-align:left;white-space:nowrap">Prazo</th>
+      <th style="background:#0A2540;color:#fff;font-size:12px;font-weight:600;padding:10px 12px;text-align:left">Destrava</th>
+      <th style="background:#0A2540;color:#fff;font-size:12px;font-weight:600;padding:10px 12px;text-align:left">Risco se atrasar</th>
+    </tr></thead>
+    <tbody>${DEPS_DATA.map((d,i)=>`<tr style="background:${i%2===0?'#fff':'#FAFAFA'}">
+      <td style="padding:10px 12px;font-size:13px;border-bottom:.5px solid #F0F0F0">${d.pre}</td>
+      <td style="padding:10px 12px;font-size:13px;font-weight:600;color:#A32D2D;border-bottom:.5px solid #F0F0F0;white-space:nowrap">${d.prazo}</td>
+      <td style="padding:10px 12px;font-size:13px;color:#185FA5;border-bottom:.5px solid #F0F0F0">${d.destrava}</td>
+      <td style="padding:10px 12px;font-size:13px;color:#854F0B;border-bottom:.5px solid #F0F0F0">${d.risco}</td>
+    </tr>`).join('')}</tbody></table></div>`;
+}
+function openDrawer(id){
+  const d=DETAIL[id];if(!d)return;
+  document.getElementById('d-meta').innerHTML=`<div class="drawer-meta-dot" style="background:${d.dot}"></div>${d.meta}`;
+  document.getElementById('d-title').textContent=d.title;
+  document.getElementById('d-period').textContent=d.period;
+  let body=`<div class="dtabs">
+    <button class="dtab active" onclick="showDTab(this,'dp-plan')">Plano de ação</button>
+    <button class="dtab" onclick="showDTab(this,'dp-kpi')">Indicadores</button>
+    ${d.fdc?'<button class="dtab" onclick="showDTab(this,\'dp-fdc\')">Diagnóstico FDC</button>':''}
+  </div>
+  <div class="dpanel active" id="dp-plan">
+    <p class="drawer-desc">${d.desc}</p>
+    <div class="drawer-section">
+      <div class="drawer-section-title">Pilares e ações</div>
+      <ul class="item-list">${(d.pilares||[]).map(p=>'<li>'+p+'</li>').join('')}</ul>
+    </div>
+  </div>
+  <div class="dpanel" id="dp-kpi">
+    <div class="drawer-section">
+      <div class="drawer-section-title">Indicadores de sucesso</div>
+      <div class="kpi-mini">${(d.indicadores||[]).map(k=>'<div class="kpi-mini-item"><div class="kpi-mini-lbl">'+k+'</div></div>').join('')}</div>
+    </div>
+  </div>`;
+  if(d.fdc){body+=`<div class="dpanel" id="dp-fdc"><div class="fdc-block">
+    <div class="fdc-block-title"><span style="width:8px;height:8px;border-radius:2px;background:#E24B4A;display:inline-block"></span>Variável identificada pelo FDC</div>
+    <div class="fdc-var">${d.fdc.var}</div><div class="fdc-opp">${d.fdc.opp}</div>
+    <div class="fdc-razao">${d.fdc.razao}</div></div></div>`;}
+  document.getElementById('d-body').innerHTML=body;
+  document.getElementById('drawer-overlay').classList.add('open');
+}
+function showDTab(btn,p){
+  btn.closest('.drawer-body').querySelectorAll('.dtab').forEach(t=>t.classList.remove('active'));
+  btn.closest('.drawer-body').querySelectorAll('.dpanel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');document.getElementById(p).classList.add('active');
+}
+function closeDrawer(){document.getElementById('drawer-overlay').classList.remove('open');}
+function showStrTab(name,btn){
+  ['gantt','fdc','metas','deps'].forEach(t=>{document.getElementById('str-tab-'+t).hidden=(t!==name);});
+  document.querySelectorAll('.s-nav').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+/* ============================================================
+ * DADOS — VISÃO TÁTICA (do Dashboard RH 2026)
+ * ============================================================ */
+const TDATA = {projects:[
+  {id:"bi_azul",name:"BI no Azul — Orçamento",meta:1,subtitle:"Governança orçamentária mensal",lead:"Dani",support:"Kennedy",actions:[
+    {mes:"Abr",acao:"Mapa orçamentário aprovado por frente",responsavel:"Dani",status:"feito"},
+    {mes:"Jun",acao:"Análise BI — verificar lançamentos",responsavel:"Dani+Kennedy",status:"planejado"},
+    {mes:"Jun",acao:"1ª quinzena: orçado vs realizado por frente",responsavel:"Dani+Kennedy",status:"planejado"},
+    {mes:"Jun",acao:"Análise e revisão de todas as despesas da área",responsavel:"Dani+Kennedy",status:"planejado"},
+    {mes:"Jul",acao:"1ª quinzena: orçado vs realizado + Mid-year",responsavel:"Dani+Kennedy",status:"planejado"},
+    {mes:"Jul",acao:"Validação do orçamento com a área de controladoria estratégica",responsavel:"Dani",status:"planejado"},
+    {mes:"Ago",acao:"1ª quinzena: orçado vs realizado",responsavel:"Dani+Kennedy",status:"planejado"},
+    {mes:"Set",acao:"1ª quinzena: orçado vs realizado",responsavel:"Dani+Kennedy",status:"planejado"},
+    {mes:"Out",acao:"1ª quinzena: orçado vs realizado",responsavel:"Dani+Kennedy",status:"planejado"},
+    {mes:"Nov",acao:"1ª quinzena: orçado vs realizado",responsavel:"Dani+Kennedy",status:"planejado"},
+    {mes:"Dez",acao:"Balanço anual — ROI documentado por frente",responsavel:"Dani+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Orçamento 2027 baseado em benchmarks reais",responsavel:"Dani",status:"planejado"}
+  ]},
+  {id:"agentes",name:"Agentes Cognitivos",meta:10,subtitle:"4 agentes cognitivos",lead:"Daniela",support:"Apoios por agente",actions:[
+    {mes:"Mai",acao:"CISSA: arquitetura TI",responsavel:"Daniela+Gabrielly",status:"feito"},
+    {mes:"Jun",acao:"CISSA: desenvolvimento + entrega v1",responsavel:"Daniela",status:"planejado"},
+    {mes:"Jul",acao:"CORA: requisitos + início desenvolvimento (01-19/07)",responsavel:"Daniela+Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"CORA: desenvolvimento contínuo",responsavel:"Daniela",status:"planejado"},
+    {mes:"Ago",acao:"CORA v1: lançamento em produção",responsavel:"Daniela+Gabrielly",status:"planejado"},
+    {mes:"Ago",acao:"PILAR: requisitos + dev no contexto PDL",responsavel:"Daniela+Mayara",status:"planejado"},
+    {mes:"Set",acao:"PILAR: desenvolvimento contínuo",responsavel:"Daniela",status:"planejado"},
+    {mes:"Out",acao:"PILAR: entrega v1",responsavel:"Daniela",status:"planejado"},
+    {mes:"Nov",acao:"Todos os 4 agentes em produção — case comercial",responsavel:"Daniela+Dani",status:"planejado"},
+    {mes:"Dez",acao:"Portfólio de agentes documentado",responsavel:"Daniela+Dani",status:"planejado"},
+    {mes:"Jan",acao:"Pipeline de agentes 2027",responsavel:"Daniela+Dani",status:"planejado"}
+  ]},
+  {id:"gp_acao",name:"GP em Ação",meta:14,subtitle:"3 ondas de presença ativa do RH",lead:"Gabrielly",support:"Bruna",actions:[
+    {mes:"Mar",acao:"Visitas SOF e MCOM (pré-início)",responsavel:"Gabrielly",status:"feito"},
+    {mes:"Abr",acao:"Kick-off integrado GP em Ação + NR-1 com comunicação institucional",responsavel:"Gabrielly",status:"feito"},
+    {mes:"Abr",acao:"1ª Pesquisa Pulso — contratos visitados (PF, MCID, SEMOB/DF, DER, ABIN, FUNCEF, PGFN)",responsavel:"Gabrielly+Bruna",status:"feito"},
+    {mes:"Mai",acao:"Finalização das visitas aos contratos (até 14/05)",responsavel:"Gabrielly+Bruna",status:"feito"},
+    {mes:"Mai",acao:"EVP inicial — narrativa de marca empregadora",responsavel:"Gabrielly",status:"feito"},
+    {mes:"Jun",acao:"1ª rodada eNPS — toda a empresa (24-28/06) · reprogramado",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jun",acao:"Roda de Conversa — Produtos + Comercial (gestores) · até 25/06",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jun",acao:"Mapeamento e definição dos Guardiões (17-28/06)",responsavel:"Gabrielly+Bruna",status:"planejado"},
+    {mes:"Jun",acao:"Criação do conteúdo de formação dos Guardiões (até 28/06)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"Formação dos Guardiões (08-19/07)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Ago",acao:"MARCO: Guardiões ATIVOS em 100% dos contratos e áreas internas (1ª semana)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"Roda de Conversa — TD + GAPE (gestores) · evita sobreposição com gerentes",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"3ª Rodada GP em Ação — Semana do Conhecimento + Cases",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"Roda de Conversa — CIOTI (gestores)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Ago",acao:"Roda de Conversa — Áreas Internas (gestores)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Set",acao:"2ª rodada eNPS — comparativo com maio",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Set",acao:"Reuniões mensais dos Guardiões",responsavel:"Gabrielly+Bruna",status:"planejado"},
+    {mes:"Out",acao:"4ª Rodada GP em Ação — apresentação de resultados + accountability",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Out",acao:"Reuniões mensais dos Guardiões",responsavel:"Gabrielly+Bruna",status:"planejado"},
+    {mes:"Nov",acao:"2ª Pesquisa Pulso — comparativo Abr vs Nov",responsavel:"Gabrielly+Bruna",status:"planejado"},
+    {mes:"Nov",acao:"Reuniões mensais dos Guardiões",responsavel:"Gabrielly+Bruna",status:"planejado"},
+    {mes:"Dez",acao:"Relatório anual GP em Ação para o Board",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"3ª rodada eNPS — comparativo anual",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"Planejamento GP em Ação 2027",responsavel:"Gabrielly",status:"planejado"}
+  ]},
+  {id:"nr1",name:"NR-1",meta:14,subtitle:"Sistema Integrado de Prevenção Psicossocial",lead:"Gabrielly",support:"Bruna",actions:[
+    {mes:"Abr",acao:"Lançamento NR-1 integrado ao kick-off do GP em Ação",responsavel:"Gabrielly",status:"feito"},
+    {mes:"Abr",acao:"Comunicação institucional sobre o programa NR-1",responsavel:"Gabrielly",status:"feito"},
+    {mes:"Mai",acao:"Encaminhar dados/pesquisa para empresa Central — atualização PGR Consórcio + MDS",responsavel:"Dani",status:"feito"},
+    {mes:"Mai",acao:"Encaminhar dados/pesquisa para empresa Evolue — atualização PGR matriz",responsavel:"Dani",status:"feito"},
+    {mes:"Jun",acao:"Lançamento dos 6 módulos UNICIT — colaboradores (17-28/06)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jun",acao:"Criação dos módulos de formação dos Guardiões (até 28/06)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jun",acao:"Preparação dos 3 módulos de liderança (até 28/06)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"CORA — Levantamento de requisitos + início do desenvolvimento (01-19/07)",responsavel:"Daniela+Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"Lançamento dos 3 módulos de liderança",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"CORA — Desenvolvimento contínuo",responsavel:"Daniela",status:"planejado"},
+    {mes:"Ago",acao:"Retorno do PGR atualizado pelas empresas externas",responsavel:"Dani",status:"planejado"},
+    {mes:"Ago",acao:"Mid-year NR-1 — revisão de conformidade",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Ago",acao:"CORA v1 — lançamento em produção",responsavel:"Daniela",status:"planejado"},
+    {mes:"Set",acao:"Reuniões mensais dos Guardiões + CORA em produção",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Out",acao:"Reuniões mensais dos Guardiões",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Reuniões mensais + atualização semestral dos Guardiões",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"2ª Pesquisa Pulso + Relatório anual NR-1 para o Board",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"Planejamento NR-1 2027",responsavel:"Gabrielly",status:"planejado"}
+  ]},
+  {id:"onboarding_digital",name:"Onboarding Digital",meta:14,subtitle:"Plataforma CITSmart X2",lead:"Gabrielly",support:"Daniela (arquitetura)",actions:[
+    {mes:"Abr",acao:"Requisitos do onboarding do gestor — concluídos nos manuais",responsavel:"Dani",status:"feito"},
+    {mes:"Abr",acao:"Roteiro completo da plataforma CITSmart X2 — pronto",responsavel:"Dani",status:"feito"},
+    {mes:"Jun",acao:"Gravação da plataforma CITSmart X2 (17/06-05/07) · confirmar com Emauri",responsavel:"Gabrielly+Daniela",status:"atrasado"},
+    {mes:"Mai",acao:"Design dos requisitos do onboarding para colaboradores",responsavel:"Gabrielly+Daniela",status:"feito"},
+    {mes:"Jun",acao:"Lançamento do Onboarding Digital · já aplicado com turma Run2biz",responsavel:"Gabrielly",status:"em_andamento"},
+    {mes:"Jun",acao:"Acompanhamento do onboarding em uso (contínuo · registro até 28/06)",responsavel:"Gabrielly",status:"em_andamento"},
+    {mes:"Ago",acao:"Rollout total — contratos e áreas internas",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Revisão 3 meses pós-rollout",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Modelo documentado + NPS onboarding",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"Ajustes 2027",responsavel:"Gabrielly",status:"planejado"}
+  ]},
+  {id:"cissa",name:"CISSA",meta:14,subtitle:"Agente conversacional · 17 marcos",lead:"Gabrielly",support:"Daniela + TI",actions:[
+    {mes:"Abr",acao:"Reunião com time de TI — roadmap resgatado",responsavel:"Gabrielly+Daniela",status:"feito"},
+    {mes:"Abr",acao:"Trilhas atualizadas com novo posicionamento Central IT",responsavel:"Gabrielly",status:"feito"},
+    {mes:"Mai",acao:"META: proposta de arquitetura do time de TI recebida",responsavel:"Gabrielly+TI",status:"feito"},
+    {mes:"Jun",acao:"Preparar roteiros de gravação — modelo + proposta por envolvido (C-level + áreas)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"Início das gravações dos envolvidos",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"Finalização das gravações dos envolvidos",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jun",acao:"Arquitetura + desenvolvimento CISSA",responsavel:"Daniela+TI",status:"planejado"},
+    {mes:"Jun",acao:"MARCO: CISSA v1 entregue",responsavel:"Daniela",status:"planejado"},
+    {mes:"Jul",acao:"CISSA em produção — acompanhamento",responsavel:"Gabrielly",status:"planejado"}
+  ]},
+  {id:"manual_gestor",name:"Manual do Gestor",meta:14,subtitle:"Unificado com Guia do Gestor de Contrato",lead:"Larysa",support:"Larysa+Renard",actions:[
+    {mes:"Abr",acao:"Manuais enviados para Larysa — pedido de unificação",responsavel:"Dani",status:"feito"},
+    {mes:"Mai",acao:"Larysa+Renard: unificação + atualização sistemas + proposta",responsavel:"Larysa+Renard",status:"feito"},
+    {mes:"Mai",acao:"Validação com Guilherme (qualidade)",responsavel:"Larysa+Guilherme",status:"feito"},
+    {mes:"Mai",acao:"MARCO: Manual pronto ao final de maio",responsavel:"Larysa",status:"feito"},
+    {mes:"Jun",acao:"Rodada 1: Focus group com gestores",responsavel:"Larysa",status:"planejado"},
+    {mes:"Jun",acao:"Rodada 2: Diretores",responsavel:"Larysa",status:"planejado"},
+    {mes:"Jun",acao:"Rodada 3: Board (Freitas + Emauri)",responsavel:"Dani",status:"planejado"},
+    {mes:"Jun",acao:"Lançamento — publicação CitDoc + Athena",responsavel:"Larysa+Renard",status:"planejado"}
+  ]},
+  {id:"manual_colab",name:"Manual do Colaborador",meta:14,subtitle:"Base cultural + jornada do colaborador",lead:"Larysa",support:"Larysa+Renard",actions:[
+    {mes:"Jun",acao:"Início da atualização do Manual do Colaborador",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Jul",acao:"Redação e finalização do conteúdo",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Jul",acao:"Validação conduzida por Dani",responsavel:"Dani",status:"planejado"},
+    {mes:"Jul",acao:"MARCO: Manual pronto ao final de julho",responsavel:"Larysa",status:"planejado"},
+    {mes:"Ago",acao:"Lançamento — publicação CitDoc + Athena",responsavel:"Larysa",status:"planejado"}
+  ]},
+  {id:"citelas",name:"CitElas v3",meta:14,subtitle:"Política de Equidade de Gênero",lead:"Mayara + Gabrielly + Larysa+Renard",support:"Dionísia + Sup. R&S",actions:[
+    {mes:"Jun",acao:"Diagnóstico situacional — baseline 3 KPIs",responsavel:"Mayara+Gabrielly",status:"planejado"},
+    {mes:"Jun",acao:"Início da auditoria de gaps salariais",responsavel:"Mayara",status:"planejado"},
+    {mes:"Jun",acao:"META R&S: vagas em plataformas femininas",responsavel:"Supervisora R&S",status:"planejado"},
+    {mes:"Jul",acao:"Vagas em plataformas femininas — expansão",responsavel:"Supervisora R&S",status:"planejado"},
+    {mes:"Jul",acao:"Mentorias + PDIs para mulheres em liderança",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Ago",acao:"Treinamento viés inconsciente — liderança",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Ago",acao:"MARCO: Reporte Lei 14.611/2023 entregue",responsavel:"Mayara",status:"planejado"},
+    {mes:"Set",acao:"Programa de aceleração para mulheres técnicas",responsavel:"Larysa+Renard+Mayara",status:"planejado"},
+    {mes:"Dez",acao:"Relatório anual CitElas v3 para o Board",responsavel:"Mayara",status:"planejado"}
+  ]},
+  {id:"maos_dadas",name:"De Mãos Dadas",meta:14,subtitle:"Maternidade, Pais e Parceiros",lead:"Gabrielly",support:"Bruna",actions:[
+    {mes:"Abr",acao:"Levantamento dos programas de maternidade/paternidade existentes",responsavel:"Gabrielly",status:"feito"},
+    {mes:"Jul",acao:"Finalização materiais + kit boas-vindas + guia de comunicação",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"Treinamento de gestores — 1 módulo UNICIT (1h)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"Lançamento — campanha + Fase 1 (Descoberta)",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Ago",acao:"Piloto — Fases 2 e 3 ativas",responsavel:"Gabrielly+Bruna",status:"planejado"},
+    {mes:"Ago",acao:"Agente digital de cuidado ativo",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Set",acao:"Piloto — Fase 4 (Licença) + acompanhamento",responsavel:"Gabrielly+Bruna",status:"planejado"},
+    {mes:"Out",acao:"Avaliação do piloto + ajustes",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Ativação do público de pais e parceiros",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Relatório anual De Mãos Dadas",responsavel:"Gabrielly",status:"planejado"}
+  ]},
+  {id:"enps",name:"eNPS",meta:14,subtitle:"3 rodadas ao longo do ano",lead:"Gabrielly",support:"Kennedy",actions:[
+    {mes:"Jun",acao:"1ª rodada eNPS — toda a empresa (24-28/06)",responsavel:"Gabrielly+Kennedy",status:"planejado"},
+    {mes:"Dez",acao:"2ª rodada eNPS — comparativo anual",responsavel:"Gabrielly+Kennedy",status:"planejado"}
+  ]},
+  {id:"pdl_pdc",name:"LiderAI 2026 (PDL + PDC)",meta:15,subtitle:"77 líderes · 5 pilares",lead:"Larysa+Renard",support:"Bruna",actions:[
+    {mes:"Mai",acao:"11/05: Kick-off oficial para os 77 líderes",responsavel:"Larysa+Renard+Bruna",status:"feito"},
+    {mes:"Mai",acao:"P1 Vendas Consultivas (Lalon) — inicia 2ª quinzena · PDL SC + PDC",responsavel:"Larysa+Renard+Lalon",status:"feito"},
+    {mes:"Jun",acao:"P1 Vendas Consultivas em andamento",responsavel:"Larysa+Renard+Lalon",status:"planejado"},
+    {mes:"Jul",acao:"P1 Vendas Consultivas em andamento",responsavel:"Larysa+Renard+Lalon",status:"planejado"},
+    {mes:"Ago",acao:"P1 Vendas Consultivas — finalização (2ª quinzena)",responsavel:"Larysa+Renard+Lalon",status:"planejado"},
+    {mes:"Ago",acao:"P2 Pessoas e Responsabilidades (Lalon)",responsavel:"Larysa+Renard+Lalon",status:"planejado"},
+    {mes:"Ago",acao:"P3 Letramento IA + Diagnóstico de Maturidade Digital (Koru) — inicia",responsavel:"Larysa+Renard+Koru",status:"planejado"},
+    {mes:"Ago",acao:"P3 Pensamento Crítico (Numera, 6h, 3 turmas)",responsavel:"Larysa+Renard+Numera",status:"planejado"},
+    {mes:"Set",acao:"P4 SmartOps + Agentes (Koru) — inicia · 2 frentes (internas + SC/Com)",responsavel:"Larysa+Renard+Koru",status:"planejado"},
+    {mes:"Out",acao:"P4 SmartOps + Agentes em andamento",responsavel:"Larysa+Renard+Koru",status:"planejado"},
+    {mes:"Nov",acao:"P4 SmartOps + Agentes em andamento",responsavel:"Larysa+Renard+Koru",status:"planejado"},
+    {mes:"Dez",acao:"P4 SmartOps + Agentes — finalização (4 meses · Set→Dez)",responsavel:"Larysa+Renard+Koru",status:"planejado"},
+    {mes:"Dez",acao:"P5 Fórum LiderAI + IA Day — celebração + certificação",responsavel:"Larysa+Renard+Koru+Dani",status:"planejado"}
+  ]},
+  {id:"trilhas",name:"Trilhas Corporativas",meta:15,subtitle:"IA e Dados + Negócios e Accountability",lead:"Dani + Larysa+Renard",support:"UNICIT",actions:[
+    {mes:"Jun",acao:"Dani cria estrutura e conteúdo das duas trilhas",responsavel:"Dani",status:"planejado"},
+    {mes:"Jun",acao:"Início da curadoria das palestras da Semana do Conhecimento",responsavel:"Dani",status:"planejado"},
+    {mes:"Jun",acao:"Validação com Freitas + Euair (Board)",responsavel:"Dani",status:"planejado"},
+    {mes:"Jun",acao:"Validação UNICIT + contratação de instrutores",responsavel:"Larysa+Renard+UNICIT",status:"planejado"},
+    {mes:"Jun",acao:"Gravações UNICIT (continua julho)",responsavel:"UNICIT",status:"planejado"},
+    {mes:"Jun",acao:"Finalização da curadoria das palestras",responsavel:"Dani",status:"planejado"},
+    {mes:"Jul",acao:"UNICIT finaliza gravações (1ª e 2ª semana)",responsavel:"UNICIT",status:"planejado"},
+    {mes:"Jul",acao:"Final de julho: Semana do Conhecimento",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Ago",acao:"LANÇAMENTO das trilhas IA e Dados + Negócios e Accountability",responsavel:"Larysa+Renard+UNICIT",status:"planejado"},
+    {mes:"Set",acao:"Trilhas em andamento — acompanhamento",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Out",acao:"Trilhas em andamento",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Nov",acao:"Trilhas em andamento",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Dez",acao:"META: ≥80% conclusão + NPS ≥80%",responsavel:"Larysa+Renard",status:"planejado"}
+  ]},
+  {id:"desc_cargo",name:"Descrições de Cargo",meta:15,subtitle:"Fluxo de 5 etapas por grupo",lead:"Mayara",support:"Dionísia",actions:[
+    {mes:"Abr",acao:"Produtos · Etapa 1: Escuta com colaboradores",responsavel:"Mayara",status:"feito"},
+    {mes:"Mai",acao:"Produtos · Etapa 2: Descrição atualizada com Agente PILAR",responsavel:"Mayara",status:"feito"},
+    {mes:"Mai",acao:"Produtos · Etapa 3: Avaliação do Diretor",responsavel:"Diretor Produtos",status:"feito"},
+    {mes:"Mai",acao:"Produtos · Etapa 4: Avaliação pelo gerente",responsavel:"Mayara",status:"feito"},
+    {mes:"Jun",acao:"Produtos · Etapa 5: Gerente valida com colaborador",responsavel:"Mayara",status:"planejado"},
+    {mes:"Abr",acao:"Comercial · Etapa 1: Escuta com colaboradores",responsavel:"Mayara",status:"feito"},
+    {mes:"Mai",acao:"Comercial · Etapa 2: Descrição atualizada com Agente PILAR",responsavel:"Mayara",status:"feito"},
+    {mes:"Jun",acao:"Comercial · Etapa 3: Avaliação do Diretor",responsavel:"Diretor Comercial",status:"em_andamento"},
+    {mes:"Jun",acao:"Comercial · Etapa 4: Avaliação pelo gerente",responsavel:"Mayara",status:"planejado"},
+    {mes:"Jun",acao:"Comercial · Etapa 5: Gerente valida com colaborador",responsavel:"Mayara",status:"planejado"},
+    {mes:"Mai",acao:"C-Level · Etapa 1: Escuta com colaboradores",responsavel:"Dani",status:"em_andamento"},
+    {mes:"Jun",acao:"C-Level · Etapa 2: Descrição atualizada com Agente PILAR",responsavel:"Dani",status:"planejado"},
+    {mes:"Jun",acao:"C-Level · Etapa 3: Avaliação do Diretor",responsavel:"Diretor C-Level",status:"planejado"},
+    {mes:"Jun",acao:"C-Level · Etapa 4: Avaliação pelo gerente",responsavel:"Dani",status:"planejado"},
+    {mes:"Jun",acao:"C-Level · Etapa 5: Gerente valida com colaborador",responsavel:"Dani",status:"planejado"},
+    {mes:"Jun",acao:"TD · Etapa 1: Escuta com colaboradores",responsavel:"Mayara+Dionísia",status:"feito"},
+    {mes:"Jun",acao:"TD · Etapa 2: Descrição atualizada com Agente PILAR",responsavel:"Mayara+Dionísia",status:"feito"},
+    {mes:"Jul",acao:"TD · Etapa 3: Avaliação do Diretor",responsavel:"Diretor TD",status:"planejado"},
+    {mes:"Jul",acao:"TD · Etapa 4: Avaliação pelo gerente",responsavel:"Mayara+Dionísia",status:"planejado"},
+    {mes:"Jul",acao:"TD · Etapa 5: Gerente valida com colaborador",responsavel:"Mayara+Dionísia",status:"planejado"},
+    {mes:"Jun",acao:"Gerente SC · Etapa 1: Escuta com colaboradores",responsavel:"Dani",status:"planejado"},
+    {mes:"Jul",acao:"Gerente SC · Etapa 2: Descrição atualizada com Agente PILAR",responsavel:"Dani",status:"planejado"},
+    {mes:"Jul",acao:"Gerente SC · Etapa 3: Avaliação do Diretor",responsavel:"Diretor SC",status:"planejado"},
+    {mes:"Jul",acao:"Gerente SC · Etapa 4: Avaliação pelo gerente",responsavel:"Dani",status:"planejado"},
+    {mes:"Jul",acao:"Gerente SC · Etapa 5: Gerente valida com colaborador",responsavel:"Dani",status:"planejado"},
+    {mes:"Jun",acao:"GAPE + CIOTI — fluxo completo, etapas 1 a 5",responsavel:"Mayara+Dionísia",status:"planejado"},
+    {mes:"Jul",acao:"Áreas Internas — fluxo completo, etapas 1 a 5",responsavel:"Mayara+Dionísia",status:"planejado"},
+    {mes:"Ago",acao:"MARCO: 100% das descrições aprovadas",responsavel:"Mayara",status:"planejado"}
+  ]},
+  {id:"framework",name:"Framework de Competências",meta:15,subtitle:"Sincronizado com Descrições de Cargo",lead:"Larysa+Renard",support:"Mayara (tutoria)",actions:[
+    {mes:"Abr",acao:"Framework de competências escolhido — modelo definido",responsavel:"Larysa+Renard",status:"feito"},
+    {mes:"Mai",acao:"Competências mapeadas — Produtos, Comercial, C-Level, Gerente SC",responsavel:"Larysa+Renard+Mayara",status:"planejado"},
+    {mes:"Jun",acao:"Revisão do framework com metodologia Gartner",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Jun",acao:"Competências mapeadas — GAPE + CIOTI",responsavel:"Larysa+Renard+Mayara",status:"planejado"},
+    {mes:"Jul",acao:"Competências mapeadas — Áreas Internas",responsavel:"Larysa+Renard+Mayara",status:"planejado"},
+    {mes:"Jul",acao:"MARCO: Framework 100% completo",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Ago",acao:"Validação do framework com lideranças — workshops",responsavel:"Larysa+Renard+Mayara",status:"planejado"},
+    {mes:"Set",acao:"Diagnóstico de gaps por área e nível",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Out",acao:"Plano de T&D vinculado às trilhas UNICIT",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Dez",acao:"MARCO: Framework consolidado e publicado",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Jan",acao:"Ajustes 2027",responsavel:"Larysa+Renard",status:"planejado"}
+  ]},
+  {id:"av180",name:"Avaliação 180°",meta:15,subtitle:"1º ciclo · Set–Dez",lead:"Larysa+Renard",support:"Mayara (tutoria)",actions:[
+    {mes:"Set",acao:"Preparação — metodologia, instrumentos, capacitação",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Out",acao:"Avaliação 180° — autoavaliação + avaliação do gestor (ciclo único)",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Nov",acao:"Devolutivas 1:1 + IDPs conectados às trilhas",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Dez",acao:"Resultados consolidados ao Board",responsavel:"Larysa+Renard",status:"planejado"}
+  ]}
+  ],
+team:{
+  "Dani":{role:"CHRO / Diretora de Pessoas",specialty:"Validação + BI + Trilhas + Agentes (governança)"},
+  "Gabrielly":{role:"Clima e Cultura",specialty:"GP em Ação, NR-1, De Mãos Dadas, Onboarding, CISSA, eNPS"},
+  "Larysa":{role:"T&D",specialty:"PDL/PDC, Trilhas, Manuais (redação), Framework, 180°"},
+  "Mayara":{role:"C&S",specialty:"PILAR, SmartOps, CitElas salarial, Manual Gestor"},
+  "Daniela":{role:"IA / Tecnologia",specialty:"Arquitetura digital + 5 agentes cognitivos"},
+  "Luana":{role:"Operações",specialty:"Manual Colaborador"},
+  "Bruna":{role:"Apoio transversal",specialty:"Campo + Plataforma + Triagem"},
+  "Dionísia":{role:"Apoio C&S → analista jul",specialty:"Operacional Mayara: PILAR, SmartOps, CitElas"},
+  "Kennedy":{role:"People Ops / Dados",specialty:"Dashboard semanal · alertas"},
+  "Renard":{role:"T&D",specialty:"PDL/PDC, Trilhas, Manuais (redação), Framework, 180°"}
+}};
+
+const STATUS_LABEL={feito:'✓ feito',em_andamento:'→ andamento',planejado:'○ planejado',atrasado:'✗ atrasado',parcial:'~ parcial'};
+const MESES_TAT=["Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez","Jan"];
+
+/* ============================================================
+ * STATE — completed actions persisted via window.storage (shared)
+ * ============================================================ */
+let completed = {};
+const ST_KEY='ci_rh_2026_completed_v1';
+
+function actionId(projId, mes, idx){
+  return `${projId}__${mes}__${idx}`;
+}
+
+async function loadState(){
+  const banner=document.getElementById('kennedy-status');
+  try{
+    const r=await window.storage.get(ST_KEY,true);
+    if(r && r.value){ completed = JSON.parse(r.value); }
+  }catch(e){
+    // first time / not yet stored — fine
+    completed = {};
+  }
+  // also seed initial "feito" status as already completed (so progress reflects what's done)
+  TDATA.projects.forEach(p=>{
+    p.actions.forEach((a,i)=>{
+      if(a.status==='feito'){
+        const id = actionId(p.id, a.mes, i);
+        if(completed[id]===undefined) completed[id]=true;
+      }
+    });
+  });
+  // banner removido — esconder completamente
+  if(banner) banner.style.display='none';
+}
+
+async function saveState(){
+  try{
+    await window.storage.set(ST_KEY, JSON.stringify(completed), true);
+  }catch(e){
+    console.error('Falha ao salvar:',e);
+  }
+}
+
+async function toggleAction(projId, mes, idx, btn){
+  // Apenas dani e kennedy podem marcar concluído
+  if(!currentUser || !['dani','kennedy'].includes(currentUser)){
+    showPermissionAlert();
+    return;
+  }
+  // Ações já marcadas como "feito" no plano original ficam travadas
+  const proj = TDATA.projects.find(p=>p.id===projId);
+  const action = proj.actions[idx];
+  if(action.status==='feito') return;
+
+  const id = actionId(projId, mes, idx);
+  completed[id] = !completed[id];
+  await saveState();
+  renderAll();
+}
+
+function showPermissionAlert(){
+  // Toast de aviso — não intrusivo
+  let t = document.getElementById('perm-toast');
+  if(!t){
+    t = document.createElement('div');
+    t.id = 'perm-toast';
+    t.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#0F2746;color:#fff;padding:12px 24px;border-radius:8px;font-size:13px;font-family:Calibri,sans-serif;z-index:9999;border-left:4px solid #1FA5A0;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:opacity .3s';
+    document.body.appendChild(t);
+  }
+  t.textContent = '🔒 Apenas Dani ou Kennedy podem marcar ações como concluídas.';
+  t.style.opacity = '1';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=>{ t.style.opacity='0'; }, 3000);
+}
+
+function isDone(projId, mes, idx){
+  return !!completed[actionId(projId,mes,idx)];
+}
+
+/* ============================================================
+ * BUILD TÁTICA
+ * ============================================================ */
+function showTatTab(name,btn){
+  ['mes','proj','resp','ken'].forEach(t=>{
+    document.getElementById('t-tab-'+t).classList.toggle('active',t===name);
+  });
+  document.querySelectorAll('.t-nav').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function computeStats(){
+  let total=0, done=0;
+  const byMonth={}, byProj={}, byResp={};
+  MESES_TAT.forEach(m=>byMonth[m]={total:0,done:0});
+  TDATA.projects.forEach(p=>{
+    byProj[p.id]={total:0,done:0};
+    p.actions.forEach((a,i)=>{
+      if(a.mes==='Mar') return; // pre-período
+      total++;
+      const d = isDone(p.id,a.mes,i);
+      if(d) done++;
+      if(byMonth[a.mes]){byMonth[a.mes].total++;if(d)byMonth[a.mes].done++;}
+      byProj[p.id].total++;
+      if(d) byProj[p.id].done++;
+      a.responsavel.split('+').map(r=>r.trim()).forEach(r=>{
+        if(!byResp[r]) byResp[r]={total:0,done:0};
+        byResp[r].total++;
+        if(d) byResp[r].done++;
+      });
+    });
+  });
+  return {total,done,byMonth,byProj,byResp};
+}
+
+function renderOverall(stats){
+  const pct = stats.total ? Math.round(stats.done/stats.total*100) : 0;
+  document.getElementById('overall-pct').textContent=pct+'%';
+  document.getElementById('overall-fill').style.width=pct+'%';
+  document.getElementById('overall-count').textContent=`${stats.done} de ${stats.total} ações concluídas`;
+  document.getElementById('stat-feito').textContent=stats.done;
+}
+
+function renderMes(stats){
+  const grid=document.getElementById('month-grid');grid.innerHTML='';
+  const currentMonth='Mai';
+  MESES_TAT.forEach(mes=>{
+    const items=[];
+    TDATA.projects.forEach(p=>p.actions.forEach((a,i)=>{
+      if(a.mes===mes) items.push({...a,projName:p.name,projId:p.id,projMeta:p.meta,idx:i});
+    }));
+    if(items.length===0) return;
+    const isCurrent=mes===currentMonth;
+    const ms=stats.byMonth[mes];
+    const pct=ms.total?Math.round(ms.done/ms.total*100):0;
+    const card=document.createElement('div');
+    card.className='month-card'+(isCurrent?' is-now':'');
+    card.innerHTML=`
+      <div class="month-hdr">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span class="month-name">${mes}</span>
+          ${isCurrent?'<span class="month-pill">hoje</span>':''}
+        </div>
+        <span class="month-count">${items.length} ações · ${new Set(items.map(a=>a.projName)).size} projetos</span>
+      </div>
+      <div class="month-body">
+        ${items.map(a=>{
+          const done=isDone(a.projId,a.mes,a.idx);
+          const locked=a.status==='feito';
+          return `<div class="m-action${done?' is-done':''}">
+            <div class="m-check${done?' checked':''}${locked?' locked':''}" onclick="toggleAction('${a.projId}','${a.mes}',${a.idx},this)" title="${locked?'Já concluído (status original do plano)':'Marcar concluída'}"></div>
+            <div class="m-action-content">
+              <div class="m-action-top">
+                <span class="m-meta m-meta-${a.projMeta}">M${a.projMeta}</span>
+                <span class="m-proj">${a.projName}</span>
+                <span class="m-status s-${a.status}">${STATUS_LABEL[a.status]}</span>
+              </div>
+              <div class="m-acao">${a.acao}</div>
+              <div class="m-resp">→ ${a.responsavel}</div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div class="month-progress">
+        <div class="mp-top">
+          <span class="mp-label">Progresso de ${mes}</span>
+          <span class="mp-pct">${pct}%</span>
+        </div>
+        <div class="mp-bar"><div class="mp-bar-fill" style="width:${pct}%"></div></div>
+        <div class="mp-meta">${ms.done} de ${ms.total} ações concluídas</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+let activeMeta='all';
+function renderProj(stats){
+  const list=document.getElementById('proj-list');list.innerHTML='';
+  TDATA.projects.filter(p=>activeMeta==='all'||p.meta==activeMeta).forEach(p=>{
+    const ps=stats.byProj[p.id];
+    const pct=ps.total?Math.round(ps.done/ps.total*100):0;
+    const row=document.createElement('div');row.className='proj-row';
+    row.innerHTML=`
+      <div class="proj-row-hdr" onclick="this.parentElement.classList.toggle('open')">
+        <div class="proj-meta-tag m-meta-${p.meta}">M${p.meta}</div>
+        <div class="proj-info-text">
+          <div class="proj-name">${p.name}</div>
+          <div class="proj-sub">${p.subtitle||''}</div>
+        </div>
+        <div class="proj-resp"><strong>${p.lead}</strong>${p.support?' · '+p.support:''}</div>
+        <div class="proj-prog">
+          <div class="proj-prog-bar"><div class="proj-prog-fill" style="width:${pct}%"></div></div>
+          <div class="proj-prog-meta"><span>${ps.done}/${ps.total} ações</span><span class="proj-prog-pct">${pct}%</span></div>
+        </div>
+      </div>
+      <div class="proj-detail">
+        <div style="font-size:11px;color:var(--text3);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px">Todas as ações do projeto</div>
+        <div class="proj-actions-list">
+          ${p.actions.map((a,i)=>{
+            const done=isDone(p.id,a.mes,i);
+            const locked=a.status==='feito';
+            return `<div class="pa-row${done?' is-done':''}">
+              <div class="m-check${done?' checked':''}${locked?' locked':''}" onclick="event.stopPropagation();toggleAction('${p.id}','${a.mes}',${i},this)"></div>
+              <div class="pa-mes">${a.mes}</div>
+              <div class="pa-content">
+                <div class="pa-text">${a.acao}</div>
+                <div class="pa-foot"><span>→ ${a.responsavel}</span><span class="m-status s-${a.status}">${STATUS_LABEL[a.status]}</span></div>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>`;
+    list.appendChild(row);
+  });
+}
+function filterMeta(m,el){
+  document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');activeMeta=m;
+  const stats=computeStats();renderProj(stats);
+}
+
+function renderResp(stats){
+  const grid=document.getElementById('resp-grid');grid.innerHTML='';
+  const respMap={};
+  TDATA.projects.forEach(p=>p.actions.forEach((a,i)=>{
+    if(a.mes==='Mar') return;
+    a.responsavel.split('+').map(r=>r.trim()).forEach(r=>{
+      if(!respMap[r]) respMap[r]=[];
+      respMap[r].push({...a,projName:p.name,projId:p.id,idx:i});
+    });
+  }));
+  const priority=['Dani','Gabrielly','Larysa','Renard','Mayara','Daniela','Luana','Bruna','Dionísia','Kennedy'];
+  // Visão por responsável mostra APENAS membros do time interno (exclui apoios externos)
+  const sorted=priority.filter(n=>respMap[n]);
+  sorted.forEach(name=>{
+    const acts=respMap[name].sort((a,b)=>MESES_TAT.indexOf(a.mes)-MESES_TAT.indexOf(b.mes));
+    const info=TDATA.team[name]||{role:'Apoio externo',specialty:''};
+    const initials=name.substring(0,2).toUpperCase();
+    const rs=stats.byResp[name]||{total:0,done:0};
+    const pct=rs.total?Math.round(rs.done/rs.total*100):0;
+    const card=document.createElement('div');card.className='resp-card';
+    card.innerHTML=`
+      <div class="resp-hdr">
+        <div class="resp-avatar">${initials}</div>
+        <div class="resp-info">
+          <div class="resp-name">${name}</div>
+          <div class="resp-role">${info.role}</div>
+        </div>
+      </div>
+      <div class="resp-mini-prog">
+        <div class="mp-top">
+          <span class="mp-label">Progresso</span>
+          <span class="mp-pct">${pct}%</span>
+        </div>
+        <div class="mp-bar"><div class="mp-bar-fill" style="width:${pct}%"></div></div>
+        <div class="mp-meta" style="font-size:10px;color:var(--text3);margin-top:4px">${rs.done} de ${rs.total} ações concluídas</div>
+      </div>
+      <div class="resp-actions">
+        ${acts.map(a=>{
+          const done=isDone(a.projId,a.mes,a.idx);
+          const locked=a.status==='feito';
+          return `<div class="resp-action${done?' is-done':''}">
+            <div class="m-check${done?' checked':''}${locked?' locked':''}" onclick="toggleAction('${a.projId}','${a.mes}',${a.idx},this)" style="margin-top:0"></div>
+            <span class="resp-mes">${a.mes}</span>
+            <span class="resp-text"><strong>[${a.projName}]</strong> ${a.acao}</span>
+          </div>`;
+        }).join('')}
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderKen(){
+  const tbody=document.getElementById('ken-table-body');
+  const f={
+    'Mai':{i:'Cobertura visitas (% contratos), 1ª eNPS adesão, atraso PILAR semanal, Manual Gestor com Guilherme, orçamento finalizado 17/05, gravações Onboarding (4-8/05)',m:'Lançamento Onboarding 11/05 · Lançamento PDL/PDC 11/05 · CISSA arquitetura'},
+    'Jun':{i:'1ª quinzena: orçado vs realizado, % cobertura PILAR, CISSA v1, Manual Gestor 3 validações',m:'Guardiões ATIVOS · CISSA v1 · Manual Gestor publicado'},
+    'Jul':{i:'Adesão PDL P1+P2, gravações UNICIT, curadoria palestras, Roda CIOTI',m:'Semana do Conhecimento · 3ª Onda GP · PDL Pilar 3'},
+    'Ago':{i:'Lançamento Trilhas (adesão), CORA v1, Reporte Lei 14.611, Mid-year NR-1, Descrições 100%, Framework workshops',m:'CORA v1 · Trilhas lançam · Manual Colab · Início prospecção'},
+    'Set':{i:'2ª eNPS adesão, preparação 180°, CitElas aceleração',m:'2ª eNPS · Diagnóstico gap framework'},
+    'Out':{i:'Avaliação 180° conclusão, PILAR entregue, avaliação piloto De Mãos Dadas',m:'1ª 180° · PILAR v1 · 4ª Onda GP'},
+    'Nov':{i:'Devolutivas 180° + IDPs, 2ª Pulso, pais e parceiros, case comercial',m:'Negócio Central IT fechado · 2ª Pulso'},
+    'Dez':{i:'Balanço orçamentário ROI, framework consolidado, relatórios Board',m:'180° Board · Portfólio agentes · Balanço CitElas+NR-1+GP'},
+    'Jan':{i:'3ª eNPS comparativo anual, planejamento 2027',m:'3ª eNPS · Planejamento 2027'}
+  };
+  tbody.innerHTML=Object.entries(f).map(([m,d])=>`<tr><td><strong>${m}</strong></td><td>${d.i}</td><td>${d.m}</td></tr>`).join('');
+}
+
+function showTatTab(name,btn){
+  document.querySelectorAll('.t-tab-content').forEach(el=>{
+    el.classList.toggle('active', el.id === 't-tab-' + name);
+  });
+  document.querySelectorAll('.t-nav').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function renderMeta(stats){
+  const grid = document.getElementById('meta-grid');
+  if(!grid) return;
+  grid.innerHTML = '';
+  const METAS = [
+    {num:1,  title:"Eficiência",             subtitle:"BI no Azul · gestão de custos · mais receita que despesa",   color:"#854F0B", desc:"Aumentar nossa eficiência na gestão de custos e despesas.",                                                                                              agility:"https://itsmx.centralit.com.br/kanban/a/agility/workspaces/2350?embed=false", evidencias:"https://centralitltda.sharepoint.com/:f:/s/RH/IgDZ06gBHYx6SY1PsGQCCOrGAeNYa4sPc-N9h-Yqx_ggKXY?e=cKQNCc"},
+    {num:10, title:"Produtividade",          subtitle:"4 agentes cognitivos · fazer mais com menos",       color:"#0F6E56", desc:"Buscar a excelência na gestão econômico-financeira.",                                                                                                  agility:"https://itsmx.centralit.com.br/kanban/a/agility/workspaces/2350?embed=false", evidencias:"https://centralitltda.sharepoint.com/:f:/s/RH/IgDZ06gBHYx6SY1PsGQCCOrGAeNYa4sPc-N9h-Yqx_ggKXY?e=cKQNCc"},
+    {num:14, title:"Capital Humano",         subtitle:"Marca empregadora · confiança · colaboração · resultados",   color:"#185FA5", desc:"Consolidar a empresa como um lugar sustentado por confiança, colaboração e resultados, reforçando sua marca empregadora.",                           agility:"https://itsmx.centralit.com.br/kanban/a/agility/workspaces/2350?embed=false", evidencias:"https://centralitltda.sharepoint.com/:f:/s/RH/IgDZ06gBHYx6SY1PsGQCCOrGAeNYa4sPc-N9h-Yqx_ggKXY?e=cKQNCc"},
+    {num:15, title:"Capital Organizacional", subtitle:"IA · dados · negócios · accountability · competências",      color:"#534AB7", desc:"Fortalecer competências em dados, IA, negócios e accountability.",                                                                                    agility:"https://itsmx.centralit.com.br/kanban/a/agility/workspaces/2350?embed=false", evidencias:"https://centralitltda.sharepoint.com/:f:/s/RH/IgDZ06gBHYx6SY1PsGQCCOrGAeNYa4sPc-N9h-Yqx_ggKXY?e=cKQNCc"}
+  ];
+  METAS.forEach(m => {
+    let mTotal=0, mDone=0;
+    const projects=[];
+    TDATA.projects.filter(p => p.meta === m.num).forEach(p => {
+      const ps = stats.byProj[p.id];
+      if(!ps) return;
+      mTotal += ps.total;
+      mDone  += ps.done;
+      projects.push({id:p.id, name:p.name, subtitle:p.subtitle, lead:p.lead, total:ps.total, done:ps.done});
+    });
+    const pct = mTotal ? Math.round(mDone/mTotal*100) : 0;
+    const card = document.createElement('div');
+    card.className = 'meta-card';
+    card.style.borderLeft = '4px solid ' + m.color;
+    card.innerHTML = `
+      <div class="meta-card-head">
+        <div class="meta-num-badge" style="background:${m.color}">
+          <div class="lbl">META</div>
+          <div class="num">${String(m.num).padStart(2,'0')}</div>
+        </div>
+        <div class="meta-info">
+          <div class="meta-title">${m.title}</div>
+          <div class="meta-sub">${m.subtitle}</div>
+          <div class="meta-desc">${m.desc || ''}</div>
+          <div class="meta-action-btns">
+            ${m.agility ? '<a href="' + m.agility + '" target="_blank" rel="noopener" class="meta-agility-link">Ver no Agility →</a>' : ''}
+            ${m.evidencias ? '<a href="' + m.evidencias + '" target="_blank" rel="noopener" class="meta-evidencias-link">Evidências →</a>' : ''}
+          </div>
+        </div>
+        <div class="meta-pct" style="color:${m.color}">${pct}%</div>
+      </div>
+      <div class="meta-progress-wrap">
+        <div class="meta-progress-bar"><div class="meta-progress-fill" style="width:${pct}%;background:${m.color}"></div></div>
+        <div class="meta-summary">
+          <span><b>${mDone} de ${mTotal}</b> ações concluídas</span>
+          <span>${projects.length} ${projects.length===1?'projeto':'projetos'}</span>
+        </div>
+      </div>
+      <div class="meta-projects">
+        <div class="meta-projects-title">Projetos da meta</div>
+        ${projects.map(p => {
+          const ppct = p.total ? Math.round(p.done/p.total*100) : 0;
+          return `<div class="meta-proj">
+            <div>
+              <div class="meta-proj-name">${p.name}</div>
+              <div class="meta-proj-sub">${p.subtitle || ''}${p.lead ? ' · ' + p.lead : ''}</div>
+            </div>
+            <div class="meta-proj-stat">
+              <div class="meta-proj-bar"><div class="meta-proj-fill" style="width:${ppct}%;background:${m.color}"></div></div>
+              <div class="meta-proj-pct"><span>${p.done} de ${p.total}</span><b>${ppct}%</b></div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderAll(){
+  const stats=computeStats();
+  renderOverall(stats);
+  renderMes(stats);
+  renderMeta(stats);
+  renderProj(stats);
+  renderResp(stats);
+}
+
+/* ============================================================
+ * INIT
+ * ============================================================ */
+buildGantt();
+buildFDC();
+buildMetas();
+buildDeps();
+renderKen();
+renderAll();
+loadState().then(renderAll);
+</script>
+
+</body>
+</html>
