@@ -427,7 +427,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
     <div style="display:flex;gap:10px;align-items:center">
       <div class="h-meta" id="h-meta">
         <strong>Abril 2026 → Janeiro 2027</strong>
-        4 Metas · 16 Projetos · 187 Ações
+        3 Metas · 16 Projetos · 187 Ações
       </div>
       <button class="h-back" id="btn-back" onclick="goHome()" style="display:none">← home</button>
       <button class="h-back" id="btn-logout" onclick="logout()" style="display:none">sair</button>
@@ -454,7 +454,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
         <ul class="home-card-list">
           <li>Roadmap Gantt interativo · clique nas barras para detalhe</li>
           <li>Diagnóstico FDC × Plano de Ação 2026</li>
-          <li>4 Metas Estratégicas com programas e indicadores</li>
+          <li>3 Metas Estratégicas com programas e indicadores</li>
           <li id="dep-criticas-item" style="display:none">Dependências críticas e cadeia de pré-requisitos</li>
         </ul>
         <div class="home-card-cta">Abrir visão estratégica <span class="home-card-cta-arrow">→</span></div>
@@ -488,7 +488,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
     <div class="nav-inner">
       <button class="nav-btn s-nav active" onclick="showStrTab('gantt',this)"><span class="nav-dot" style="background:#185FA5"></span>Roadmap Gantt</button>
       <button class="nav-btn s-nav" onclick="showStrTab('fdc',this)"><span class="nav-dot" style="background:#E24B4A"></span>Diagnóstico FDC</button>
-      <button class="nav-btn s-nav" onclick="showStrTab('metas',this)"><span class="nav-dot" style="background:#1D9E75"></span>4 Metas Estratégicas</button>
+      <button class="nav-btn s-nav" onclick="showStrTab('metas',this)"><span class="nav-dot" style="background:#1D9E75"></span>3 Metas Estratégicas</button>
       <button class="nav-btn s-nav" onclick="showStrTab('deps',this)"><span class="nav-dot" style="background:#EF9F27"></span>Dependências Críticas</button>
     </div>
   </nav>
@@ -496,7 +496,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
   <div class="main">
     <div class="kpi-row">
       <div class="kpi"><div class="kpi-val" style="color:var(--m1)">~1.800</div><div class="kpi-lbl">colaboradores em 12 estados</div></div>
-      <div class="kpi"><div class="kpi-val" style="color:var(--m2)">4</div><div class="kpi-lbl">metas BSC 2026</div></div>
+      <div class="kpi"><div class="kpi-val" style="color:var(--m2)">3</div><div class="kpi-lbl">metas BSC 2026</div></div>
       <div class="kpi"><div class="kpi-val" style="color:var(--m3)">16</div><div class="kpi-lbl">projetos e programas ativos</div></div>
       <div class="kpi"><div class="kpi-val" style="color:var(--fdc)">6/6</div><div class="kpi-lbl">variáveis FDC endereçadas</div></div>
       <div class="kpi"><div class="kpi-val" style="color:var(--m3)">4</div><div class="kpi-lbl">agentes cognitivos (ago)</div></div>
@@ -515,8 +515,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
           <div class="leg-item"><div class="leg-dot" style="background:#185FA5"></div>M14 Capital Humano</div>
           <div class="leg-item"><div class="leg-dot" style="background:#534AB7"></div>M15 Capital Organizacional</div>
           
-          <div class="leg-item"><div class="leg-dot" style="background:#8F80D9"></div>Trilhas Corporativas</div>
-          <div class="leg-item"><div class="leg-dot" style="background:#E24B4A"></div>Tag FDC</div>
         </div>
         <div class="gantt-wrap"><div class="gantt" id="gantt-root"></div></div>
       </div>
@@ -573,10 +571,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
     </div>
 
     <div class="t-stats">
-      <div class="t-stat"><div class="t-stat-val">19</div><div class="t-stat-lbl">Projetos</div></div>
-      <div class="t-stat"><div class="t-stat-val">200</div><div class="t-stat-lbl">Ações</div></div>
-      <div class="t-stat"><div class="t-stat-val">4</div><div class="t-stat-lbl">Metas</div></div>
-      <div class="t-stat"><div class="t-stat-val">10</div><div class="t-stat-lbl">Pessoas</div></div>
+      <div class="t-stat"><div class="t-stat-val" id="stat-projetos">0</div><div class="t-stat-lbl">Projetos</div></div>
+      <div class="t-stat"><div class="t-stat-val" id="stat-acoes">0</div><div class="t-stat-lbl">Ações</div></div>
+      <div class="t-stat"><div class="t-stat-val" id="stat-metas">0</div><div class="t-stat-lbl">Metas</div></div>
+      <div class="t-stat"><div class="t-stat-val" id="stat-pessoas">0</div><div class="t-stat-lbl">Pessoas</div></div>
       <div class="t-stat"><div class="t-stat-val teal" id="stat-feito">0</div><div class="t-stat-lbl">Concluídas</div></div>
     </div>
 
@@ -771,7 +769,6 @@ const DETAIL = {
   "gp-acao":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"Gestão de Pessoas em Ação",period:"3 ondas: Abr/Mai · Jul/Ago · Out 2026",desc:"Programa de presença ativa do RH nas operações e contratos. Leva o RH até onde o trabalho acontece, criando espaços estruturados de escuta, diálogo, desenvolvimento e alinhamento estratégico.",pilares:["1ª Pesquisa Pulso (Abr/Mai), 2ª Pesquisa Pulso (Jul/Ago), 3ª Pesquisa Pulso (Out/Nov)","P2 Colaboradores — 6 módulos UNICIT + Rodas de Conversa TEAMS","P3 Lideranças — 3 módulos NR-1 + Rodas Líder-Liderado","P4 Guardiões — Seleção · Formação · Reuniões mensais","P5 Clareza Organizacional — Comunicação Estratégica 2º ciclo","Onda 2 — Cases + Lançamento 'O Poder de Ser Central'","Onda 3 — Retorno presencial às operações"],indicadores:["100% dos contratos engajados","≥70% adesão (áreas internas e contratos) · ≥50% contratos de centrais de atendimento (MDS e Central DF)","Evolução Pesquisa Pulso Abr→Nov","Guardiões ativos em 100% dos contratos"],fdc:{var:"Estruturação da área de RH organizada e equipada",opp:"PRIORIZAR — Inferior / Alta",razao:"Uma área de RH não estruturada gera custo invisível. Para uma empresa de tecnologia que vende eficiência, ter um RH ineficiente é uma contradição estratégica."}},
   "nr1":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"NR-1 — Sistema Integrado de Prevenção Psicossocial",period:"Fase 1 (Abr–Mai) · Fase 2 (Jun–Nov) · Fase 3 (Dez–Jan)",desc:"Programa fundamentado na NR-01 Portaria MTE 1.419/2024. Fiscalização punitiva a partir de maio/2026. Base científica: , HSE,  ISO 45003:2021.",pilares:["P1 Diagnóstico — Pulses + PGR atualizado","P2 Colaboradores — UNICIT 6 módulos + Rodas TEAMS","P3 Lideranças — Fundamentos + Seg. Psicológica + Conversas Difíceis","P4 Guardiões — Seleção + Formação + Reuniões mensais","P5 Clareza Organizacional — Rodas Líder-Liderado","Mid-year NR-1 (Ago) — PGR revisado ","2ª Pulso (Dez) + Relatório Board"],indicadores:["Conformidade NR-01 antes de junho/2026","PGR auditável","Zero autuações na fiscalização MTE","Guardiões: 1 por área/contrato","2ª Pulso com melhora vs baseline"],fdc:null},
   "onboarding":{meta:"M14 · Capital Humano",dot:"#0F6E56",title:"Onboarding Digital — CISSA Redesenhada",period:"Abr/Mai → 11/Mai → Jun/Jul → Ago → Dez",desc:"Redesenho da jornada de onboarding via CISSA.",pilares:["Abr/Mai — CISSA atualizada + design + gravações","Jun/Jul — Acompanhamento + ajustes","Ago — Rollout total","Nov — Revisão 3 meses pós-rollout","Dez — Modelo documentado + NPS"],indicadores:["NPS onboarding","100% colaboradores com jornada digital"],fdc:{var:"Estruturação da área de RH organizada e equipada",opp:"PRIORIZAR — Inferior / Alta",razao:"Onboarding estruturado é o primeiro momento em que o colaborador percebe se a empresa é organizada ou caótica. É a base da retenção e da produtividade nos primeiros 90 dias."}},
-  "cissa":{meta:"M14 · Capital Humano",dot:"#0F6E56",title:"CISSA — Agente Conversacional de Onboarding",period:"Abr → Mai → Jun (v1) → Jul (produção)",desc:"Agente conversacional via WhatsApp com 17 marcos. Acompanha o colaborador na jornada de onboarding. Parceria com TI. Lead: Gabrielly. Arquitetura: Daniela.",pilares:["Abr — Reunião com TI + trilhas atualizadas","Mai — META: receber arquitetura do TI + roteiros + gravações","Jul — Finalização gravações + arquitetura + dev","Jun — MARCO: CISSA v1 entregue"],indicadores:["Arquitetura TI (mai)","Em produção (jul)","17 marcos ativos"],fdc:{var:"Estruturação da área de RH",opp:"PRIORIZAR — Inferior / Alta",razao:"CISSA garante uma jornada consistente e escalável para 1.800+ colaboradores em 12 estados."}},
   "manual-lider":{meta:"M14 · Manuais",dot:"#534AB7",title:"Manual do Gestor + Guia do Gestor de Contrato",period:"Redação Mai → Validação Mai → Lançamento Jun",desc:"Documento unificado que orienta a liderança como principal alavanca de execução da estratégia, integrando o Manual do Gestor e o Guia do Gestor de Contrato.",pilares:["Orienta a liderança como tradutora da estratégia","GESTOR: equilibra resultado, pessoas e cultura","GESTOR DE CONTRATO: governança, controle e valor","Direcionadores do Gestor: performance + valores + desenvolvimento","Direcionadores do Gestor de Contrato: dados + integração + relacionamento","Visão sistêmica: colaborador → gestor → gestor de contrato","Alinhamento PDL (IA, Dados, Agentes)","Rituais: 1:1, feedback, clareza de metas","Papel no onboarding digital e NR-1","Publicação digital UNICIT + CITSmart People"],indicadores:["Publicação até final de julho","100% gestores com acesso digital"],fdc:null},
   "manual-colab":{meta:"M14 · Manuais",dot:"#534AB7",title:"Manual do Colaborador",period:"Redação Jun/Jul → Validação Jul → Lançamento Ago",desc:"Estabelece a base cultural e orienta a jornada do colaborador como protagonista na geração de valor.",pilares:["Indivíduo como agente ativo","Propósito, valores, pertencimento","Cultura: colaboração + autonomia + aprendizado","Carreira + performance + desenvolvimento","Mobilidade interna","Jornada de onboarding (CISSA, marcos)","Benefícios De Mãos Dadas","'O Poder de Ser Central'","Direitos e deveres NR-1 e CitElas v3","Publicação + kit boas-vindas"],indicadores:["Publicação até final de julho","100% acesso digital","Integrado ao onboarding"],fdc:null},
   "citelas":{meta:"M14 · Capital Humano",dot:"#993556",title:"CitElas v3 — Política de Equidade de Gênero",period:"Jun (diagnóstico) → Ago (reporte legal) → Dez (Board)",desc:"Política aprovada pela Diretoria com base na Lei 14.611/2023. .",pilares:["Jun — Diagnóstico baseline 3 KPIs","Jun — R&S em plataformas femininas","Jul — Mentorias + PDIs","Ago — Treinamento viés inconsciente","Ago — Reporte Lei 14.611/2023","Dez — Relatório Board: Compras.gov.br"],indicadores:["Gap salarial ≤10% em 2026","100% novas contratações com equidade na entrada","+5pp mulheres em liderança","Retenção pós-maternidade ≥90%","Nível PRATA Compras.gov.br","Zero autuações","PGR auditável"],fdc:{var:"Comprometimento público da liderança em sustentabilidade",opp:"PRIORIZAR — Inferior / Alta",razao:"Sustentabilidade inclui equidade, saúde psicossocial e conformidade legal. Empresa de TI sem isso perde marca empregadora, clientes ESG e conformidade regulatória."}},
@@ -791,7 +788,6 @@ const GANTT_DATA = [
   {label:"GP em Ação",sub:"3 ondas",id:"gp-acao",bars:[{s:0,d:2,c:"m1",fdc:true,t:"Onda 1 — Fundação"},{s:0,d:2,c:"m1b",t:"Pulso 1 (Abr/Mai)"},{s:3,d:2,c:"m1",t:"Onda 2 — Cases + Cultura"},{s:3,d:2,c:"m1b",t:"Pulso 2 (Jul/Ago)"},{s:6,d:1,c:"m1",t:"Onda 3"},{s:6,d:2,c:"m1b",t:"Pulso 3 (Out/Nov)"}]},
   {label:"NR-1",sub:"3 fases",id:"nr1",bars:[{s:0,d:2,c:"m1b",t:"Fase 1"},{s:2,d:6,c:"m1",t:"Fase 2 — Ação e Sustentabilidade"},{s:8,d:2,c:"m1b",t:"Fase 3"}]},
   {label:"Onboarding digital",sub:"Lançamento 11/Mai",id:"onboarding",bars:[{s:0,d:1,c:"m3",fdc:true,t:"CISSA + design"},{s:1,d:1,c:"m3",t:"Lançamento 11/Mai"},{s:2,d:2,c:"m3",t:"Acompanhamento"},{s:4,d:1,c:"m3",t:"Rollout total"},{s:8,d:1,c:"m3",t:"Consolidado"}]},
-  {label:"CISSA",sub:"Agente · 17 marcos · Jun v1",id:"cissa",bars:[{s:0,d:1,c:"m3",t:"TI+trilhas"},{s:1,d:1,c:"m3",t:"Arquitetura"},{s:2,d:1,c:"m3",t:"v1 entregue"},{s:3,d:1,c:"m3",t:"Produção"}]},
   {label:"Manual do Gestor",sub:"Pronto Mai · Lançamento Jun",id:"manual-lider",bars:[{s:0,d:2,c:"mnl",t:"Redação"},{s:2,d:1,c:"mnl",t:"Lançamento"}]},
   {label:"Manual do Colaborador",sub:"Pronto Jul · Lançamento Ago",id:"manual-colab",bars:[{s:2,d:2,c:"mnl",t:"Redação"},{s:4,d:1,c:"mnl",t:"Lançamento"}]},
   {label:"CitElas v3",sub:"Equidade de gênero",id:"citelas",bars:[{s:2,d:1,c:"pink",fdc:true,t:"Diagnóstico"},{s:3,d:5,c:"pink",t:"Ações equidade"},{s:8,d:1,c:"pink",t:"Board"}]},
@@ -1062,17 +1058,7 @@ const TDATA = {projects:[
     {mes:"Dez",acao:"Modelo documentado + NPS onboarding",responsavel:"Gabrielly",status:"planejado"},
     {mes:"Jan",acao:"Ajustes 2027",responsavel:"Gabrielly",status:"planejado"}
   ]},
-  {id:"cissa",name:"CISSA",meta:14,subtitle:"Agente conversacional · 17 marcos",lead:"Gabrielly",support:"Daniela + TI",actions:[
-    {mes:"Abr",acao:"Reunião com time de TI — roadmap resgatado",responsavel:"Gabrielly+Daniela",status:"feito"},
-    {mes:"Abr",acao:"Trilhas atualizadas com novo posicionamento Central IT",responsavel:"Gabrielly",status:"feito"},
-    {mes:"Mai",acao:"META: proposta de arquitetura do time de TI recebida",responsavel:"Gabrielly+TI",status:"feito"},
-    {mes:"Jun",acao:"Preparar roteiros de gravação — modelo + proposta por envolvido (C-level + áreas)",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Jul",acao:"Início das gravações dos envolvidos",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Jul",acao:"Finalização das gravações dos envolvidos",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Jun",acao:"Arquitetura + desenvolvimento CISSA",responsavel:"Daniela+TI",status:"planejado"},
-    {mes:"Jun",acao:"MARCO: CISSA v1 entregue",responsavel:"Daniela",status:"planejado"},
-    {mes:"Jul",acao:"CISSA em produção — acompanhamento",responsavel:"Gabrielly",status:"planejado"}
-  ]},
+
   {id:"manual_gestor",name:"Manual do Gestor",meta:14,subtitle:"Unificado com Guia do Gestor de Contrato",lead:"Larysa",support:"Larysa+Renard",actions:[
     {mes:"Abr",acao:"Manuais enviados para Larysa — pedido de unificação",responsavel:"Dani",status:"feito"},
     {mes:"Mai",acao:"Larysa+Renard: unificação + atualização sistemas + proposta",responsavel:"Larysa+Renard",status:"feito"},
@@ -1330,6 +1316,17 @@ function renderOverall(stats){
   document.getElementById('overall-fill').style.width=pct+'%';
   document.getElementById('overall-count').textContent=`${stats.done} de ${stats.total} ações concluídas`;
   document.getElementById('stat-feito').textContent=stats.done;
+  // KPIs automáticos calculados dos dados
+  const projCount = TDATA.projects.length;
+  const acoesCount = stats.total;
+  const metasCount = new Set(TDATA.projects.map(p=>p.meta)).size;
+  const pessoasCount = new Set(
+    TDATA.projects.flatMap(p=>p.actions.flatMap(a=>a.responsavel.split('+')))
+  ).size;
+  document.getElementById('stat-projetos').textContent = projCount;
+  document.getElementById('stat-acoes').textContent = acoesCount;
+  document.getElementById('stat-metas').textContent = metasCount;
+  document.getElementById('stat-pessoas').textContent = pessoasCount;
 }
 
 function renderMes(stats){
