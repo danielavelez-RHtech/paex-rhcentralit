@@ -452,9 +452,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
         <div class="home-card-title">Visão Estratégica</div>
         <div class="home-card-desc">Roadmap integrado, BSC, metas, programas e correlações com o diagnóstico da Fundação Dom Cabral.</div>
         <ul class="home-card-list">
-          <li>Roadmap Gantt interativo · clique nas barras para detalhe</li>
+          <li>Metas Estratégicas com programas e indicadores</li>
           <li>Diagnóstico FDC × Plano de Ação 2026</li>
-          <li>3 Metas Estratégicas com programas e indicadores</li>
+          <li>Roadmap Gantt interativo · clique nas barras para detalhe</li>
           <li id="dep-criticas-item" style="display:none">Dependências críticas e cadeia de pré-requisitos</li>
         </ul>
         <div class="home-card-cta">Abrir visão estratégica <span class="home-card-cta-arrow">→</span></div>
@@ -486,9 +486,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
 <section id="view-strategic" hidden>
   <nav class="nav-bar">
     <div class="nav-inner">
-      <button class="nav-btn s-nav active" onclick="showStrTab('gantt',this)"><span class="nav-dot" style="background:#185FA5"></span>Roadmap Gantt</button>
+      <button class="nav-btn s-nav active" onclick="showStrTab('metas',this)"><span class="nav-dot" style="background:#1D9E75"></span>Metas Estratégicas</button>
       <button class="nav-btn s-nav" onclick="showStrTab('fdc',this)"><span class="nav-dot" style="background:#E24B4A"></span>Diagnóstico FDC</button>
-      <button class="nav-btn s-nav" onclick="showStrTab('metas',this)"><span class="nav-dot" style="background:#1D9E75"></span>3 Metas Estratégicas</button>
+      <button class="nav-btn s-nav" onclick="showStrTab('gantt',this)"><span class="nav-dot" style="background:#185FA5"></span>Roadmap Gantt</button>
       <button class="nav-btn s-nav" onclick="showStrTab('deps',this)"><span class="nav-dot" style="background:#EF9F27"></span>Dependências Críticas</button>
     </div>
   </nav>
@@ -503,7 +503,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
       <div class="kpi"><div class="kpi-val" style="color:var(--m5)">1</div><div class="kpi-lbl">negócio a fechar (nov)</div></div>
     </div>
 
-    <div id="str-tab-gantt">
+    <div id="str-tab-gantt" hidden>
       <div class="section">
         <div class="section-header">
           <div class="section-dot" style="background:var(--navy)"></div>
@@ -527,7 +527,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
       </div>
     </div>
 
-    <div id="str-tab-metas" hidden><div id="metas-cards"></div></div>
+    <div id="str-tab-metas"><div id="metas-cards"></div></div>
 
     <div id="str-tab-deps" hidden>
       <div class="section">
@@ -675,7 +675,8 @@ const USERS = {
   'jaime':      'jaiR8m2vH4',
   'freitas':    'freK7x2pM9',
   'emauri':     'emaT4n8wL5',
-  'pablo':      'pabC5j3xW7'
+  'pablo':      'pabC5j3xW7',
+  'victor':     'vicL9m4tR6'
 };
 
 let currentUser = null;
