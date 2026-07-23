@@ -371,6 +371,99 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
 .login-error{background:var(--fdcl);border:.5px solid #F0BBBB;color:var(--fdc);padding:8px 12px;border-radius:6px;font-size:12px;display:none}
 .login-error.show{display:block}
 .login-foot{text-align:center;font-size:10px;color:var(--text3);margin-top:20px;letter-spacing:.04em}
+
+
+/* ── AÇÕES ROTINEIRAS ── */
+.rot-header{background:linear-gradient(135deg,#0F6E56,#1FA5A0);color:#fff;padding:16px 24px;border-radius:10px;margin:28px 0 16px}
+.rot-header h3{font-size:17px;font-weight:700;margin:0 0 2px}
+.rot-header p{font-size:12px;opacity:.85;margin:0}
+.rot-proj-card{background:#fff;border-radius:10px;border:1px solid #E2E8F0;margin-bottom:14px;overflow:hidden}
+.rot-proj-header{background:linear-gradient(90deg,#0F6E5615,#fff);border-bottom:2px solid #0F6E56;padding:12px 18px;display:flex;align-items:center;gap:10px}
+.rot-proj-badge{background:#0F6E56;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px}
+
+/* ── PROJETOS ESTRUTURANTES ── */
+.home-card.est{border-top:4px solid #7C3AED}
+.home-card-bar.est{background:linear-gradient(135deg,#7C3AED,#A855F7)}
+:root{--est:#7C3AED;--est-light:#F5F3FF}
+.est-header{background:linear-gradient(135deg,#7C3AED,#A855F7);color:#fff;padding:20px 24px;border-radius:10px;margin-bottom:20px}
+.est-header h2{font-size:20px;font-weight:700;margin:0 0 4px}
+.est-header p{font-size:13px;opacity:.85;margin:0}
+.est-proj-card{background:#fff;border-radius:10px;border:1px solid #E2E8F0;margin-bottom:20px;overflow:hidden}
+.est-proj-header{background:linear-gradient(90deg,#7C3AED15,#fff);border-bottom:2px solid #7C3AED;padding:14px 20px;display:flex;align-items:center;gap:12px}
+.est-proj-badge{background:#7C3AED;color:#fff;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;white-space:nowrap}
+.est-proj-title{font-size:16px;font-weight:700;color:#0B2B5C}
+.est-proj-sub{font-size:12px;color:#6B7280;margin-top:2px}
+.est-proj-meta{font-size:12px;color:#6B7280;margin:0 20px 12px;padding-top:8px;border-bottom:1px solid #F0F0F0;padding-bottom:8px}
+.est-proj-meta span{font-weight:600;color:#0B2B5C}
+.est-empty{text-align:center;padding:32px;color:#9CA3AF;font-size:13px;font-style:italic}
+.est-empty svg{display:block;margin:0 auto 8px;opacity:.3}
+.est-stats{display:flex;gap:12px;padding:12px 20px;background:#FAFAFA;border-top:1px solid #F0F0F0}
+.est-stat{text-align:center;flex:1}
+.est-stat-val{font-size:22px;font-weight:700;color:#7C3AED;line-height:1}
+.est-stat-lbl{font-size:10px;color:#6B7280;margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+/* sub-abas do painel estruturante */
+.est-nav{display:flex;gap:6px;padding:16px 0 12px;border-bottom:2px solid #F0F0F0;margin-bottom:16px;overflow-x:auto}
+.est-nav-btn{padding:7px 14px;border-radius:20px;border:1.5px solid #E2E8F0;background:#fff;font-size:12px;font-weight:600;color:#6B7280;cursor:pointer;white-space:nowrap;transition:all .15s}
+.est-nav-btn.active{background:#7C3AED;border-color:#7C3AED;color:#fff}
+/* tabela de ações */
+.est-table{width:100%;border-collapse:collapse;font-size:13px}
+.est-table th{background:#0B2B5C;color:#fff;padding:8px 10px;text-align:left;font-size:12px}
+.est-table td{padding:8px 10px;border-bottom:1px solid #F0F0F0;vertical-align:top}
+.est-table tr:nth-child(even) td{background:#FAFAFA}
+.est-table .badge-status{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600}
+.est-mes-block{margin-bottom:24px}
+.est-mes-block h3{font-size:13px;font-weight:700;color:#7C3AED;padding:6px 12px;background:#F5F3FF;border-radius:6px;margin-bottom:8px;border-left:3px solid #7C3AED}
+.est-resp-block{margin-bottom:20px}
+.est-resp-block h3{font-size:13px;font-weight:700;color:#0B2B5C;padding:6px 12px;background:#F4F6F9;border-radius:6px;margin-bottom:8px}
+
+
+/* ── VISÃO UNIFICADA ── */
+.home-card.unif{border-top:4px solid #0B2B5C}
+.home-card-bar.unif{background:linear-gradient(135deg,#0B2B5C,#1FA5A0)}
+.unif-hero{background:linear-gradient(135deg,#0B2B5C 0%,#185FA5 50%,#00B6BE 100%);
+  color:#fff;padding:28px 32px;border-radius:12px;margin-bottom:24px;position:relative;overflow:hidden}
+.unif-hero::before{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;
+  background:rgba(255,255,255,.05);border-radius:50%}
+.unif-hero h2{font-size:22px;font-weight:800;margin:0 0 4px;letter-spacing:-.3px}
+.unif-hero p{font-size:13px;opacity:.85;margin:0 0 16px}
+.unif-kpis{display:flex;gap:16px;flex-wrap:wrap}
+.unif-kpi{background:rgba(255,255,255,.15);border-radius:8px;padding:10px 16px;text-align:center;min-width:80px}
+.unif-kpi-val{font-size:24px;font-weight:800;line-height:1}
+.unif-kpi-lbl{font-size:10px;opacity:.8;margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
+/* nav abas */
+.unif-nav{display:flex;gap:6px;padding:0 0 16px;border-bottom:2px solid #F0F0F0;margin-bottom:20px;overflow-x:auto}
+.unif-nav-btn{padding:8px 16px;border-radius:20px;border:1.5px solid #E2E8F0;background:#fff;
+  font-size:12px;font-weight:600;color:#6B7280;cursor:pointer;white-space:nowrap;transition:all .15s;display:flex;align-items:center;gap:6px}
+.unif-nav-btn.active{background:#0B2B5C;border-color:#0B2B5C;color:#fff}
+.unif-nav-btn .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+/* gantt unificado */
+.unif-gantt-wrap{overflow-x:auto;padding-bottom:8px}
+.unif-gantt{display:grid;min-width:700px}
+.unif-gantt-header{display:grid;grid-template-columns:200px repeat(10,1fr);gap:2px;margin-bottom:4px}
+.unif-gantt-header .col-lbl{font-size:10px;font-weight:700;color:#6B7280;text-align:center;text-transform:uppercase;letter-spacing:.5px}
+.unif-gantt-header .col-lbl:first-child{text-align:left;padding-left:4px}
+.unif-gantt-row{display:grid;grid-template-columns:200px repeat(10,1fr);gap:2px;margin-bottom:3px;align-items:center}
+.unif-gantt-label{font-size:11px;color:#0B2B5C;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:4px}
+.unif-gantt-label .src-badge{font-size:9px;font-weight:700;padding:1px 5px;border-radius:8px;margin-right:4px;vertical-align:middle}
+.unif-gantt-cell{height:18px;border-radius:3px;background:#F4F6F9}
+.unif-gantt-bar{height:18px;border-radius:3px;display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;padding:0 4px;
+  cursor:pointer;transition:opacity .15s}
+.unif-gantt-bar:hover{opacity:.85}
+.unif-sec-label{grid-column:1/-1;font-size:10px;font-weight:800;text-transform:uppercase;
+  letter-spacing:.8px;color:#6B7280;padding:10px 0 4px;border-top:1px solid #E2E8F0;margin-top:4px}
+/* cards de meta/origem */
+.unif-origem-header{display:flex;align-items:center;gap:10px;padding:14px 20px;
+  border-radius:10px;margin:24px 0 12px;color:#fff;font-weight:700;font-size:15px}
+.unif-origem-header .cnt{font-size:12px;font-weight:400;opacity:.85;margin-left:auto}
+/* tabela unificada */
+.unif-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:4px}
+.unif-table th{background:#0B2B5C;color:#fff;padding:7px 10px;text-align:left;font-size:11px;font-weight:600}
+.unif-table td{padding:7px 10px;border-bottom:1px solid #F0F0F0;vertical-align:top}
+.unif-table tr:nth-child(even) td{background:#FAFAFA}
+.unif-src-badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;white-space:nowrap}
+.unif-status{padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;white-space:nowrap}
+
 </style>
 
 <script>
@@ -440,8 +533,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
   <div class="home">
     <div class="home-hero">
       <span class="home-eyebrow">Planejamento Estratégico de RH 2026</span>
-      <h1 class="home-title">Duas visões. Um único dashboard.</h1>
-      <p class="home-sub">A visão estratégica conecta o plano aos diagnósticos e metas do BSC. A visão tática traduz isso em 202 ações distribuídas entre o time. Escolha por onde começar.</p>
+      <h1 class="home-title">Quatro visões. Um único dashboard.</h1>
+      <p class="home-sub">Visão Estratégica, Tática, Projetos Estruturantes e Plano Unificado 2026. Tudo no mesmo dashboard, com dados conectados e atualizados em tempo real.</p>
     </div>
 
     <div class="home-grid">
@@ -473,6 +566,32 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
           <li>Compilado Kennedy · KPIs e alertas semanais</li>
         </ul>
         <div class="home-card-cta">Abrir visão tática <span class="home-card-cta-arrow">→</span></div>
+      </div>
+      <div class="home-card est" onclick="showView('estruturante')" style="margin-top:0">
+        <div class="home-card-bar est"></div>
+        <div class="home-card-icon">◈</div>
+        <div class="home-card-eyebrow">Além do BSC</div>
+        <div class="home-card-title">Projetos Estruturantes</div>
+        <div class="home-card-desc">Projetos estratégicos que sustentam a operação de RH e não pertencem às metas do BSC, mas são fundamentais para a execução do plano.</div>
+        <ul class="home-card-list">
+          <li>Programa Puts · Saúde Corporativa · Endomarketing</li>
+          <li>SmartOps · Educação Central · Governança</li>
+          <li>Visão por mês · por projeto · por responsável</li>
+        </ul>
+        <div class="home-card-cta">Abrir projetos estruturantes <span class="home-card-cta-arrow">→</span></div>
+      </div>
+      <div class="home-card unif" onclick="showView('unificado')" style="border-top:4px solid #0B2B5C">
+        <div class="home-card-bar unif"></div>
+        <div class="home-card-icon">⊕</div>
+        <div class="home-card-eyebrow">Execução Geral 2026</div>
+        <div class="home-card-title">Plano 2026 — Visão Unificada</div>
+        <div class="home-card-desc">BSC + Projetos Estruturantes em um único painel de comando. Gantt consolidado, ações por mês, por projeto, por meta e por responsável — tudo junto.</div>
+        <ul class="home-card-list">
+          <li>Gantt unificado · BSC + Estruturantes na mesma linha do tempo</li>
+          <li>Por mês · todas as ações de todas as origens</li>
+          <li>Por projeto e por responsável · visão consolidada</li>
+        </ul>
+        <div class="home-card-cta">Abrir visão unificada <span class="home-card-cta-arrow">→</span></div>
       </div>
     </div>
 
@@ -674,6 +793,7 @@ const USERS = {
   'jaime':      'jaiR8m2vH4',
   'freitas':    'freK7x2pM9',
   'emauri':     'emaT4n8wL5',
+  'dasio':      'dasQ7k2nR5',
   'pablo':      'pabC5j3xW7',
   'victor':     'vicL9m4tR6'
 };
@@ -719,6 +839,8 @@ function logout(){
   document.getElementById('view-home').hidden=false;
   document.getElementById('view-strategic').hidden=true;
   document.getElementById('view-tactical').hidden=true;
+  document.getElementById('view-estruturante').hidden=true;
+  document.getElementById('view-unificado').hidden=true;
   document.getElementById('h-meta').style.display='block';
   document.getElementById('brand-sub').textContent='Daniela Velez · CHRO / Diretora de Pessoas';
 }
@@ -737,6 +859,8 @@ function goHome(){
   document.getElementById('view-home').hidden=false;
   document.getElementById('view-strategic').hidden=true;
   document.getElementById('view-tactical').hidden=true;
+  document.getElementById('view-estruturante').hidden=true;
+  document.getElementById('view-unificado').hidden=true;
   document.getElementById('btn-back').style.display='none';
   document.getElementById('h-meta').style.display='block';
   document.getElementById('brand-sub').textContent='Daniela Velez · CHRO / Diretora de Pessoas';
@@ -746,9 +870,19 @@ function showView(v){
   document.getElementById('view-home').hidden=true;
   document.getElementById('view-strategic').hidden=(v!=='strategic');
   document.getElementById('view-tactical').hidden=(v!=='tactical');
+  document.getElementById('view-estruturante').hidden=(v!=='estruturante');
+  document.getElementById('view-unificado').hidden=(v!=='unificado');
   document.getElementById('btn-back').style.display='inline-block';
   document.getElementById('h-meta').style.display='none';
-  document.getElementById('brand-sub').textContent = v==='strategic' ? 'Visão Estratégica · BSC + FDC + Roadmap' : 'Visão Tática · Execução das 187 ações';
+  const subs = {
+    strategic:'Visão Estratégica · BSC + FDC + Roadmap',
+    tactical:'Visão Tática · Execução das ações',
+    estruturante:'Projetos Estruturantes · Além do BSC',
+    unificado:'Plano 2026 · Execução Geral'
+  };
+  document.getElementById('brand-sub').textContent = subs[v]||'';
+  if(v==='estruturante'){ renderEstProj(); }
+  if(v==='unificado'){ renderUnifView('gantt'); }
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1574,6 +1708,511 @@ function renderAll(){
 /* ============================================================
  * INIT
  * ============================================================ */
+
+/* ============================================================
+ * DADOS — PROJETOS ESTRUTURANTES
+ * ============================================================ */
+const EST_PROJECTS = [
+  {id:"puts",      name:"Programa Puts",              lead:"",support:"",desc:"Programa de reconhecimento e valorização de pessoas",actions:[]},
+  {id:"saude",     name:"Saúde Corporativa",           lead:"",support:"",desc:"Programa de saúde e bem-estar corporativo",actions:[]},
+  {id:"endo",      name:"Endomarketing",               lead:"",support:"",desc:"Comunicação interna e engajamento",actions:[]},
+  {id:"smartops",  name:"SmartOps",                    lead:"",support:"",desc:"Otimização de processos e operações de RH",actions:[]},
+  {id:"educacao",  name:"Educação Central",            lead:"",support:"",desc:"Programa de educação corporativa Central IT",actions:[]},
+  {id:"gov",       name:"Governança",                  lead:"",support:"",desc:"Governança de RH e conformidade",actions:[]},
+  {id:"empexp",    name:"Employee Experience",         lead:"",support:"",desc:"Programa de experiência do colaborador",actions:[]},
+];
+
+const ROT_PROJECTS = [
+  {id:"movim",     name:"Movimentações",               lead:"",support:"",desc:"Promoções, transferências e desligamentos",actions:[]},
+  {id:"mapeaperf", name:"Mapeamento de Perfis Comportamentais", lead:"",support:"",desc:"Mapeamento e análise de perfis comportamentais da equipe",actions:[]},
+  {id:"planoexc",  name:"Plano de Excelência",         lead:"",support:"",desc:"Acompanhamento de indicadores e plano de melhoria contínua",actions:[]},
+];
+
+
+/* ============================================================
+ * PROJETOS ESTRUTURANTES — renderização
+ * ============================================================ */
+const MESES_EST = ["Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez","Jan"];
+const ST_BG_EST = {feito:"#D1FAE5",andamento:"#FEF3C7",planejado:"#EFF6FF",atrasado:"#FEE2E2"};
+const ST_TC_EST = {feito:"#065F46",andamento:"#92400E",planejado:"#1E40AF",atrasado:"#991B1B"};
+const ST_PT_EST = {feito:"Feito",andamento:"Em andamento",planejado:"Planejado",atrasado:"Atrasado"};
+
+function showEstTab(tab, btn){
+  ['proj','mes','resp'].forEach(t=>{
+    document.getElementById('est-tab-'+t).hidden = (t!==tab);
+  });
+  const rot = document.getElementById('est-rotineiras');
+  if(rot) rot.style.display = (tab==='proj') ? 'block' : 'none';
+  document.querySelectorAll('.est-nav-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  if(tab==='mes') renderEstMes();
+  if(tab==='resp') renderEstResp();
+}
+
+function renderEstProj(){
+  const root = document.getElementById('est-proj-cards');
+  if(!root) return;
+  root.innerHTML = '';
+  let totalAcoes=0, totalFeito=0;
+  EST_PROJECTS.forEach((p,pi)=>{
+    totalAcoes += p.actions.length;
+    totalFeito += p.actions.filter(a=>a.status==='feito').length;
+    const card = document.createElement('div');
+    card.className = 'est-proj-card';
+    const feito = p.actions.filter(a=>a.status==='feito').length;
+    const pct = p.actions.length ? Math.round(feito/p.actions.length*100) : 0;
+    let rowsHtml = '';
+    if(p.actions.length===0){
+      rowsHtml = '<div class="est-empty"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Sem ações cadastradas · aguardando preenchimento</div>';
+    } else {
+      rowsHtml = '<div style="overflow-x:auto;padding:0 20px 16px"><table class="est-table"><thead><tr><th>Mês</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>';
+      p.actions.forEach((a,i)=>{
+        const bg = i%2===0?'#fff':'#FAFAFA';
+        const sBg = ST_BG_EST[a.status]||'#EFF6FF';
+        const sTc = ST_TC_EST[a.status]||'#1E40AF';
+        rowsHtml += `<tr style="background:${bg}"><td>${a.mes}</td><td>${a.acao}</td><td>${a.responsavel}</td><td><span class="badge-status" style="background:${sBg};color:${sTc}">${ST_PT_EST[a.status]||a.status}</span></td></tr>`;
+      });
+      rowsHtml += '</tbody></table></div>';
+    }
+    card.innerHTML = `
+      <div class="est-proj-header">
+        <span class="est-proj-badge">P${pi+1}</span>
+        <div><div class="est-proj-title">${p.name}</div><div class="est-proj-sub">${p.desc}</div></div>
+      </div>
+      <div class="est-proj-meta">
+        <span>Lead:</span> ${p.lead||'<em style="color:#9CA3AF">a definir</em>'}
+        &nbsp;&nbsp;|&nbsp;&nbsp;<span>Apoio:</span> ${p.support||'<em style="color:#9CA3AF">a definir</em>'}
+        &nbsp;&nbsp;|&nbsp;&nbsp;<span>${p.actions.length}</span> ações
+        &nbsp;&nbsp;|&nbsp;&nbsp;<span>${pct}%</span> concluído
+      </div>
+      ${rowsHtml}`;
+    root.appendChild(card);
+  });
+  document.getElementById('est-stat-acoes').textContent = totalAcoes;
+  document.getElementById('est-stat-feito').textContent = totalFeito;
+
+  // Renderizar Ações Rotineiras
+  renderRotProj();
+}
+
+function renderRotProj(){
+  const root = document.getElementById('rot-proj-cards');
+  if(!root) return;
+  root.innerHTML = '';
+  ROT_PROJECTS.forEach((p,pi)=>{
+    const feito = p.actions.filter(a=>a.status==='feito').length;
+    const pct = p.actions.length ? Math.round(feito/p.actions.length*100) : 0;
+    const card = document.createElement('div');
+    card.className = 'rot-proj-card';
+    let rowsHtml = '';
+    if(p.actions.length===0){
+      rowsHtml = '<div class="est-empty">Sem ações cadastradas · aguardando preenchimento</div>';
+    } else {
+      rowsHtml = '<div style="overflow-x:auto;padding:0 20px 16px"><table class="est-table"><thead><tr><th>Mês</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>';
+      p.actions.forEach((a,i)=>{
+        const bg = i%2===0?'#fff':'#FAFAFA';
+        const sBg = ST_BG_EST[a.status]||'#EFF6FF';
+        const sTc = ST_TC_EST[a.status]||'#1E40AF';
+        rowsHtml += `<tr style="background:${bg}"><td>${a.mes}</td><td>${a.acao}</td><td>${a.responsavel}</td><td><span class="badge-status" style="background:${sBg};color:${sTc}">${ST_PT_EST[a.status]||a.status}</span></td></tr>`;
+      });
+      rowsHtml += '</tbody></table></div>';
+    }
+    card.innerHTML = `
+      <div class="rot-proj-header">
+        <span class="rot-proj-badge">R${pi+1}</span>
+        <div><div class="est-proj-title">${p.name}</div><div class="est-proj-sub">${p.desc}</div></div>
+      </div>
+      <div class="est-proj-meta">
+        <span>Lead:</span> ${p.lead||'<em style="color:#9CA3AF">a definir</em>'}
+        &nbsp;&nbsp;|&nbsp;&nbsp;<span>Apoio:</span> ${p.support||'<em style="color:#9CA3AF">a definir</em>'}
+        &nbsp;&nbsp;|&nbsp;&nbsp;<span>${p.actions.length}</span> ações
+      </div>
+      ${rowsHtml}`;
+    root.appendChild(card);
+  });
+}
+
+function renderEstMes(){
+  const root = document.getElementById('est-mes-content');
+  if(!root) return;
+  root.innerHTML = '';
+  MESES_EST.forEach(mes=>{
+    const items = [];
+    EST_PROJECTS.forEach(p=>{
+      p.actions.forEach(a=>{ if(a.mes===mes) items.push({...a, projName:p.name}); });
+    });
+    if(!items.length) return;
+    const block = document.createElement('div');
+    block.className = 'est-mes-block';
+    let rows = items.map((a,i)=>{
+      const bg = i%2===0?'#fff':'#FAFAFA';
+      const sBg = ST_BG_EST[a.status]||'#EFF6FF';
+      const sTc = ST_TC_EST[a.status]||'#1E40AF';
+      return `<tr style="background:${bg}"><td style="font-weight:600;color:#7C3AED">${a.projName}</td><td>${a.acao}</td><td>${a.responsavel}</td><td><span class="badge-status" style="background:${sBg};color:${sTc}">${ST_PT_EST[a.status]||a.status}</span></td></tr>`;
+    }).join('');
+    block.innerHTML = `<h3>${mes} · ${items.length} ação${items.length!==1?'s':''}</h3>
+      <div style="overflow-x:auto"><table class="est-table"><thead><tr><th>Projeto</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    root.appendChild(block);
+  });
+  if(!root.children.length){
+    root.innerHTML = '<div class="est-empty" style="padding:48px">Nenhuma ação cadastrada ainda. Adicione ações aos projetos para visualizar por mês.</div>';
+  }
+}
+
+function renderEstResp(){
+  const root = document.getElementById('est-resp-content');
+  if(!root) return;
+  root.innerHTML = '';
+  const byResp = {};
+  EST_PROJECTS.forEach(p=>{
+    p.actions.forEach(a=>{
+      const resps = a.responsavel.split('+');
+      resps.forEach(r=>{
+        r = r.trim();
+        if(!byResp[r]) byResp[r] = [];
+        byResp[r].push({...a, projName:p.name});
+      });
+    });
+  });
+  const sorted = Object.entries(byResp).sort(([a],[b])=>a.localeCompare(b));
+  if(!sorted.length){
+    root.innerHTML = '<div class="est-empty" style="padding:48px">Nenhuma ação cadastrada ainda. Adicione ações aos projetos para visualizar por responsável.</div>';
+    return;
+  }
+  sorted.forEach(([resp, items])=>{
+    const block = document.createElement('div');
+    block.className = 'est-resp-block';
+    const feito = items.filter(a=>a.status==='feito').length;
+    let rows = items.map((a,i)=>{
+      const bg = i%2===0?'#fff':'#FAFAFA';
+      const sBg = ST_BG_EST[a.status]||'#EFF6FF';
+      const sTc = ST_TC_EST[a.status]||'#1E40AF';
+      return `<tr style="background:${bg}"><td>${a.mes}</td><td style="font-weight:600;color:#7C3AED">${a.projName}</td><td>${a.acao}</td><td><span class="badge-status" style="background:${sBg};color:${sTc}">${ST_PT_EST[a.status]||a.status}</span></td></tr>`;
+    }).join('');
+    block.innerHTML = `<h3>${resp} · ${items.length} ação${items.length!==1?'s':''} · ${feito} concluída${feito!==1?'s':''}</h3>
+      <div style="overflow-x:auto"><table class="est-table"><thead><tr><th>Mês</th><th>Projeto</th><th>Ação</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    root.appendChild(block);
+  });
+}
+
+
+/* ============================================================
+ * PLANO 2026 — VISÃO UNIFICADA
+ * ============================================================ */
+const MESES_U = ["Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez","Jan"];
+const ST_BG_U = {feito:"#D1FAE5",andamento:"#FEF3C7",planejado:"#EFF6FF",atrasado:"#FEE2E2",em_andamento:"#FEF3C7"};
+const ST_TC_U = {feito:"#065F46",andamento:"#92400E",planejado:"#1E40AF",atrasado:"#991B1B",em_andamento:"#92400E"};
+const ST_PT_U = {feito:"Feito",andamento:"Em andamento",planejado:"Planejado",atrasado:"Atrasado",em_andamento:"Em andamento"};
+const META_COR = {10:"#0F6E56",14:"#185FA5",15:"#534AB7"};
+const META_NM  = {10:"M10 · Produtividade",14:"M14 · Capital Humano",15:"M15 · Capital Organizacional"};
+const EST_COR  = "#7C3AED";
+
+// Agrega todas as ações (BSC + Estruturantes)
+function getAllActions(){
+  const all = [];
+  // BSC
+  TDATA.projects.forEach(p=>{
+    const metaNum = p.meta;
+    p.actions.forEach((a,i)=>{
+      all.push({
+        mes:a.mes, acao:a.acao, responsavel:a.responsavel, status:a.status,
+        projId:p.id, projName:p.name, origem:'bsc', meta:metaNum,
+        srcLabel:'M'+metaNum, srcColor:META_COR[metaNum]||'#185FA5', idx:i
+      });
+    });
+  });
+  // Estruturantes
+  EST_PROJECTS.forEach(p=>{
+    p.actions.forEach((a,i)=>{
+      all.push({
+        mes:a.mes, acao:a.acao, responsavel:a.responsavel||'—', status:a.status||'planejado',
+        projId:p.id, projName:p.name, origem:'est', meta:null,
+        srcLabel:'EST', srcColor:EST_COR, idx:i
+      });
+    });
+  });
+  // Rotineiras
+  ROT_PROJECTS.forEach(p=>{
+    p.actions.forEach((a,i)=>{
+      all.push({
+        mes:a.mes, acao:a.acao, responsavel:a.responsavel||'—', status:a.status||'planejado',
+        projId:p.id, projName:p.name, origem:'rot', meta:null,
+        srcLabel:'ROT', srcColor:'#0F6E56', idx:i
+      });
+    });
+  });
+  return all;
+}
+
+function getAllProjects(){
+  const projs = [];
+  TDATA.projects.forEach(p=>projs.push({...p, origem:'bsc', srcLabel:'M'+p.meta, srcColor:META_COR[p.meta]||'#185FA5'}));
+  EST_PROJECTS.forEach(p=>projs.push({...p, origem:'est', srcLabel:'EST', srcColor:EST_COR}));
+  ROT_PROJECTS.forEach(p=>projs.push({...p, origem:'rot', srcLabel:'ROT', srcColor:'#0F6E56'}));
+  return projs;
+}
+
+function updateUnifKPIs(){
+  const all = getAllActions();
+  const bsc = all.filter(a=>a.origem==='bsc');
+  const est = all.filter(a=>a.origem==='est');
+  const feito = all.filter(a=>a.status==='feito').length;
+  const pct = all.length ? Math.round(feito/all.length*100) : 0;
+  const allProjs = getAllProjects();
+  el('unif-tot-proj').textContent = allProjs.length;
+  el('unif-tot-acoes').textContent = all.length;
+  el('unif-tot-feito').textContent = feito;
+  el('unif-tot-pct').textContent = pct+'%';
+  el('unif-bsc-acoes').textContent = bsc.length;
+  el('unif-est-acoes').textContent = est.length;
+}
+function el(id){return document.getElementById(id);}
+
+function renderUnifView(tab, btn){
+  // Atualizar botões
+  document.querySelectorAll('.unif-nav-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else document.querySelector('.unif-nav-btn')?.classList.add('active');
+  updateUnifKPIs();
+  const root = el('unif-content');
+  root.innerHTML = '';
+  if(tab==='gantt')     renderUnifGantt(root);
+  if(tab==='mes')       renderUnifMes(root);
+  if(tab==='projeto')   renderUnifProjeto(root);
+  if(tab==='meta')      renderUnifMeta(root);
+  if(tab==='responsavel') renderUnifResp(root);
+}
+
+/* ── GANTT UNIFICADO ── */
+function renderUnifGantt(root){
+  // Grupos de linhas: uma por projeto, agrupados por meta/origem
+  let html = '<div class="unif-gantt-wrap"><div class="unif-gantt">';
+  // Cabeçalho
+  html += '<div class="unif-gantt-header"><div class="col-lbl">Projeto</div>';
+  MESES_U.forEach(m=>{ html += `<div class="col-lbl">${m}</div>`; });
+  html += '</div>';
+
+  // BSC por meta
+  [10,14,15].forEach(mNum=>{
+    const projs = TDATA.projects.filter(p=>p.meta===mNum);
+    if(!projs.length) return;
+    html += `<div class="unif-gantt-row"><div class="unif-sec-label">${META_NM[mNum]}</div></div>`;
+    projs.forEach(p=>{
+      // Calcular barras: agrupar ações por mês
+      const byMes = {};
+      p.actions.forEach(a=>{ if(!byMes[a.mes]) byMes[a.mes]=0; byMes[a.mes]++; });
+      const cor = META_COR[mNum]||'#185FA5';
+      const cells = MESES_U.map(mes=>{
+        const cnt = byMes[mes]||0;
+        if(cnt===0) return `<div class="unif-gantt-cell"></div>`;
+        const done = p.actions.filter(a=>a.mes===mes&&a.status==='feito').length;
+        const pct = Math.round(done/cnt*100);
+        const opacity = 0.5 + pct/200;
+        return `<div class="unif-gantt-bar" style="background:${cor};opacity:${opacity}" title="${p.name} · ${mes} · ${cnt} ação(ões)">${cnt}</div>`;
+      }).join('');
+      html += `<div class="unif-gantt-row">
+        <div class="unif-gantt-label"><span class="src-badge" style="background:${cor}20;color:${cor}">M${mNum}</span>${p.name}</div>
+        ${cells}
+      </div>`;
+    });
+  });
+
+  // Estruturantes
+  html += `<div class="unif-gantt-row"><div class="unif-sec-label" style="color:${EST_COR}">Projetos Estruturantes</div></div>`;
+  EST_PROJECTS.forEach(p=>{
+    const byMes = {};
+    p.actions.forEach(a=>{ if(!byMes[a.mes]) byMes[a.mes]=0; byMes[a.mes]++; });
+    const cells = MESES_U.map(mes=>{
+      const cnt = byMes[mes]||0;
+      if(cnt===0) return `<div class="unif-gantt-cell"></div>`;
+      return `<div class="unif-gantt-bar" style="background:${EST_COR}" title="${p.name} · ${mes} · ${cnt} ação(ões)">${cnt}</div>`;
+    }).join('');
+    html += `<div class="unif-gantt-row">
+      <div class="unif-gantt-label"><span class="src-badge" style="background:${EST_COR}20;color:${EST_COR}">EST</span>${p.name}</div>
+      ${cells}
+    </div>`;
+  });
+
+  // Rotineiras no Gantt
+  html += `<div class="unif-gantt-row"><div class="unif-sec-label" style="color:#0F6E56">Ações Rotineiras</div></div>`;
+  ROT_PROJECTS.forEach(p=>{
+    const byMes = {};
+    p.actions.forEach(a=>{ if(!byMes[a.mes]) byMes[a.mes]=0; byMes[a.mes]++; });
+    const cells = MESES_U.map(mes=>{
+      const cnt = byMes[mes]||0;
+      if(cnt===0) return `<div class="unif-gantt-cell"></div>`;
+      return `<div class="unif-gantt-bar" style="background:#0F6E56" title="${p.name} · ${mes} · ${cnt} ação(ões)">${cnt}</div>`;
+    }).join('');
+    html += `<div class="unif-gantt-row">
+      <div class="unif-gantt-label"><span class="src-badge" style="background:#0F6E5620;color:#0F6E56">ROT</span>${p.name}</div>
+      ${cells}
+    </div>`;
+  });
+  html += '</div></div>';
+  // Legenda
+  html += `<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;font-size:11px;color:#6B7280">
+    <span><span style="display:inline-block;width:10px;height:10px;background:#0F6E56;border-radius:2px;margin-right:4px"></span>M10 Produtividade</span>
+    <span><span style="display:inline-block;width:10px;height:10px;background:#185FA5;border-radius:2px;margin-right:4px"></span>M14 Capital Humano</span>
+    <span><span style="display:inline-block;width:10px;height:10px;background:#534AB7;border-radius:2px;margin-right:4px"></span>M15 Capital Organizacional</span>
+    <span><span style="display:inline-block;width:10px;height:10px;background:#7C3AED;border-radius:2px;margin-right:4px"></span>Estruturantes</span>
+    <span style="margin-left:auto;font-style:italic">Número = qtd. de ações no mês · opacidade indica % concluído</span>
+  </div>`;
+  root.innerHTML = html;
+}
+
+/* ── POR MÊS ── */
+function renderUnifMes(root){
+  let html = '';
+  const all = getAllActions();
+  MESES_U.forEach(mes=>{
+    const items = all.filter(a=>a.mes===mes);
+    if(!items.length) return;
+    const feito = items.filter(a=>a.status==='feito').length;
+    html += `<div style="margin-bottom:28px">
+      <div style="background:#F4F6F9;border-left:4px solid #00B6BE;padding:8px 16px;border-radius:0 8px 8px 0;margin-bottom:10px">
+        <span style="font-size:15px;font-weight:800;color:#0B2B5C">${mes}</span>
+        <span style="font-size:12px;color:#6B7280;margin-left:10px">${items.length} ações · ${feito} concluídas</span>
+      </div>
+      <div style="overflow-x:auto"><table class="unif-table"><thead><tr>
+        <th>Origem</th><th>Projeto</th><th>Ação</th><th>Responsável</th><th>Status</th>
+      </tr></thead><tbody>`;
+    items.forEach((a,i)=>{
+      const bg = i%2===0?'#fff':'#FAFAFA';
+      const sBg=ST_BG_U[a.status]||'#EFF6FF', sTc=ST_TC_U[a.status]||'#1E40AF';
+      html += `<tr style="background:${bg}">
+        <td><span class="unif-src-badge" style="background:${a.srcColor}20;color:${a.srcColor}">${a.srcLabel}</span></td>
+        <td style="font-weight:600;color:#0B2B5C;font-size:11px">${a.projName}</td>
+        <td>${a.acao}</td>
+        <td style="font-size:11px">${a.responsavel}</td>
+        <td><span class="unif-status" style="background:${sBg};color:${sTc}">${ST_PT_U[a.status]||a.status}</span></td>
+      </tr>`;
+    });
+    html += '</tbody></table></div></div>';
+  });
+  if(!html) html = '<div style="text-align:center;padding:48px;color:#9CA3AF;font-size:13px;font-style:italic">Nenhuma ação cadastrada ainda nos Projetos Estruturantes.</div>';
+  root.innerHTML = html;
+}
+
+/* ── POR PROJETO ── */
+function renderUnifProjeto(root){
+  const allProjs = getAllProjects();
+  let html = '';
+  allProjs.forEach(p=>{
+    const feito = p.actions.filter(a=>a.status==='feito').length;
+    const pct = p.actions.length ? Math.round(feito/p.actions.length*100) : 0;
+    html += `<div style="margin-bottom:20px;border:1px solid #E2E8F0;border-radius:10px;overflow:hidden">
+      <div style="background:linear-gradient(90deg,${p.srcColor}18,#fff);border-bottom:2px solid ${p.srcColor};padding:12px 18px;display:flex;align-items:center;gap:10px">
+        <span class="unif-src-badge" style="background:${p.srcColor};color:#fff">${p.srcLabel}</span>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:#0B2B5C">${p.name}</div>
+          <div style="font-size:11px;color:#6B7280">${p.actions.length} ações · ${pct}% concluído · Lead: ${p.lead||'<em>a definir</em>'}</div>
+        </div>
+      </div>`;
+    if(!p.actions.length){
+      html += `<div class="est-empty">Aguardando preenchimento das ações</div>`;
+    } else {
+      html += `<div style="overflow-x:auto;padding:0 18px 14px"><table class="unif-table" style="margin-top:10px"><thead><tr><th>Mês</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>`;
+      p.actions.forEach((a,i)=>{
+        const bg=i%2===0?'#fff':'#FAFAFA';
+        const sBg=ST_BG_U[a.status]||'#EFF6FF', sTc=ST_TC_U[a.status]||'#1E40AF';
+        html += `<tr style="background:${bg}"><td>${a.mes}</td><td>${a.acao}</td><td style="font-size:11px">${a.responsavel}</td>
+          <td><span class="unif-status" style="background:${sBg};color:${sTc}">${ST_PT_U[a.status]||a.status}</span></td></tr>`;
+      });
+      html += '</tbody></table></div>';
+    }
+    html += '</div>';
+  });
+  root.innerHTML = html;
+}
+
+/* ── POR META / ORIGEM ── */
+function renderUnifMeta(root){
+  let html = '';
+  [10,14,15].forEach(mNum=>{
+    const cor = META_COR[mNum];
+    const projs = TDATA.projects.filter(p=>p.meta===mNum);
+    const totalA = projs.reduce((s,p)=>s+p.actions.length,0);
+    const totalF = projs.reduce((s,p)=>s+p.actions.filter(a=>a.status==='feito').length,0);
+    html += `<div class="unif-origem-header" style="background:${cor}">
+      ${META_NM[mNum]}<span class="cnt">${projs.length} projetos · ${totalA} ações · ${totalF} concluídas</span>
+    </div>`;
+    projs.forEach(p=>{
+      html += `<div style="margin-bottom:6px;padding:8px 14px;background:#F9FAFB;border-radius:8px;border-left:3px solid ${cor}">
+        <div style="font-size:13px;font-weight:700;color:#0B2B5C;margin-bottom:4px">${p.name} <span style="font-size:11px;font-weight:400;color:#6B7280">· ${p.actions.length} ações · Lead: ${p.lead}</span></div>`;
+      if(p.actions.length){
+        html += '<div style="overflow-x:auto"><table class="unif-table"><thead><tr><th>Mês</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>';
+        p.actions.forEach((a,i)=>{
+          const bg=i%2===0?'#fff':'#FAFAFA';
+          const sBg=ST_BG_U[a.status]||'#EFF6FF', sTc=ST_TC_U[a.status]||'#1E40AF';
+          html += `<tr style="background:${bg}"><td>${a.mes}</td><td>${a.acao}</td><td style="font-size:11px">${a.responsavel}</td>
+            <td><span class="unif-status" style="background:${sBg};color:${sTc}">${ST_PT_U[a.status]||a.status}</span></td></tr>`;
+        });
+        html += '</tbody></table></div>';
+      }
+      html += '</div>';
+    });
+  });
+  // Estruturantes
+  const estTotal = EST_PROJECTS.reduce((s,p)=>s+p.actions.length,0);
+  const estFeito = EST_PROJECTS.reduce((s,p)=>s+p.actions.filter(a=>a.status==='feito').length,0);
+  html += `<div class="unif-origem-header" style="background:${EST_COR}">
+    ◈ Projetos Estruturantes<span class="cnt">${EST_PROJECTS.length} projetos · ${estTotal} ações · ${estFeito} concluídas</span>
+  </div>`;
+  EST_PROJECTS.forEach(p=>{
+    html += `<div style="margin-bottom:6px;padding:8px 14px;background:#F5F3FF;border-radius:8px;border-left:3px solid ${EST_COR}">
+      <div style="font-size:13px;font-weight:700;color:#0B2B5C;margin-bottom:4px">${p.name} <span style="font-size:11px;font-weight:400;color:#6B7280">· Lead: ${p.lead||'a definir'}</span></div>
+      <div style="font-size:11px;color:#9CA3AF;font-style:italic;padding:4px 0">Aguardando preenchimento das ações</div>
+    </div>`;
+  });
+  root.innerHTML = html;
+}
+
+/* ── POR RESPONSÁVEL ── */
+function renderUnifResp(root){
+  const all = getAllActions();
+  const byResp = {};
+  all.forEach(a=>{
+    (a.responsavel||'—').split('+').map(r=>r.trim()).forEach(r=>{
+      if(!byResp[r]) byResp[r] = [];
+      byResp[r].push(a);
+    });
+  });
+  const sorted = Object.entries(byResp).sort(([a],[b])=>a.localeCompare(b));
+  let html = '';
+  sorted.forEach(([resp, items])=>{
+    const feito = items.filter(a=>a.status==='feito').length;
+    const pct = Math.round(feito/items.length*100);
+    const bsc = items.filter(a=>a.origem==='bsc').length;
+    const est = items.filter(a=>a.origem==='est').length;
+    html += `<div style="margin-bottom:20px;border:1px solid #E2E8F0;border-radius:10px;overflow:hidden">
+      <div style="background:#F4F6F9;border-bottom:1px solid #E2E8F0;padding:12px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <div style="font-size:16px;font-weight:800;color:#0B2B5C">${resp}</div>
+        <div style="font-size:11px;color:#6B7280">${items.length} ações · ${feito} concluídas · ${pct}%</div>
+        <div style="margin-left:auto;display:flex;gap:8px">
+          ${bsc?`<span class="unif-src-badge" style="background:#185FA520;color:#185FA5">${bsc} BSC</span>`:''}
+          ${est?`<span class="unif-src-badge" style="background:${EST_COR}20;color:${EST_COR}">${est} EST</span>`:''}
+        </div>
+      </div>
+      <div style="overflow-x:auto;padding:0 18px 14px"><table class="unif-table" style="margin-top:10px"><thead><tr>
+        <th>Mês</th><th>Origem</th><th>Projeto</th><th>Ação</th><th>Status</th>
+      </tr></thead><tbody>`;
+    items.sort((a,b)=>MESES_U.indexOf(a.mes)-MESES_U.indexOf(b.mes)).forEach((a,i)=>{
+      const bg=i%2===0?'#fff':'#FAFAFA';
+      const sBg=ST_BG_U[a.status]||'#EFF6FF', sTc=ST_TC_U[a.status]||'#1E40AF';
+      html += `<tr style="background:${bg}">
+        <td>${a.mes}</td>
+        <td><span class="unif-src-badge" style="background:${a.srcColor}20;color:${a.srcColor}">${a.srcLabel}</span></td>
+        <td style="font-size:11px;font-weight:600;color:#0B2B5C">${a.projName}</td>
+        <td>${a.acao}</td>
+        <td><span class="unif-status" style="background:${sBg};color:${sTc}">${ST_PT_U[a.status]||a.status}</span></td>
+      </tr>`;
+    });
+    html += '</tbody></table></div></div>';
+  });
+  if(!html) html = '<div style="text-align:center;padding:48px;color:#9CA3AF;font-size:13px;font-style:italic">Nenhuma ação cadastrada.</div>';
+  root.innerHTML = html;
+}
+
 buildGantt();
 buildFDC();
 buildMetas();
@@ -1583,5 +2222,86 @@ renderAll();
 loadState().then(renderAll);
 </script>
 
+
+<!-- ===================== PROJETOS ESTRUTURANTES ===================== -->
+<section id="view-estruturante" hidden>
+  <div class="t-wrap" style="max-width:900px;margin:0 auto;padding:24px 16px">
+
+    <div class="est-header">
+      <h2>◈ Projetos Estruturantes · Ações Rotineiras</h2>
+      <p>Iniciativas estratégicas de RH além do BSC + ações rotineiras · Central IT 2026</p>
+    </div>
+
+    <!-- Stats globais -->
+    <div class="est-stats" style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;margin-bottom:20px">
+      <div class="est-stat"><div class="est-stat-val" id="est-stat-proj">10</div><div class="est-stat-lbl">Projetos</div></div>
+      <div class="est-stat"><div class="est-stat-val" id="est-stat-acoes">0</div><div class="est-stat-lbl">Ações</div></div>
+      <div class="est-stat"><div class="est-stat-val teal" id="est-stat-feito">0</div><div class="est-stat-lbl">Concluídas</div></div>
+    </div>
+
+    <!-- Sub-navegação -->
+    <div class="est-nav">
+      <button class="est-nav-btn active" onclick="showEstTab('proj',this)">Por projeto</button>
+      <button class="est-nav-btn" onclick="showEstTab('mes',this)">Por mês</button>
+      <button class="est-nav-btn" onclick="showEstTab('resp',this)">Por responsável</button>
+    </div>
+
+    <!-- Por projeto -->
+    <div id="est-tab-proj">
+      <div id="est-proj-cards"></div>
+    </div>
+
+    <!-- Por mês -->
+    <div id="est-tab-mes" hidden>
+      <div id="est-mes-content"></div>
+    </div>
+
+    <!-- Por responsável -->
+    <div id="est-tab-resp" hidden>
+      <div id="est-resp-content"></div>
+    </div>
+
+    <!-- Ações Rotineiras -->
+    <div id="est-rotineiras">
+      <div class="rot-header">
+        <h3>⚙ Ações Rotineiras</h3>
+        <p>Processos contínuos de RH que sustentam a operação ao longo do ano</p>
+      </div>
+      <div id="rot-proj-cards"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== PLANO 2026 UNIFICADO ===================== -->
+<section id="view-unificado" hidden>
+  <div class="t-wrap" style="max-width:1050px;margin:0 auto;padding:24px 16px">
+
+    <!-- Hero -->
+    <div class="unif-hero">
+      <h2>⊕ Plano 2026 · Execução Geral</h2>
+      <p>BSC (M10 · M14 · M15) + Projetos Estruturantes · Central IT · Abr 2026 → Jan 2027</p>
+      <div class="unif-kpis">
+        <div class="unif-kpi"><div class="unif-kpi-val" id="unif-tot-proj">0</div><div class="unif-kpi-lbl">Projetos</div></div>
+        <div class="unif-kpi"><div class="unif-kpi-val" id="unif-tot-acoes">0</div><div class="unif-kpi-lbl">Ações</div></div>
+        <div class="unif-kpi"><div class="unif-kpi-val" id="unif-tot-feito">0</div><div class="unif-kpi-lbl">Concluídas</div></div>
+        <div class="unif-kpi"><div class="unif-kpi-val" id="unif-tot-pct">0%</div><div class="unif-kpi-lbl">Progresso</div></div>
+        <div class="unif-kpi" style="background:rgba(0,182,190,.25)"><div class="unif-kpi-val" id="unif-bsc-acoes">0</div><div class="unif-kpi-lbl">Ações BSC</div></div>
+        <div class="unif-kpi" style="background:rgba(124,58,237,.25)"><div class="unif-kpi-val" id="unif-est-acoes">0</div><div class="unif-kpi-lbl">Estruturantes</div></div>
+      </div>
+    </div>
+
+    <!-- Navegação -->
+    <div class="unif-nav">
+      <button class="unif-nav-btn active" onclick="renderUnifView('gantt',this)"><span class="dot" style="background:#00B6BE"></span>Gantt Unificado</button>
+      <button class="unif-nav-btn" onclick="renderUnifView('mes',this)"><span class="dot" style="background:#185FA5"></span>Por mês</button>
+      <button class="unif-nav-btn" onclick="renderUnifView('projeto',this)"><span class="dot" style="background:#0F6E56"></span>Por projeto</button>
+      <button class="unif-nav-btn" onclick="renderUnifView('meta',this)"><span class="dot" style="background:#534AB7"></span>Por meta / origem</button>
+      <button class="unif-nav-btn" onclick="renderUnifView('responsavel',this)"><span class="dot" style="background:#854F0B"></span>Por responsável</button>
+    </div>
+
+    <div id="unif-content"></div>
+  </div>
+</section>
 </body>
 </html>
