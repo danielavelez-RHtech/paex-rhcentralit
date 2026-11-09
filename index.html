@@ -464,6 +464,26 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
 .unif-src-badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:8px;white-space:nowrap}
 .unif-status{padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;white-space:nowrap}
 
+
+/* ── AUDITORIA DE MARCAÇÕES ── */
+.audit-box{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin:0 0 22px}
+.audit-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.audit-title{font-size:15px;font-weight:700;color:var(--navy);margin:0 0 2px}
+.audit-sub{font-size:12px;color:var(--text3)}
+.audit-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.audit-actions select{font-size:12px;padding:6px 8px;border:1px solid var(--border);border-radius:6px;background:#fff}
+.audit-btn{font-size:12px;font-weight:600;padding:7px 12px;border-radius:6px;border:1.5px solid var(--teal);background:#fff;color:var(--navy);cursor:pointer}
+.audit-btn:hover{background:var(--teal);color:#fff}
+.audit-body{max-height:420px;overflow:auto}
+.audit-table{width:100%;border-collapse:collapse;font-size:12px}
+.audit-table th{background:var(--navy);color:#fff;text-align:left;padding:7px 9px;position:sticky;top:0}
+.audit-table td{padding:7px 9px;border-bottom:1px solid #F0F0F0;vertical-align:top}
+.audit-table tr:nth-child(even) td{background:#FAFAFA}
+.audit-tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600}
+.audit-tag.on{background:#D1FAE5;color:#065F46}
+.audit-tag.off{background:#FEE2E2;color:#991B1B}
+.audit-empty{padding:24px;text-align:center;color:var(--text3);font-size:13px;font-style:italic}
+
 </style>
 
 <script>
@@ -725,11 +745,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
         <div class="ken-title">Kennedy — Guardião dos Dados de RH</div>
         <div class="ken-sub">Dashboard semanal · KPIs por projeto · alertas antes de virar gargalo</div>
       </div>
+      <div class="audit-box">
+        <div class="audit-head">
+          <div>
+            <h2 class="audit-title">Histórico de marcações</h2>
+            <div class="audit-sub">Quem marcou e desmarcou cada ação, com data e hora. Visível apenas para Dani e Kennedy.</div>
+          </div>
+          <div class="audit-actions">
+            <select id="audit-filter-user" onchange="renderAudit()"><option value="">Todas as pessoas</option></select>
+            <button class="audit-btn" onclick="loadAudit()">Atualizar</button>
+            <button class="audit-btn" onclick="exportAudit()">Baixar planilha (CSV)</button>
+          </div>
+        </div>
+        <div id="audit-body" class="audit-body"><div class="audit-empty">Clique em Atualizar para carregar o histórico.</div></div>
+      </div>
       <h2 style="font-size:14px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin-bottom:14px">Escopo de monitoramento</h2>
       <div class="ken-grid">
         <div class="ken-card"><h3>Projetos e execução</h3><ul class="ken-list"><li>Planejado vs realizado por projeto/mês</li><li>Status semanal das 187 ações</li><li>Alertas de atraso > 1 semana</li><li>Marcos críticos por mês</li></ul></div>
         <div class="ken-card"><h3>Pessoas e capacidade</h3><ul class="ken-list"><li>Carga por pessoa por mês</li><li>Ausências e afastamentos</li><li>Movimentações</li><li>Headcount atualizado</li></ul></div>
-        <div class="ken-card"><h3>Pesquisas e indicadores</h3><ul class="ken-list"><li>eNPS: 2 rodadas (jun/jul/ago, nov/dez/jan)</li><li>Pesquisa Pulso: 2 rodadas (abr, nov)</li><li>NPS por pilar do LiderAI</li><li>Adesão e conclusão UNICIT/PDL/PDC</li></ul></div>
+        <div class="ken-card"><h3>Pesquisas e indicadores</h3><ul class="ken-list"><li>eNPS: 2 rodadas (jun/jul/ago, nov/dez/jan)</li><li>Pesquisa Pulso: 2 rodadas (abr, nov)</li><li>NPS por pilar do LiderAI</li><li>Adesão e conclusão PDL/PDC</li></ul></div>
         
       </div>
 
@@ -738,7 +772,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
 
       <h2 style="font-size:14px;font-weight:600;color:var(--text2);letter-spacing:.04em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--border);margin:24px 0 14px">Alertas que devem chegar para Dani</h2>
       <div class="ken-grid">
-        <div class="ken-card"><h3>Crítico — escalar imediatamente</h3><ul class="ken-list"><li>Atraso PILAR (cascata até 180°)</li><li>Arquitetura CISSA não recebida em maio</li><li>Mayara com >7 streams ativos no mesmo mês</li><li>Larysa sem progresso semanal nos manuais</li></ul></div>
+        <div class="ken-card"><h3>Crítico — escalar imediatamente</h3><ul class="ken-list"><li>Atraso PILAR (cascata até Avaliação de Competências)</li><li>Arquitetura CISSA não recebida em maio</li><li>Mayara com >7 streams ativos no mesmo mês</li></ul></div>
         <div class="ken-card"><h3>Atenção — reportar semanal</h3><ul class="ken-list"><li>Adesão eNPS < 70%</li><li>Visitas a contratos atrasadas</li><li>Orçamento realizado > 100% em qualquer frente</li></ul></div>
       </div>
     </div>
@@ -779,9 +813,11 @@ const LOCAL_MODE = location.protocol === 'file:';
 const ADMINS = ['dani','kennedy'];
 const USER_NAMES = {
   dani:'Dani', kennedy:'Kennedy', gabrielly:'Gabrielly', larysa:'Larysa',
-  mayara:'Mayara', bruna:'Bruna', dionisia:'Dionísia', renard:'Renard',
-  guilherme:'Guilherme', jaime:'Jaime', freitas:'Freitas', emauri:'Emauri',
-  lucas:'Lucas', dasio:'Dasio', pablo:'Pablo', victor:'Victor'
+  mayara:'Mayara', bruna:'Bruna', guilherme:'Guilherme', pablo:'Pablo',
+  dasio:'Dasio', jaime:'Jaime', freitas:'Freitas', emauri:'Emauri',
+  vinicius:'Vinicius', geraldo:'Geraldo', carol:'Carol', stefanie:'Stefanie', jennifer:'Jennifer', jessica:'Jessica', dany:'Dany',
+  // usuários antigos: mantidos só para exibir o nome no histórico
+  dionisia:'Dionísia', renard:'Renard', lucas:'Lucas', victor:'Victor'
 };
 const TOKEN_KEY = 'ci_painel_token';
 let currentUser = null;
@@ -931,72 +967,73 @@ const C = {
 };
 
 const DETAIL = {
-  "gp-acao":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"Gestão de Pessoas em Ação",period:"3 ondas: Abr/Mai · Jul/Ago · Set/Out 2026",desc:"Programa de presença ativa do RH nas operações e contratos. Leva o RH até onde o trabalho acontece, criando espaços estruturados de escuta, diálogo, desenvolvimento e alinhamento estratégico.",pilares:["Mar — Visitas Contratos SOF e MCOM","Abr/Mai — 1ª Rodada GP em Ação: visitas a contratos e áreas internas","Jun — Relatório com resultados da 1ª Rodada","Jul/Ago — 2ª Rodada GP em Ação","Set — Relatório com resultados da 2ª Rodada","Set/Out — 3ª Rodada GP em Ação","Set — Relatório com resultados da 3ª Rodada","Dez — Relatório anual para o Board","Jan — Consolidação do Programa: Indicadores, Análise Crítica e Plano de Melhoria"],indicadores:["100% dos contratos visitados em cada rodada","3 rodadas completas no ano","Relatório de resultados após cada rodada","Consolidação anual com plano de melhoria"],fdc:{var:"Estruturação da área de RH organizada e equipada",opp:"PRIORIZAR — Inferior / Alta",razao:"Uma área de RH não estruturada gera custo invisível. Para uma empresa de tecnologia que vende eficiência, ter um RH ineficiente é uma contradição estratégica."}},
-  "nr1":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"Viva Mais — Programa de Bem-Estar e Saúde Integral",period:"Fase 1 (Abr–Mai) · Fase 2 (Jun–Ago) · Fase 3 (Set–Jan)",desc:"Programa fundamentado na NR-01 Portaria MTE 1.419/2024. Fiscalização punitiva a partir de maio/2026. Base científica: HSE, ISO 45003:2021.",pilares:["Abr/Mai — Pesquisa HSE (contratos e áreas internas) + atualização PGR","Jun — Pílula Liderança: NR-1 e Segurança Psicológica + Formação Primeiros Socorros em Saúde Mental","Jul — Lançamento dos 6 módulos UNICIT + criação dos módulos e manual dos Guardiões + mapeamento","Ago — Treinamento e Live de lançamento dos Guardiões","Set–Dez — Reuniões mensais com Guardiões","Jan — Consolidação do Programa: Indicadores, Análise Crítica e Plano de Melhoria"],indicadores:["Conformidade NR-01 antes de junho/2026","PGR auditável","Zero autuações na fiscalização MTE","Guardiões: 1 por área/contrato","Consolidação anual com plano de melhoria"],fdc:null},
-  "onboarding":{meta:"M14 · Capital Humano",dot:"#0F6E56",title:"Onboarding Digital — Plataforma Digital",period:"Abr/Mai (MVP) → Jun (PCD) → Jul/Ago (gravações) → Set (publicação)",desc:"Jornadas digitais de onboarding para colaboradores, gestores e PCD.",pilares:["Abr — Levantamento de requisitos do onboarding (gestor e colaboradores)","Mai — Jornadas Onboarding Colaborador e Gestor: MVP 01","Jun — Onboarding PCD: MVP 01","Jul — Preparação dos roteiros de gravação com pessoas de áreas-chave","Ago — Gravação com pessoas de áreas-chave","Set — Atualização e publicação do procedimento operacional"],indicadores:["NPS onboarding","100% colaboradores com jornada digital","Onboarding PCD ativo"],fdc:{var:"Estruturação da área de RH organizada e equipada",opp:"PRIORIZAR — Inferior / Alta",razao:"Onboarding estruturado é o primeiro momento em que o colaborador percebe se a empresa é organizada ou caótica. É a base da retenção e da produtividade nos primeiros 90 dias."}},
-  "manual-lider":{meta:"M14 · Manuais",dot:"#534AB7",title:"Manual do Gestor + Guia do Gestor de Contrato",period:"Unificação Mai → Lançamento Jul → v1 Out (organograma + qualidade) → v2 Nov (GRCS + cadeia de valor)",desc:"Documento unificado que orienta a liderança como principal alavanca de execução da estratégia, integrando o Manual do Gestor e o Guia do Gestor de Contrato.",pilares:["Orienta a liderança como tradutora da estratégia","GESTOR: equilibra resultado, pessoas e cultura","GESTOR DE CONTRATO: governança, controle e valor","Direcionadores do Gestor: performance + valores + desenvolvimento","Direcionadores do Gestor de Contrato: dados + integração + relacionamento","Visão sistêmica: colaborador → gestor → gestor de contrato","Alinhamento PDL (IA, Dados, Agentes)","Rituais: 1:1, feedback, clareza de metas","Papel no onboarding digital e Viva Mais","Publicação digital UNICIT + CITSmart People"],indicadores:["Publicação até final de julho","100% gestores com acesso digital"],fdc:null},
-  "manual-colab":{meta:"M14 · Manuais",dot:"#534AB7",title:"Manual do Colaborador",period:"Redação Jul → Validação Ago → Lançamento Ago",desc:"Estabelece a base cultural e orienta a jornada do colaborador como protagonista na geração de valor.",pilares:["Indivíduo como agente ativo","Propósito, valores, pertencimento","Cultura: colaboração + autonomia + aprendizado","Carreira + performance + desenvolvimento","Mobilidade interna","Jornada de onboarding (CISSA, marcos)","Benefícios De Mãos Dadas","'O Poder de Ser Central'","Direitos e deveres Viva Mais e CitElas","Publicação + kit boas-vindas"],indicadores:["Publicação até final de agosto","100% acesso digital","Integrado ao onboarding"],fdc:null},
-  "citelas":{meta:"M14 · Capital Humano",dot:"#993556",title:"CitElas — Política de Equidade de Gênero",period:"Jun (diagnóstico) → Jul (auditoria) → Ago (lançamento) → Jan (revisão)",desc:"Política aprovada pela Diretoria com base na Lei 14.611/2023. Lançamento na Semana do Conhecimento em agosto.",pilares:["Jun — Diagnóstico de gaps salariais + divulgação de vagas em plataformas femininas","Jul — Auditoria + plano de ação para Board + preparação do lançamento","Ago — Lançamento na Semana do Conhecimento + Mapeamento de Talentos","Set — Elaboração de PDIs","Out/Nov — Ações de Acompanhamento","Dez — Acompanhamento final","Jan — Revisão (Indicadores, Análise Crítica e Plano de ação)"],indicadores:["Gap salarial ≤10% em 2026","100% novas contratações com equidade na entrada","+5pp mulheres em liderança","Retenção pós-maternidade ≥90%","Nível PRATA Compras.gov.br","Zero autuações","PGR auditável"],fdc:{var:"Comprometimento público da liderança em sustentabilidade",opp:"PRIORIZAR — Inferior / Alta",razao:"Sustentabilidade inclui equidade, saúde psicossocial e conformidade legal. Empresa de TI sem isso perde marca empregadora, clientes ESG e conformidade regulatória."}},
-  "sucessao":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"Programa de Sucessão — 1ª Edição",period:"Jul (escopo) → Ago (lançamento) → Set (início) → Jan (avaliação)",desc:"Primeiro ciclo formal de sucessão da Central IT. Identifica e desenvolve talentos com potencial para posições-chave, criando um pipeline interno de liderança.",pilares:["Jul — Desenho do escopo do programa e validação com Board","Ago — Lançamento do Programa e processo seletivo","Set — Início do Programa","Out/Nov/Dez — Andamento do Programa","Jan — 1ª Pesquisa do Programa: Análise Crítica e Plano de Melhoria para 2027"],indicadores:["Pipeline de sucessores mapeado","100% posições-chave com ao menos 1 sucessor identificado","NPS do programa ≥75%"],fdc:null},
+  "gp-acao":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"Gestão de Pessoas em Ação",period:"1ª rodada Abr/Mai · 2ª rodada Out · 3ª rodada Jan 2027",desc:"Programa de presença ativa do RH nas operações e contratos. Leva o RH até onde o trabalho acontece, criando espaços estruturados de escuta, diálogo, desenvolvimento e alinhamento estratégico.",pilares:["Mar — Visitas Contratos SOF e MCOM","Abr/Mai — 1ª Rodada GP em Ação: visitas a contratos e áreas internas","Jun — Relatório com resultados da 1ª Rodada","Out — 2ª Rodada GP em Ação","Nov — Relatório com resultados da 2ª Rodada","Jan — 3ª Rodada, relatório anual para o Board e consolidação do programa"],indicadores:["100% dos contratos visitados em cada rodada","3 rodadas completas no ano","Relatório de resultados após cada rodada","Consolidação anual com plano de melhoria"],fdc:{var:"Estruturação da área de RH organizada e equipada",opp:"PRIORIZAR — Inferior / Alta",razao:"Uma área de RH não estruturada gera custo invisível. Para uma empresa de tecnologia que vende eficiência, ter um RH ineficiente é uma contradição estratégica."}},
+  "nr1":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"Viva Mais — Programa de Bem-Estar e Saúde Integral",period:"Fase 1 (Abr a Jun) · Fase 2 (Jul) · Fase 3 (Nov a Jan)",desc:"Programa fundamentado na NR-01 Portaria MTE 1.419/2024. Fiscalização punitiva a partir de maio/2026. Base científica: HSE, ISO 45003:2021.",pilares:["Abr/Mai — Pesquisa HSE (contratos e áreas internas) + atualização PGR","Jun — Pílula Liderança: NR-1 e Segurança Psicológica + Formação Primeiros Socorros em Saúde Mental","Jul — Mapeamento e definição dos guardiões","Nov — Divulgação dos 6 módulos UNICIT para os colaboradores","Nov a Jan — Reuniões individuais com gestores e guardiões (Stefanie)","Nov — Proposta de temas a partir das reuniões com os gestores","Nov a Jan — Pauta mensal de saúde integral (Lei 15.377 e outros temas) no mural dos contratos e por e-mail","Nov — Validação da política de saúde corporativa","Jan — Consolidação do Programa: Indicadores, Análise Crítica e Plano de Melhoria"],indicadores:["Conformidade NR-01 antes de junho/2026","PGR auditável","Zero autuações na fiscalização MTE","Guardiões: 1 por área/contrato","Consolidação anual com plano de melhoria"],fdc:null},
+  "onboarding":{meta:"M14 · Capital Humano",dot:"#0F6E56",title:"Onboarding Digital — Plataforma Digital",period:"Abr/Mai (MVP) → Jun (PCD) → Nov (proposta CITSmart People) → Dez (roteiros e implantação) → Jan (gravações e procedimento)",desc:"Jornadas digitais de onboarding para colaboradores, gestores e PCD.",pilares:["Abr — Levantamento de requisitos do onboarding (gestor e colaboradores)","Mai — Jornadas Onboarding Colaborador e Gestor: MVP 01","Jun — Onboarding PCD: MVP 01","Nov — Proposta de onboarding para o CITSmart People","Dez — Preparação dos roteiros de gravação com pessoas de áreas-chave","Dez — Implementação do onboarding no CITSmart People","Jan — Gravação com pessoas de áreas-chave","Jan — Atualização e publicação do procedimento operacional"],indicadores:["NPS onboarding","100% colaboradores com jornada digital","Onboarding PCD ativo"],fdc:{var:"Estruturação da área de RH organizada e equipada",opp:"PRIORIZAR — Inferior / Alta",razao:"Onboarding estruturado é o primeiro momento em que o colaborador percebe se a empresa é organizada ou caótica. É a base da retenção e da produtividade nos primeiros 90 dias."}},
+  "manual-lider":{meta:"M14 · Manuais",dot:"#534AB7",title:"Manual do Gestor + Guia do Gestor de Contrato",period:"Unificação Mai → Lançamento Jul → Validação com o Board e publicação no Athena Out → v1, publicação e divulgação Nov → v2 Dez",desc:"Documento unificado que orienta a liderança como principal alavanca de execução da estratégia, integrando o Manual do Gestor e o Guia do Gestor de Contrato.",pilares:["Orienta a liderança como tradutora da estratégia","GESTOR: equilibra resultado, pessoas e cultura","GESTOR DE CONTRATO: governança, controle e valor","Direcionadores do Gestor: performance + valores + desenvolvimento","Direcionadores do Gestor de Contrato: dados + integração + relacionamento","Visão sistêmica: colaborador → gestor → gestor de contrato","Alinhamento PDL (IA, Dados, Agentes)","Rituais: 1:1, feedback, clareza de metas","Papel no onboarding digital e Viva Mais","Publicação digital CITSmart People"],indicadores:["Publicação até final de julho","100% gestores com acesso digital"],fdc:null},
+  "manual-colab":{meta:"M14 · Manuais",dot:"#534AB7",title:"Manual do Colaborador",period:"Atualização, validação e lançamento em Nov com Gabrielly",desc:"Estabelece a base cultural e orienta a jornada do colaborador como protagonista na geração de valor.",pilares:["Indivíduo como agente ativo","Propósito, valores, pertencimento","Cultura: colaboração + autonomia + aprendizado","Carreira + performance + desenvolvimento","Mobilidade interna","Jornada de onboarding (CISSA, marcos)","Benefícios De Mãos Dadas","'O Poder de Ser Central'","Direitos e deveres Viva Mais e CitElas","Publicação + kit boas-vindas"],indicadores:["Publicação até final de agosto","100% acesso digital","Integrado ao onboarding"],fdc:null},
+  "citelas":{meta:"M14 · Capital Humano",dot:"#993556",title:"CitElas — Política de Equidade de Gênero",period:"Jun (diagnóstico) → Jul (auditoria) → Out e Nov (parcerias e pacto ONU Mulheres) → Dez (preparação do lançamento e mapeamento das mulheres) → Jan (revisão mensal de indicadores)",desc:"Política aprovada pela Diretoria com base na Lei 14.611/2023.",pilares:["Jun — Diagnóstico de gaps salariais","Jul — Auditoria + plano de ação para o Board","Out — Mapeamento das empresas parceiras para divulgação de vagas","Nov — Fechamento da parceria com Mulheres Positivas e Emprega Elas","Nov — Assinatura do pacto da ONU Mulheres (WEPs)","Dez — Preparação do lançamento e mapeamento das mulheres","Jan — Revisão mensal dos indicadores, com registro e plano de melhoria se necessário"],indicadores:["Gap salarial ≤10% em 2026","100% novas contratações com equidade na entrada","+5pp mulheres em liderança","Retenção pós-maternidade ≥90%","Nível PRATA Compras.gov.br","Zero autuações","PGR auditável"],fdc:{var:"Comprometimento público da liderança em sustentabilidade",opp:"PRIORIZAR — Inferior / Alta",razao:"Sustentabilidade inclui equidade, saúde psicossocial e conformidade legal. Empresa de TI sem isso perde marca empregadora, clientes ESG e conformidade regulatória."}},
+  "sucessao":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"Programa de Talentos Tech e Business — 1ª Edição",period:"Nov (concepção, escuta, Board, regulamento e régua) → Dez (lançamento)",desc:"Programa de identificação e desenvolvimento de talentos nas frentes Tech e Business. A concepção acontece em novembro e o lançamento em dezembro.",pilares:["Nov — Concepção do programa","Nov — Escuta com Diretores","Nov — Validação com o Board","Nov — Criação do regulamento","Nov — Criação da régua de comunicação","Dez — Lançamento do programa"],indicadores:["Regulamento validado pelo Board","Régua de comunicação aprovada","Lançamento realizado em dezembro"],fdc:null},
+  "evp":{meta:"M14 · Capital Humano",dot:"#185FA5",title:"EVP — Employer Value Proposition",period:"Out (proposta) → Nov (Gartner, Board, parcerias e novos benefícios) → Dez (apresentação à liderança e à diretoria)",desc:"Proposta de valor ao colaborador da Central IT. Lead: Dani, com apoio de Gabrielly e Dasio.",pilares:["Out — Estruturação da proposta de EVP","Nov — Validação com a Gartner e aprovação do Board","Nov — Atualização e novas parcerias para colaboradores (Dasio)","Nov — Fechamento dos novos benefícios Viagem e Pet (Gabrielly)","Dez — Apresentação na reunião de liderança e para a diretoria"],indicadores:["EVP aprovado pelo Board","Novas parcerias ativas para colaboradores","Benefícios Viagem e Pet implantados"],fdc:null},
   "dmd":{meta:"M14 · Capital Humano",dot:"#993C1D",title:"De Mãos Dadas — Maternidade, Pais e Parceiros",period:"Abr (levantamento) → Ago (lançamento) → Dez (pais e parceiros)",desc:"Programa de acompanhamento da jornada de maternidade, paternidade e adoção. Agente Digital de Cuidado ativo durante toda a experiência.",pilares:["Abr — Levantamento programas existentes","Ago — Materiais + kit boas-vindas + treinamento gestores","Ago — Lançamento + Fase 1 (Descoberta)","Set — Piloto Fases 2 e 3 + Agente Digital","Out — Fase 4 (Licença)","Nov — Avaliação + ajustes","Dez — Pais e parceiros"],indicadores:["NPS Maternidade ≥85%","Retorno pós-licença ≥90%","Participação ≥80%"],fdc:null},
   "cultura":{meta:"M14 · Capital Humano",dot:"#3C3489",title:'"O Poder de Ser Central" — Programa de Cultura',period:"Lançamento Jul/Ago — Onda 2 GP em Ação",desc:"Programa de identidade e cultura organizacional, com a alta liderança como porta-voz. Sustenta todos os demais programas.",pilares:["Identidade: quem somos, como atuamos","Pertencimento: o que nos conecta","Propósito: Inspirar pessoas e impactar negócios","Rituais e símbolos a definir","Comunicação integrada com Manual + onboarding + Viva Mais"],indicadores:["≥80% engajamento (out)","eNPS ≥70 · Jan > Set"],fdc:{var:"Comprometimento público da liderança em sustentabilidade",opp:"PRIORIZAR — Inferior / Alta",razao:"Cultura é o que resta quando as regras não estão olhando. Comprometimento público com identidade e propósito transforma clima em vantagem competitiva."}},
-  "liderai":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"LiderAI 2026 — PDL + PDC",period:"Kick-off 11/Mai → Fórum LiderAI Dez · 77 líderes",desc:"Programa unificado de desenvolvimento de líderes (PDL+PDC). 77 líderes. 5 pilares com Koru, Numera e Lalon.",pilares:["11/Mai — Kick-off oficial","Mai (2ª quinzena) → Ago (2ª quinzena) — P1 Vendas Consultivas (Lalon) · PDL SC + PDC","Ago — P3 Letramento IA + Diagnóstico Maturidade Digital (Koru) + Pensamento Crítico (Numera, 3 turmas)","Set → Dez — P4 Agentes Cognitivos (Koru) · 4 meses · 2 frentes (internas + SC/Com)","Dez — P5 Fórum LiderAI + IA Day · celebração + certificação"],indicadores:["100% dos 77 líderes certificados","Projetos de transformação no Fórum","NPS ≥85%","Diagnóstico Maturidade Digital concluído"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"LiderAI é o braço operacional do framework de competências para liderança. Sem líderes em IA, dados e agentes, os agentes cognitivos não têm quem os adote."}},
-  "trilha-ia":{meta:"M15 · Trilha Corporativa",dot:"#8F80D9",title:"Trilha Corporativa — IA e Dados",period:"Estruturação Mai · Validação Jun · Gravações Jun/Jul · Lançamento Ago",desc:"Trilha para TODA a empresa. Desenvolve competências em IA e dados em todos os níveis hierárquicos.",pilares:["Mai — Estruturação do conteúdo e validação Board","Jul — UNICIT + instrutores + gravações","Ago — LANÇAMENTO das Trilhas","Set–Nov — Em andamento","Dez — META: ≥80% conclusão + ","Formato: UNICIT assíncrono + TEAMS síncrono"],indicadores:["≥80% conclusão até dez","≥60% demonstram uso no trabalho"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"Trilha IA e Dados leva o letramento a toda a empresa. Sem isso, IA First fica restrita às lideranças."}},
-  "trilha-neg":{meta:"M15 · Trilha Corporativa",dot:"#8F80D9",title:"Trilha Corporativa — Negócios e Accountability",period:"Conteúdo Mai · Lançamento Ago",desc:"Trilha para TODA a empresa. Desenvolve visão de negócios e cultura de accountability no novo posicionamento.",pilares:["Visão do negócio Central IT e cadeia de valor","Como o trabalho conecta-se à estratégia","Cultura de responsabilidade individual e coletiva","Protagonismo, autonomia, maturidade","Formato: UNICIT + Rodas TEAMS","Sincronizada com 'O Poder de Ser Central'"],indicadores:[],fdc:null},
-  "desc-cargo":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"Descrições de Cargo — 100% Aprovadas",period:"Etapas 1 concluídas → Etapas 2 e 3 em Jul (Mayara) → Etapas 4 e 5 em Ago (Dani+Mayara)",desc:"Pré-requisito do Framework de Competências e da Avaliação 180°. Metodologia com Elliott Jaques.",pilares:["Abr/Mai — Etapa 1 (Escuta) concluída: Produtos, Comercial, C-Level, TD","Jun — Etapa 1 (Escuta) concluída: Gerente SC, GAPE, CIOTI, Áreas Internas","Jul — Etapas 2 e 3 de todas as áreas (Mayara): Produtos, Comercial, TD, Gerente SC, GAPE, CIOTI, Áreas Internas","Ago — Etapas 4 e 5 de todas as áreas (Dani+Mayara): validação gerentes e colaboradores","Ago — MARCO: 100% das descrições aprovadas"],indicadores:["100% homologadas (ago)","Pré-req Framework (jul)","Pré-req 180° (out)"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"Sem descrições precisas, não há como definir competências, contratar com critério, desenvolver com foco nem avaliar com objetividade."}},
-  "competencias":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"Framework de Competências",period:"Jun (design) → Set (gap) → Dez (consolidado)",desc:"Lead: Dani + Mayara. Design (Jun) → Mapeamento Analista→Diretor (Jul) → Validação workshops (Ago) → Gap (Set) → Plano T&D vinculado às trilhas.",pilares:["Core — todos os colaboradores","Liderança — por nível","Técnicas — por área","IA e dados transversal","Validação em workshops"],indicadores:["Validado por ≥80% lideranças (ago)","Gap mapeado por área (set)","Plano T&D às trilhas UNICIT (out)"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"Framework é o DNA operacional da estratégia. Dá objetividade ao desenvolvimento, à avaliação e às decisões de promoção."}},
-  "av180":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"Avaliação 180° — 1º Ciclo",period:"Out (desenho + capacitação) · Nov (execução) · Dez (consolidação) · Jan (Board)",desc:"1º ciclo formal de avaliação. IA reduz viés cognitivo. PDIs gerados automaticamente e validados pelo gestor.",pilares:["Out — Etapa 01: desenho do processo, metodologia, critérios e ferramenta","Out — Etapa 02: comunicação e capacitação dos avaliadores","Nov — Etapa 03: execução, autoavaliação + avaliação do gestor","Dez — Etapa 04: consolidação e calibração dos resultados, devolutivas 1:1 e PDIs","Jan — Etapa 05: resultados consolidados ao Board"],indicadores:["100% avaliados out/nov","PDIs para 100%"],fdc:{var:"Sistema eficaz de avaliação",opp:"PRIORIZAR — Similar / Alta",razao:"Sem sistema estruturado, decisões ficam à percepção do gestor. Gera injustiças, perda de talentos e desconexão performance↔resultado."}},
-  "agentes":{meta:"M10 · Produtividade",dot:"#0F6E56",title:"Agentes Cognitivos — 4 agentes",period:"CISSA Jun → CORA Ago → PILAR Out → Portfólio Dez",desc:"3 agentes cognitivos próprios em produção com dados reais. Base para o case comercial.",pilares:["Mai — CISSA: arquitetura TI","Jun — CISSA v1","Jul — PILAR dev","Ago — PILAR produção","Set/Nov — Desenvolvimento de mais 2 agentes","Dez — Portfólio documentado"],indicadores:[],fdc:null},
+  "liderai":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"LiderAI 2026 — PDL + PDC",period:"Kick-off 11/Mai → P1 Vendas Consultivas (Mai a Ago) → P3 Pensamento Crítico (Set) → Fechamento dos indicadores (Nov) → Digital Day (04/12) · 77 líderes",desc:"Programa unificado de desenvolvimento de líderes (PDL+PDC). 77 líderes. 5 pilares com Koru, Numera e Lalon.",pilares:["11/Mai — Kick-off oficial","Mai (2ª quinzena) → Ago (2ª quinzena) — P1 Vendas Consultivas (Lalon) · PDL SC + PDC","Set — P3 Pensamento Crítico (Numera, 3 turmas)","Nov — Fechamento dos indicadores (Dani, com apoio da Larysa)","Dez — Encerramento no Digital Day do Central IT Intelligence em 04/12 (antigo Fórum LiderAI e IA Day)"],indicadores:["100% dos 77 líderes certificados","NPS ≥85%"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"LiderAI é o braço operacional do framework de competências para liderança. Sem líderes em IA, dados e agentes, os agentes cognitivos não têm quem os adote."}},
+  "trilha-ia":{meta:"M15 · Central IT Intelligence",dot:"#8F80D9",title:"Central IT Intelligence — IA e Dados",period:"Lançamento 29/09 · Diagnóstico 30/09 a 15/10 · Trilha Digital Skills e canvas 21/10 a 30/11 · Digital Day 04/12",desc:"Trilha para TODA a empresa. Desenvolve competências em IA e dados em todos os níveis hierárquicos.",pilares:["29/09: Lançamento do Programa","30/09 a 15/10: Diagnóstico de Maturidade Digital (Koru)","21/10 a 30/11: Trilha Digital Skills (portal UNICIT) e envio dos canvas","04/12: Digital Day"],indicadores:["≥80% conclusão até dez","≥60% demonstram uso no trabalho"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"Trilha IA e Dados leva o letramento a toda a empresa. Sem isso, IA First fica restrita às lideranças."}},
+  "trilha-neg":{meta:"M15 · Central IT Intelligence",dot:"#8F80D9",title:"Central IT Intelligence — Negócios e Accountability",period:"Lançamento 29/09 · Diagnóstico 30/09 a 15/10 · Trilha Digital Skills e canvas 21/10 a 30/11 · Digital Day 04/12",desc:"Trilha para TODA a empresa. Desenvolve visão de negócios e cultura de accountability no novo posicionamento.",pilares:["Visão do negócio Central IT e cadeia de valor","Como o trabalho conecta-se à estratégia","Cultura de responsabilidade individual e coletiva","Protagonismo, autonomia, maturidade","Sincronizada com 'O Poder de Ser Central'"],indicadores:[],fdc:null},
+  "desc-cargo":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"Descrições de Cargo — 100% Aprovadas",period:"Etapas 1 concluídas → Etapas 2 e 3 em Jul (Mayara) → Etapas 4 e 5 em Ago (Dani+Mayara)",desc:"Pré-requisito do Framework de Competências e da Avaliação de Competências. Metodologia com Elliott Jaques.",pilares:["Abr/Mai — Etapa 1 (Escuta) concluída: Produtos, Comercial, C-Level, TD","Jun — Etapa 1 (Escuta) concluída: Gerente SC, GAPE, CIOTI, Áreas Internas","Jul — Etapas 2 e 3 de todas as áreas (Mayara): Produtos, Comercial, TD, Gerente SC, GAPE, CIOTI, Áreas Internas","Ago — Etapas 4 e 5 de todas as áreas (Dani+Mayara): validação gerentes e colaboradores","Ago — MARCO: 100% das descrições aprovadas"],indicadores:["100% homologadas (ago)","Pré-req Framework (jul)","Pré-req Avaliação de Competências (out)"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"Sem descrições precisas, não há como definir competências, contratar com critério, desenvolver com foco nem avaliar com objetividade."}},
+  "competencias":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"Framework de Competências",period:"Abr (modelo) → Mai a Jul (mapeamento por área) → Set (competências organizacionais) → Nov (validação com o Board)",desc:"Lead: Dani + Mayara. Modelo definido (Abr), revisão com Gartner e SFIA (Jun), mapeamento por área (Mai a Jul), competências organizacionais (Set) e validação com o Board (Nov).",pilares:["Core — todos os colaboradores","Liderança — por nível","Técnicas — por área","IA e dados transversal","Validação em workshops"],indicadores:["Competências mapeadas em todas as áreas","Framework validado pelo Board (nov)"],fdc:{var:"Definição e desenvolvimento de competências",opp:"PRIORIZAR — Inferior / Alta",razao:"Framework é o DNA operacional da estratégia. Dá objetividade ao desenvolvimento, à avaliação e às decisões de promoção."}},
+  "av180":{meta:"M15 · Capital Organizacional",dot:"#534AB7",title:"Avaliação de Competências — 1º Ciclo",period:"Ago (Encontro 1 da monitoria FDC com Pedro, 14 e 28/08) → Set (alinhamento) → Out (estruturação) → Nov (validação do objetivo com o Board e 3º encontro de monitoria)",desc:"1º ciclo formal de avaliação. IA reduz viés cognitivo. PDIs gerados automaticamente e validados pelo gestor.",pilares:["Ago — Encontro 1 da monitoria FDC com Pedro (14 e 28/08): validação do foco da monitoria, conhecer o grupo de trabalho, situação atual e desejada, conexão estratégica","Set — Alinhamento (25/09)","Out — Estruturação do programa (16/10)","Nov — Validação do objetivo do mapeamento de competências com o Board","Nov — 3º encontro de monitoria: entrega do objetivo validado"],indicadores:["100% avaliados out/nov","PDIs para 100%"],fdc:{var:"Sistema eficaz de avaliação",opp:"PRIORIZAR — Similar / Alta",razao:"Sem sistema estruturado, decisões ficam à percepção do gestor. Gera injustiças, perda de talentos e desconexão performance↔resultado."}},
+  "agentes":{meta:"M10 · Produtividade",dot:"#0F6E56",title:"Agentes Cognitivos — 4 agentes",period:"CISSA Jun → Descrição de Cargo Jul → Dashboard Ago → LiderAI Out e Nov → Learning Dez",desc:"Agentes cognitivos próprios em produção com dados reais. Base para o case comercial.",pilares:["Mai — CISSA: arquitetura TI","Jun — CISSA v1","Jul — Agente de descrição de cargo","Ago — Agente Dashboard","Out — Agente LiderAI: requisitos, desenvolvimento e produção","Nov — Agente LiderAI em produção","Dez — Agente Learning e portfólio documentado"],indicadores:[],fdc:null},
 };
 
 const GANTT_DATA = [
   {sec:"M14 · Capital Humano — Marca Empregadora",dot:"#185FA5"},
-  {label:"GP em Ação",sub:"3 ondas",id:"gp-acao",bars:[{s:0,d:3,c:"m1",fdc:true,t:"1ª Rodada + Relatório"},{s:3,d:3,c:"m1",t:"2ª Rodada + Relatório"},{s:5,d:1,c:"m1",t:"3ª Rodada"},{s:8,d:1,c:"m1",t:"Relatório Board"},{s:9,d:1,c:"m1",t:"Consolidação anual"}]},
-  {label:"Viva Mais",sub:"3 fases",id:"nr1",bars:[{s:0,d:2,c:"m1b",t:"Fase 1 — Diagnóstico"},{s:3,d:2,c:"m1",t:"Fase 2 — Guardiões"},{s:5,d:5,c:"m1b",t:"Fase 3 — Acompanhamento"}]},
-  {label:"Onboarding digital",sub:"Plataforma Digital",id:"onboarding",bars:[{s:0,d:1,c:"m3",fdc:true,t:"Requisitos"},{s:1,d:1,c:"m3",t:"MVP 01"},{s:2,d:1,c:"m3",t:"Onboarding PCD"},{s:3,d:1,c:"m3",t:"Roteiros"},{s:4,d:1,c:"m3",t:"Gravação"},{s:5,d:1,c:"m3",t:"Publicação"}]},
-  {label:"Manual do Gestor",sub:"v1 Out · v2 Nov",id:"manual-lider",bars:[{s:1,d:1,c:"mnl",t:"Unificação"},{s:2,d:1,c:"mnl",t:"Validação"},{s:3,d:1,c:"mnl",t:"Lançamento"},{s:6,d:1,c:"mnl",t:"v1: organograma+qualidade"},{s:7,d:1,c:"mnl",t:"v2: GRCS+cadeia de valor"}]},
-  {label:"Manual do Colaborador",sub:"Pronto Ago · Lançamento Ago",id:"manual-colab",bars:[{s:3,d:1,c:"mnl",t:"Redação"},{s:4,d:1,c:"mnl",t:"Validação + Lançamento"}]},
-  {label:"CitElas",sub:"Equidade de gênero",id:"citelas",bars:[{s:2,d:1,c:"pink",fdc:true,t:"Diagnóstico+Vagas"},{s:3,d:1,c:"pink",t:"Auditoria+Lançamento"},{s:4,d:1,c:"pink",t:"Lançamento+Talentos"},{s:5,d:3,c:"pink",t:"PDI + Acompanhamento"},{s:8,d:1,c:"pink",t:"Acompanhamento"},{s:9,d:1,c:"pink",t:"Revisão anual"}]},
+  {label:"GP em Ação",sub:"3 rodadas",id:"gp-acao",bars:[{s:0,d:3,c:"m1",fdc:true,t:"1ª Rodada + Relatório"},{s:6,d:1,c:"m1",t:"2ª Rodada"},{s:7,d:1,c:"m1",t:"Relatório 2ª Rodada"},{s:9,d:1,c:"m1",t:"3ª Rodada + Board + Consolidação"}]},
+  {label:"Viva Mais",sub:"3 fases",id:"nr1",bars:[{s:0,d:3,c:"m1b",t:"Fase 1 — Diagnóstico e formação"},{s:3,d:1,c:"m1",t:"Fase 2 — Guardiões"},{s:7,d:3,c:"m1b",t:"Fase 3 — Reuniões com gestores e guardiões"}]},
+  {label:"Onboarding digital",sub:"Plataforma Digital",id:"onboarding",bars:[{s:0,d:1,c:"m3",fdc:true,t:"Requisitos"},{s:1,d:1,c:"m3",t:"MVP 01"},{s:2,d:1,c:"m3",t:"Onboarding PCD"},{s:7,d:1,c:"m3",t:"Proposta CITSmart People"},{s:8,d:1,c:"m3",t:"Roteiros + implantação"},{s:9,d:1,c:"m3",t:"Gravação + procedimento"}]},
+  {label:"Manual do Gestor",sub:"Gabrielly · v1 Nov · v2 Dez",id:"manual-lider",bars:[{s:1,d:1,c:"mnl",t:"Unificação"},{s:2,d:1,c:"mnl",t:"Validação"},{s:3,d:1,c:"mnl",t:"Lançamento"},{s:6,d:1,c:"mnl",t:"Validação Board + Athena"},{s:7,d:1,c:"mnl",t:"v1 + publicação e divulgação"},{s:8,d:1,c:"mnl",t:"v2: GRCS + cadeia de valor"}]},
+  {label:"Manual do Colaborador",sub:"Gabrielly · conclusão Nov",id:"manual-colab",bars:[{s:7,d:1,c:"mnl",t:"Atualização + validação + lançamento"}]},
+  {label:"CitElas",sub:"Equidade de gênero · programa a partir de Dez",id:"citelas",bars:[{s:2,d:1,c:"pink",fdc:true,t:"Diagnóstico"},{s:3,d:1,c:"pink",t:"Auditoria + Board"},{s:6,d:1,c:"pink",t:"Mapeamento parceiras"},{s:7,d:1,c:"pink",t:"Parcerias + pacto ONU Mulheres"},{s:8,d:1,c:"pink",t:"Lançamento + mapeamento das mulheres"},{s:9,d:1,c:"pink",t:"Revisão de indicadores"}]},
   {label:"De Mãos Dadas",sub:"Lançamento Ago · pais Dez",id:"dmd",bars:[{s:0,d:1,c:"cor",t:"Levantamento"},{s:4,d:1,c:"cor",t:"Lançamento"},{s:5,d:2,c:"cor",t:"Piloto fases 2,3,4"},{s:7,d:1,c:"cor",t:"Avaliação"},{s:8,d:1,c:"cor",t:"Pais+parceiros"}]},
   {label:"Cultura",sub:'"O Poder de Ser Central"',id:"cultura",bars:[{s:3,d:2,c:"cult",t:"Lançamento + sustentação"}]},
-  {label:"eNPS",sub:"2 rodadas",id:"enps",bars:[{s:3,d:2,c:"m1",t:"1ª rodada eNPS (Jul/Ago)"},{s:7,d:3,c:"m1",t:"2ª rodada eNPS"}]},
-  {label:"Prog. de Sucessão",sub:"1ª edição · Jul–Jan",id:"sucessao",bars:[{s:3,d:1,c:"m1b",t:"Escopo + Board"},{s:4,d:1,c:"m1",t:"Lançamento"},{s:5,d:4,c:"m1",t:"Programa em andamento"},{s:9,d:1,c:"m1b",t:"Avaliação + Plano 2027"}]},
+  {label:"eNPS",sub:"2 rodadas",id:"enps",bars:[{s:2,d:3,c:"m1",t:"1ª rodada (Jun a Ago)"},{s:7,d:1,c:"m1",t:"Board + gestores"},{s:8,d:1,c:"m1",t:"Planejamento 2ª rodada"},{s:9,d:1,c:"m1",t:"2ª rodada + relatório"}]},
+  {label:"Talentos Tech e Business",sub:"Concepção Nov · Lançamento Dez",id:"sucessao",bars:[{s:7,d:1,c:"m1b",t:"Concepção + Board + regulamento + régua"},{s:8,d:1,c:"m1",t:"Lançamento"}]},
+  {label:"EVP",sub:"Proposta Out · aprovação Nov",id:"evp",bars:[{s:6,d:1,c:"m1",t:"Proposta"},{s:7,d:1,c:"m1",t:"Gartner + Board + benefícios"},{s:8,d:1,c:"m1",t:"Liderança + diretoria"}]},
   {sec:"M15 · Capital Organizacional",dot:"#534AB7"},
-  {label:"LiderAI 2026",sub:"89 líderes · 11/Mai",id:"liderai",bars:[{s:1,d:1,c:"m2",t:"Kick-off"},{s:2,d:1,c:"m2",t:"P1 Letramento IA"},{s:3,d:2,c:"m2",t:"P2+P3+P4"},{s:5,d:2,c:"m2",t:"P3 IA + Pensamento"},{s:7,d:1,c:"m2",t:"P5 Pessoas"},{s:8,d:1,c:"m2",t:"Fórum LiderAI ✓"}]},
-  {label:"Central IT Intelligence (IA e Dados)",sub:"Toda empresa · Ago",id:"trilha-ia",bars:[{s:3,d:1,c:"m2c",t:"Validação+Gravações"},{s:4,d:1,c:"m2c",t:"Lançamento Ago"},{s:5,d:4,c:"m2c",t:"Em andamento"}]},
-  {label:"Central IT Intelligence (Negócios)",sub:"Toda empresa · Ago",id:"trilha-neg",bars:[{s:3,d:1,c:"m2c",t:"Validação+Gravações"},{s:4,d:1,c:"m2c",t:"Lançamento Ago"},{s:5,d:4,c:"m2c",t:"Em andamento"}]},
+  {label:"LiderAI 2026",sub:"89 líderes · 11/Mai",id:"liderai",bars:[{s:1,d:1,c:"m2",t:"Kick-off"},{s:2,d:3,c:"m2",t:"P1 Vendas Consultivas"},{s:5,d:1,c:"m2",t:"P3 Pensamento Crítico"},{s:7,d:1,c:"m2",t:"Fechamento de indicadores"}]},
+  {label:"Central IT Intelligence",sub:"Lançamento 29/09 · Digital Day 04/12",id:"trilha-ia",bars:[{s:5,d:1,c:"m2c",t:"Concepção + Board + Lançamento 29/09"},{s:6,d:1,c:"m2c",t:"Diagnóstico + abertura da trilha"},{s:7,d:1,c:"m2c",t:"Trilha + canvas + preparação"},{s:8,d:1,c:"m2c",t:"Avaliação + Digital Day 04/12"}]},
   {label:"Descrições de cargo",sub:"FDC: Priorizar",id:"desc-cargo",bars:[{s:0,d:3,c:"m2",fdc:true,t:"Etapas 1 e 2 — Escuta + PILAR"},{s:4,d:1,c:"m2",t:"Etapas 3,4,5 — Avaliação + aprovação"},{s:4,d:1,c:"m2",t:"Plano excelência"}]},
-  {label:"Competências org.",sub:"FDC: Priorizar",id:"competencias",bars:[{s:2,d:5,c:"m2",fdc:true,t:"Design→Mapeamento→Validação→Gap"},{s:8,d:1,c:"m2",t:"Consolidado"}]},
-  {label:"Avaliação 180°",sub:"Inicia Out",id:"av180",bars:[{s:6,d:1,c:"m2",fdc:true,t:"Desenho + Capacitação"},{s:7,d:1,c:"m2",fdc:true,t:"Execução"},{s:8,d:1,c:"m2",fdc:true,t:"Consolidação"},{s:9,d:1,c:"m2",t:"Board ✓"}]},
+  {label:"Competências org.",sub:"FDC: Priorizar",id:"competencias",bars:[{s:0,d:4,c:"m2",fdc:true,t:"Modelo + mapeamento por área"},{s:5,d:1,c:"m2",t:"Competências organizacionais"},{s:7,d:1,c:"m2",t:"Validação com Board"}]},
+  {label:"Avaliação de Competências",sub:"Monitoria Ago–Nov",id:"av180",bars:[{s:4,d:1,c:"m2",fdc:true,t:"Encontro 1 FDC (Pedro)"},{s:5,d:1,c:"m2",fdc:true,t:"1º encontro: alinhamento"},{s:6,d:1,c:"m2",fdc:true,t:"2º encontro: estruturação"},{s:7,d:1,c:"m2",fdc:true,t:"Board + 3º encontro"}]},
   {sec:"M10 · Produtividade",dot:"#0F6E56"},
-  {label:"Agentes Cognitivos",sub:"4 agentes",id:"agentes",bars:[{s:1,d:2,c:"m3",t:"CISSA v1 entregue"},{s:3,d:1,c:"m3",t:"Agente DC"},{s:4,d:2,c:"m3",t:"Agente R&S + LiderAI"},{s:6,d:1,c:"m3",t:"Plataforma Multiagente"},{s:7,d:1,c:"m3",t:"Portfólio documentado"}]},
+  {label:"Agentes Cognitivos",sub:"4 agentes",id:"agentes",bars:[{s:1,d:2,c:"m3",t:"CISSA v1 entregue"},{s:3,d:1,c:"m3",t:"Agente DC"},{s:4,d:1,c:"m3",t:"Agente Dashboard"},{s:6,d:1,c:"m3",t:"Agente LiderAI"},{s:7,d:1,c:"m3",t:"LiderAI em produção"},{s:8,d:1,c:"m3",t:"Agente Learning"}]},
 ];
 
 const FDC_DATA = [
   {tipo:"PRIORIZAR",cor:"#A32D2D",bg:"#FCEBEB",vars:[
     {var:"Estruturação da área de RH para os objetivos internos e organizacionais",pos:"Inferior",imp:"Alta",razao:"Para uma empresa de tecnologia que vende eficiência, ter um RH não estruturado é uma contradição estratégica.",acoes:["GP em Ação com 5 pilares e 3 ondas","Manuais Líder e Colaborador publicados digitalmente"],kpis:["100% chamados RH com rastreabilidade (abr)"]},
-    {var:"Definição, desenvolvimento e avaliação das competências por cargo",pos:"Inferior",imp:"Alta",razao:"Competências são o DNA operacional da estratégia. Sem elas, o RH não contrata, desenvolve nem avalia com critério.",acoes:["Descrições de Cargo: 4 blocos Abr→Ago","Framework: Jun → Set Gap → Dez","PDL: 5 meses para líderes internos · IA First","PDC: 90 dias para Comercial e CS","Trilha IA e Dados: lançamento Ago","Trilha Negócios e Accountability: lançamento Ago"],kpis:["100% cargos homologados (ago)","Competências validadas por ≥80% lideranças","Certificações PDL/PDC","Trilha IA ≥95% conclusão"]},
-    {var:"Sistema eficaz de avaliação de desempenho",pos:"Similar",imp:"Alta",razao:"Sem sistema estruturado, decisões de promoção ficam à percepção do gestor, gerando injustiças e perda de talentos.",acoes:["Avaliação 180°: 1º ciclo Out–Jan · IA anti-viés","PDIs automáticos validados pelo gestor"],kpis:["100% avaliados (out/nov)","PDIs para 100%"]},
+    {var:"Definição, desenvolvimento e avaliação das competências por cargo",pos:"Inferior",imp:"Alta",razao:"Competências são o DNA operacional da estratégia. Sem elas, o RH não contrata, desenvolve nem avalia com critério.",acoes:["Descrições de Cargo: 4 blocos Abr→Ago","Framework: Jun → Set Gap → Dez","PDL: 5 meses para líderes internos · IA First","PDC: 90 dias para Comercial e CS","Central IT Intelligence: lançamento 29/09 e Digital Day em 04/12"],kpis:["100% cargos homologados (ago)","Competências validadas por ≥80% lideranças","Certificações PDL/PDC","Central IT Intelligence ≥95% conclusão"]},
+    {var:"Sistema eficaz de avaliação de desempenho",pos:"Similar",imp:"Alta",razao:"Sem sistema estruturado, decisões de promoção ficam à percepção do gestor, gerando injustiças e perda de talentos.",acoes:["Avaliação de Competências: 1º ciclo Out–Jan · IA anti-viés","PDIs automáticos validados pelo gestor"],kpis:["100% avaliados (out/nov)","PDIs para 100%"]},
     {var:"Comprometimento público da liderança em sustentabilidade",pos:"Inferior",imp:"Alta",razao:"Inclui equidade, saúde psicossocial e conformidade legal. Sem isso, a empresa perde marca empregadora, clientes ESG e conformidade.",acoes:["CitElas: política aprovada + Lei 14.611/2023","Viva Mais: liderança protagonista.","'O Poder de Ser Central': cultura conduzida pela alta liderança"],kpis:["Zero autuações Viva Mais","Reporte Lei 14.611 entregue (ago)","PRATA Compras.gov.br"]}
   ]},
   {tipo:"PROTEGER",cor:"#27500A",bg:"#EAF3DE",vars:[
     {var:"Indicadores de GP definidos e acompanhados",pos:"Similar",imp:"Alta",razao:"Central IT já tem indicadores e é ponto forte. O risco de PROTEGER é perder o que funciona. O plano não só mantém: eleva esse diferencial.",acoes:["eNPS: 2 rodadas comparáveis","Pulso: 3 ciclos","Dashboard em tempo real"],kpis:["Dashboard atualizado em tempo real","eNPS ≥70 nas 2 rodadas"]}
   ]},
   {tipo:"NEUTRALIDADE",cor:"#444441",bg:"#F4F4F4",vars:[
-    {var:"Competências futuras · sucessão · gestão de conhecimento",pos:"Inferior",imp:"Baixa",razao:"Variáveis de baixa importância para resultados atuais. A base é criada agora. O aprofundamento acontece em 2027.",acoes:["Definição das competências organizacionais","Avaliação 180° + PDIs mapeiam pipeline"],kpis:["Base criada em 2026","Sucessão e knowledge mgmt em 2027"]}
+    {var:"Competências futuras · sucessão · gestão de conhecimento",pos:"Inferior",imp:"Baixa",razao:"Variáveis de baixa importância para resultados atuais. A base é criada agora. O aprofundamento acontece em 2027.",acoes:["Definição das competências organizacionais","Avaliação de Competências + PDIs mapeiam pipeline"],kpis:["Base criada em 2026","Sucessão e knowledge mgmt em 2027"]}
   ]}
 ];
 
 const METAS_DATA = [
   {num:"10",title:"Produtividade",subtitle:"4 agentes cognitivos · fazer mais com menos",cor:"#0F6E56",desc:"Buscar a excelência na gestão econômico-financeira.",programas:["Agentes Cognitivos — 4 em produção (ago)"],kpis:["4 agentes em operação (dez)"]},
-    {num:"14",title:"Capital Humano",subtitle:"Marca empregadora · confiança · colaboração · resultados",cor:"#185FA5",desc:"Consolidar a empresa como um lugar sustentado por confiança, colaboração e resultados, reforçando sua marca empregadora.",programas:["GP em Ação (3 ondas)","Viva Mais (3 fases)","Onboarding Digital","Manual do Líder + Colaborador","CitElas","De Mãos Dadas","Cultura: O Poder de Ser Central","eNPS (2 rodadas)","Programa de Sucessão"],kpis:["eNPS ≥ 70%","Zero autuações Viva Mais"]},
-  {num:"15",title:"Capital Organizacional",subtitle:"IA · dados · negócios · accountability · competências",cor:"#534AB7",desc:"Fortalecer competências em dados, IA, negócios e accountability.",programas:["PDL (5 meses)","PDC (90 dias)","Trilha IA e Dados (toda empresa)","Trilha Negócios e Accountability (toda empresa)","Descrições de Cargo (Abr→Ago)","Framework de Competências","Avaliação 180° (Out→Jan)"],kpis:["100% dos cargos atualizados","PDL e PDC — 100% dos líderes certificados"]}
+    {num:"14",title:"Capital Humano",subtitle:"Marca empregadora · confiança · colaboração · resultados",cor:"#185FA5",desc:"Consolidar a empresa como um lugar sustentado por confiança, colaboração e resultados, reforçando sua marca empregadora.",programas:["GP em Ação (3 ondas)","Viva Mais (3 fases)","Onboarding Digital","Manual do Líder + Colaborador","CitElas","De Mãos Dadas","Cultura: O Poder de Ser Central","eNPS (2 rodadas)","Programa de Talentos Tech e Business","EVP"],kpis:["eNPS ≥ 70%","Zero autuações Viva Mais"]},
+  {num:"15",title:"Capital Organizacional",subtitle:"IA · dados · negócios · accountability · competências",cor:"#534AB7",desc:"Fortalecer competências em dados, IA, negócios e accountability.",programas:["LiderAI 2026: PDL para os gestores da empresa (5 meses)","LiderAI 2026: PDC (90 dias)","Central IT Intelligence: IA e Dados + Negócios e Accountability (toda empresa)","Descrições de Cargo (Abr→Ago)","Framework de Competências","Avaliação de Competências (Out→Jan)"],kpis:["100% dos cargos atualizados","PDL e PDC — 100% dos líderes certificados"]}
 ];
 
 const DEPS_DATA = [
   {pre:"Diagnóstico CitElas (baseline KPIs)",prazo:"Junho",destrava:"Reporte Lei 14.611/2023 em agosto",risco:"Sem baseline, reporte legal sem evidências: risco de multa"},
-  {pre:"Descrições de Cargo 100%",prazo:"Abr → Ago",destrava:"Framework de Competências + Avaliação 180°",risco:"180° não pode iniciar em out sem base de competências"},
-  {pre:"Framework validado",prazo:"Jun → Ago",destrava:"Avaliação 180° com critérios objetivos",risco:"Avaliação sem framework = avaliação por percepção"},
+  {pre:"Descrições de Cargo 100%",prazo:"Abr → Ago",destrava:"Framework de Competências + Avaliação de Competências",risco:"Avaliação de Competências não pode iniciar em out sem base de competências"},
+  {pre:"Framework validado",prazo:"Jun → Ago",destrava:"Avaliação de Competências com critérios objetivos",risco:"Avaliação sem framework = avaliação por percepção"},
   {pre:"4 Agentes em produção",prazo:"Agosto",destrava:"Case comercial",risco:"Pitch sem dados reais não é crível"},
   {pre:"Case comercial maduro",prazo:"Outubro",destrava:"Fechamento do 1º negócio",risco:"Case comercial depende de evidência, não de promessa"}
 ];
@@ -1018,7 +1055,7 @@ function buildGantt(){
     const row=document.createElement('div');row.className='g-row';
     const lbl=document.createElement('div');lbl.className='g-label';
     lbl.innerHTML=`${item.label}${item.sub?'<small>'+item.sub+'</small>':''}`;row.appendChild(lbl);
-    const cells=Array.from({length:10},()=>{const c=document.createElement('div');c.className='g-cell';row.appendChild(c);return c;});
+    const cells=Array.from({length:MESES.length},()=>{const c=document.createElement('div');c.className='g-cell';row.appendChild(c);return c;});
     item.bars.forEach(bar=>{
       const col=C[bar.c];const el=document.createElement('div');el.className='bar';
       el.style.cssText=`background:${col.f};color:${col.t};border-color:${col.s}`;
@@ -1161,20 +1198,18 @@ const TDATA = {projects:[
     {mes:"Jul",acao:"Agente de descrição de cargo: requisitos + desenvolvimento + produção",responsavel:"Dani+Mayara",status:"feito"},
     {mes:"Ago",acao:"Agente Dashboard: requisitos + desenvolvimento + produção",responsavel:"Dani+Pablo",status:"feito"},
     {mes:"Ago",acao:"Agente Dashboard: requisitos + desenvolvimento + produção",responsavel:"Dani",status:"feito"},
-    {mes:"Set",acao:"Agente LiderAI: requisitos + desenvolvimento + produção",responsavel:"Dani",status:"planejado"},
-    {mes:"Out",acao:"Agente LiderAI: em produção",responsavel:"Dani",status:"planejado"},
-    {mes:"Nov",acao:"Agente Learning: desenvolvimento + portfólio documentado",responsavel:"Dani",status:"planejado"},
+    {mes:"Out",acao:"Agente LiderAI: requisitos + desenvolvimento + produção",responsavel:"Dani",status:"feito"},
+    {mes:"Nov",acao:"Agente LiderAI: em produção",responsavel:"Dani",status:"planejado"},
+    {mes:"Dez",acao:"Agente Learning: desenvolvimento + portfólio documentado",responsavel:"Dani",status:"planejado"},
   ]},
   {id:"gp_acao",name:"GP em Ação",meta:14,subtitle:"3 ondas de presença ativa do RH",lead:"Gabrielly",support:"Bruna",actions:[
     {mes:"Mar",acao:"Visitas Contratos SOF e MCOM",responsavel:"Gabrielly",status:"feito"},
     {mes:"Abr",acao:"1ª Rodada GP em Ação: Visitas Contratos (PF, MCID, SEMOB/DF, DER, ABIN, FUNCEF, PGFN)",responsavel:"Gabrielly",status:"feito"},
     {mes:"Mai",acao:"1ª Rodada GP em Ação: Visitas demais contratos e áreas internas",responsavel:"Gabrielly",status:"feito"},
     {mes:"Jun",acao:"Relatório com resultados - 1ª Rodada GP em Ação",responsavel:"Gabrielly",status:"feito"},
-    {mes:"Set",acao:"2ª Rodada GP em Ação",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Out",acao:"Relatório com resultados - 2ª Rodada GP em Ação",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Dez",acao:"3ª Rodada GP em Ação",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Dez",acao:"3ª Rodada GP em Ação",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Set",acao:"Relatório com resultados - 3ª Rodada GP em Ação",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Out",acao:"2ª Rodada GP em Ação",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Relatório com resultados - 2ª Rodada GP em Ação",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"3ª Rodada GP em Ação",responsavel:"Gabrielly",status:"planejado"},
     {mes:"Jan",acao:"Relatório anual GP em Ação para o Board",responsavel:"Gabrielly",status:"planejado"},
     {mes:"Jan",acao:"Consolidação do Programa, Indicadores, Análise Crítica e Plano de Melhoria",responsavel:"Gabrielly",status:"planejado"},
   ]},
@@ -1185,57 +1220,57 @@ const TDATA = {projects:[
     {mes:"Mai",acao:"Encaminhar dados/pesquisa para empresa Evolue e CEMTRA: atualização PGR",responsavel:"Gabrielly",status:"feito"},
     {mes:"Jun",acao:"1º. Pílula Liderança: Apresentação NR1 e Segurança Psicológica",responsavel:"Gabrielly",status:"feito"},
     {mes:"Jun",acao:"Formação time GP - Formação de Primeiros Socorros em Saúde Mental",responsavel:"Gabrielly",status:"feito"},
-    {mes:"Set",acao:"Lançamento dos 6 módulos UNICIT: colaboradores",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Out",acao:"Criação dos módulos de formação Guardiões",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Jul",acao:"Mapeamento e definição de guardiões",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Jul",acao:"Criação do Manual dos guardiões",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Out",acao:"Treinamento dos guardiões",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Nov",acao:"Reunião Mensal com Guardiões",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Dez",acao:"Reunião Mensal com Guardiões",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Nov",acao:"Reunião Mensal com Guardiões",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Dez",acao:"Reunião Mensal com Guardiões",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jul",acao:"Mapeamento e definição de guardiões",responsavel:"Gabrielly",status:"feito"},
+    {mes:"Nov",acao:"Divulgação dos 6 módulos UNICIT para os colaboradores",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Reuniões individuais com gestores e guardiões",responsavel:"Stefanie",status:"planejado"},
+    {mes:"Nov",acao:"Apresentação da proposta de temas, a partir das reuniões com os gestores",responsavel:"Stefanie",status:"planejado"},
+    {mes:"Nov",acao:"Validação da política de saúde corporativa",responsavel:"Dani+Gabrielly+Stefanie",status:"planejado"},
+    {mes:"Nov",acao:"Pauta mensal de saúde integral (Lei 15.377 e outros temas de saúde integral) para o mural dos contratos e divulgação por e-mail: novembro",responsavel:"Gabrielly+Stefanie",status:"planejado",endo:true},
+    {mes:"Dez",acao:"Reuniões individuais com gestores e guardiões",responsavel:"Stefanie",status:"planejado"},
+    {mes:"Dez",acao:"Pauta mensal de saúde integral (Lei 15.377 e outros temas de saúde integral) para o mural dos contratos e divulgação por e-mail: dezembro",responsavel:"Gabrielly+Stefanie",status:"planejado",endo:true},
+    {mes:"Jan",acao:"Reuniões individuais com gestores e guardiões",responsavel:"Stefanie",status:"planejado"},
+    {mes:"Jan",acao:"Pauta mensal de saúde integral (Lei 15.377 e outros temas de saúde integral) para o mural dos contratos e divulgação por e-mail: janeiro",responsavel:"Gabrielly+Stefanie",status:"planejado",endo:true},
     {mes:"Jan",acao:"Consolidação do Programa: Indicadores, Análise Crítica e Plano de Melhoria",responsavel:"Gabrielly",status:"planejado"},
   ]},
   {id:"onboarding_digital",name:"Onboarding Digital",meta:14,subtitle:"Plataforma Digital",lead:"Gabrielly",support:"Dani (arquitetura)",actions:[
     {mes:"Abr",acao:"Requisitos do Onboarding do gestor e colaboradores",responsavel:"Gabrielly+Dani",status:"feito"},
     {mes:"Mai",acao:"Jornadas Onboarding Colaborador e Gestor: MVP 01",responsavel:"Gabrielly+Dani",status:"feito"},
     {mes:"Jun",acao:"Onboarding PCD: MVP 01",responsavel:"Gabrielly",status:"feito"},
-    {mes:"Set",acao:"Preparação dos roteiros de gravação com pessoas de áreas-chave",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Out",acao:"Gravação com pessoas de áreas-chave para onboarding digital",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Set",acao:"Atualização e Publicação do procedimento operacional",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Nov",acao:"Implement onboarding at people",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Preparação dos roteiros de gravação com pessoas de áreas-chave",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"Gravação com pessoas de áreas-chave para onboarding digital",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"Atualização e Publicação do procedimento operacional",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Proposta de onboarding para o CITSmart People",responsavel:"Gabrielly+Pablo",status:"planejado"},
+    {mes:"Dez",acao:"Implementar o onboarding no CITSmart People",responsavel:"Gabrielly+Pablo",status:"planejado"},
   ]},
 
-  {id:"manual_gestor",name:"Manual do Gestor",meta:14,subtitle:"Unificado com Guia do Gestor de Contrato",lead:"Larysa+Renard",support:"",actions:[
+  {id:"manual_gestor",name:"Manual do Gestor",meta:14,subtitle:"Unificado com Guia do Gestor de Contrato",lead:"Gabrielly",support:"",actions:[
     {mes:"Mai",acao:"Unificação (Manual do Líder com Manual do Gestor de Contrato)",responsavel:"Larysa+Renard",status:"feito"},
     {mes:"Mai",acao:"Atualização com a área de qualidade (Manual do Gestor de Contrato)",responsavel:"Larysa+Guilherme",status:"feito"},
     {mes:"Jul",acao:"Validação Focus group com lideranças",responsavel:"Dani",status:"feito"},
-    {mes:"Jul",acao:"Lançamento: publicação CitDoc e Athena",responsavel:"Dani",status:"feito"},
-    {mes:"Set",acao:"Apoio: validação Board + lançamento publicação CitDoc e Athena",responsavel:"Dani",status:"planejado"},
-    {mes:"Out",acao:"v1: Atualização do organograma e ajustes recomendados pela área de qualidade",responsavel:"Larysa+Renard",status:"planejado"},
-    {mes:"Nov",acao:"v2: Inclusão de GRCS, cadeia de valor e gestor multistakeholders",responsavel:"Larysa+Renard",status:"planejado"},
+    {mes:"Jul",acao:"Lançamento: publicação Athena",responsavel:"Dani",status:"feito"},
+    {mes:"Out",acao:"Apoio: validação Board + lançamento publicação Athena",responsavel:"Dani",status:"feito"},
+    {mes:"Nov",acao:"Publicação e divulgação do Manual",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"v1: Atualização do organograma e ajustes recomendados pela área de qualidade",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"v2: Inclusão de GRCS, cadeia de valor e gestor multistakeholders",responsavel:"Gabrielly",status:"planejado"},
   ]},
-  {id:"manual_colab",name:"Manual do Colaborador",meta:14,subtitle:"Base cultural + jornada do colaborador",lead:"Larysa+Renard",support:"",actions:[
-    {mes:"Set",acao:"Atualização Manual do Colaborador",responsavel:"Larysa+Renard",status:"planejado"},
-    {mes:"Out",acao:"Validação Focus group com lideranças e colaboradores",responsavel:"Larysa+Renard",status:"planejado"},
-    {mes:"Out",acao:"Lançamento: publicação CitDoc e Athena",responsavel:"Larysa+Renard",status:"planejado"},
+  {id:"manual_colab",name:"Manual do Colaborador",meta:14,subtitle:"Base cultural + jornada do colaborador",lead:"Gabrielly",support:"",actions:[
+    {mes:"Nov",acao:"Atualização Manual do Colaborador",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Validação Focus group com lideranças e colaboradores",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Lançamento: publicação Athena",responsavel:"Gabrielly",status:"planejado"},
   ]},
-  {id:"citelas",name:"CitElas",meta:14,subtitle:"Política de Equidade de Gênero",lead:"Mayara + Gabrielly + Larysa+Renard + Dani",support:"Kennedy",actions:[
+  {id:"citelas",name:"CitElas",meta:14,subtitle:"Política de Equidade de Gênero",lead:"Gabrielly + Stefanie",support:"Kennedy",actions:[
     {mes:"Jun",acao:"Realizar diagnóstico de gaps salariais",responsavel:"Mayara",status:"feito"},
-    {mes:"Jun",acao:"Divulgar vagas em plataformas e grupos específicos para mulheres",responsavel:"Pablo",status:"feito"},
-    {mes:"Jul",acao:"Apurar auditoria e proposta de plano de ação para Board",responsavel:"Dani",status:"planejado"},
-    {mes:"Nov",acao:"Preparar lançamento do programa (logo e régua de comunicação)",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Nov",acao:"Mapeamento Talentos para o programa",responsavel:"Gabrielly+Dani",status:"planejado"},
-    {mes:"Set",acao:"Elaboração PDI",responsavel:"Larysa+Renard",status:"planejado"},
-    {mes:"Out",acao:"Ações de Acompanhamento do programa",responsavel:"Larysa+Renard",status:"planejado"},
-    {mes:"Nov",acao:"Ações de Acompanhamento do programa",responsavel:"Larysa+Renard",status:"planejado"},
-    {mes:"Dez",acao:"Ações de Acompanhamento do programa",responsavel:"Mayara",status:"planejado"},
-    {mes:"Jan",acao:"Revisão do Programa (Indicadores, Análise Crítica e Plano de ação)",responsavel:"Dani",status:"planejado"},
+    {mes:"Out",acao:"Mapeamento das empresas parceiras para divulgação de vagas",responsavel:"Dani",status:"feito"},
+    {mes:"Nov",acao:"Fechamento da parceria com Mulheres Positivas e Emprega Elas para divulgação de vagas",responsavel:"Jennifer",status:"planejado"},
+    {mes:"Nov",acao:"Assinar o pacto da ONU Mulheres (Princípios de Empoderamento das Mulheres, WEPs)",responsavel:"Dani+Board",status:"planejado"},
+    {mes:"Jul",acao:"Apurar auditoria e proposta de plano de ação para Board",responsavel:"Dani",status:"feito"},
+    {mes:"Dez",acao:"Preparar lançamento do programa (logo e régua de comunicação)",responsavel:"Gabrielly+Stefanie",status:"planejado"},
+    {mes:"Dez",acao:"Mapeamento das mulheres para o programa",responsavel:"Gabrielly+Stefanie",status:"planejado"},
+    {mes:"Jan",acao:"Revisão mensal dos indicadores do CitElas, com registro e plano de melhoria se necessário",responsavel:"Gabrielly+Stefanie",status:"planejado"},
   ]},
   {id:"maos_dadas",name:"De Mãos Dadas",meta:14,subtitle:"Maternidade, Pais e Parceiros",lead:"Gabrielly",support:"Bruna",actions:[
     {mes:"Abr",acao:"Levantamento dos programas de maternidade/paternidade existentes",responsavel:"Gabrielly",status:"feito"},
     {mes:"Ago",acao:"Finalização materiais + kit boas-vindas + guia de comunicação",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Ago",acao:"Treinamento de gestores: 1 módulo UNICIT (1h)",responsavel:"Gabrielly",status:"planejado"},
     {mes:"Ago",acao:"Lançamento: campanha e Fase 1 (Descoberta)",responsavel:"Gabrielly",status:"planejado"},
     {mes:"Set",acao:"Piloto: Fases 2 e 3 ativas",responsavel:"Gabrielly+Bruna",status:"planejado"},
     {mes:"Set",acao:"Agente digital de cuidado ativo",responsavel:"Gabrielly",status:"planejado"},
@@ -1248,45 +1283,77 @@ const TDATA = {projects:[
     {mes:"Jun",acao:"1ª rodada eNPS - Planejamento da campanha e régua de comunicação",responsavel:"Gabrielly",status:"feito"},
     {mes:"Jul",acao:"1ª rodada eNPS",responsavel:"Gabrielly",status:"feito"},
     {mes:"Ago",acao:"1ª rodada eNPS - Relatório com os resultados. Indicadores, Análise Crítica e Plano de Melhoria",responsavel:"Gabrielly",status:"feito"},
-    {mes:"Set",acao:"Apresentação dos resultados eNPS ao Board",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Out",acao:"Reunião individual com gestores sobre resultados",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Nov",acao:"2ª rodada eNPS: Planejamento campanha e régua de comunicação",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Dez",acao:"2ª rodada eNPS",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Apresentação dos resultados eNPS ao Board",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Reunião individual com gestores sobre resultados",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"2ª rodada eNPS: Planejamento campanha e régua de comunicação",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"2ª rodada eNPS",responsavel:"Gabrielly",status:"planejado"},
     {mes:"Jan",acao:"2ª rodada eNPS: Relatório com resultados. Indicadores, Análise Crítica e Plano de Melhoria",responsavel:"Gabrielly",status:"planejado"},
   ]},
-  {id:"sucessao",name:"Programa de Sucessão",meta:14,subtitle:"1ª edição · Jul–Jan",lead:"Dani",support:"Larysa+Renard",actions:[
-    {mes:"Set",acao:"Desenho do escopo do programa e validação com Board",responsavel:"Dani",status:"planejado"},
-    {mes:"Out",acao:"Lançamento do Programa e processo seletivo",responsavel:"Dani",status:"planejado"},
-    {mes:"Set",acao:"Início do Programa",responsavel:"Dani+Larysa+Renard",status:"planejado"},
-    {mes:"Out",acao:"Andamento do Programa",responsavel:"Dani+Larysa+Renard",status:"planejado"},
-    {mes:"Nov",acao:"Andamento do Programa",responsavel:"Dani+Larysa+Renard",status:"planejado"},
-    {mes:"Dez",acao:"Andamento do Programa",responsavel:"Dani+Larysa+Renard",status:"planejado"},
-    {mes:"Jan",acao:"1ª Pesquisa do Programa: Análise Crítica e Plano de Melhoria para 2027",responsavel:"Dani",status:"planejado"}
+  {id:"sucessao",name:"Programa de Talentos Tech e Business",meta:14,subtitle:"1ª edição · concepção Nov · lançamento Dez",lead:"Dani",support:"Mayara",actions:[
+    {mes:"Nov",acao:"Concepção do programa",responsavel:"Dani",status:"planejado"},
+    {mes:"Nov",acao:"Escuta com Diretores",responsavel:"Dani",status:"planejado"},
+    {mes:"Nov",acao:"Validação com o Board",responsavel:"Dani",status:"planejado"},
+    {mes:"Nov",acao:"Criação do regulamento do programa",responsavel:"Dani",status:"planejado"},
+    {mes:"Nov",acao:"Criação da régua de comunicação do programa",responsavel:"Dani",status:"planejado"},
+    {mes:"Dez",acao:"Lançamento do programa",responsavel:"Dani",status:"planejado"},
   ]},
-  {id:"pdl_pdc",name:"LiderAI 2026 (PDL + PDC)",meta:15,subtitle:"77 líderes · 5 pilares",lead:"Larysa+Renard",support:"Bruna",actions:[
-    {mes:"Mai",acao:"11/05: Kick-off oficial para os 77 líderes",responsavel:"Larysa+Renard+Bruna",status:"feito"},
-    {mes:"Mai",acao:"P1 Vendas Consultivas (Lalon): inicia 2ª quinzena, PDL SC e PDC",responsavel:"Larysa+Renard+Lalon",status:"feito"},
-    {mes:"Jun",acao:"P1 Vendas Consultivas em andamento",responsavel:"Larysa+Renard+Lalon",status:"feito"},
-    {mes:"Jul",acao:"P1 Vendas Consultivas em andamento",responsavel:"Larysa+Renard+Lalon",status:"feito"},
-    {mes:"Ago",acao:"P1 Vendas Consultivas: finalização (2ª quinzena)",responsavel:"Larysa+Renard+Lalon",status:"feito"},
-    {mes:"Set",acao:"P3 Letramento IA e Diagnóstico de Maturidade Digital (Koru): inicia",responsavel:"Larysa+Renard+Koru",status:"planejado"},
-    {mes:"Set",acao:"P3 Pensamento Crítico (Numera, 6h, 3 turmas)",responsavel:"Larysa+Renard+Numera",status:"planejado"},
-    {mes:"Set",acao:"P4 Letramento e Adoção de IA Estratégica: inicia",responsavel:"Larysa+Renard+Koru",status:"planejado"},
-    {mes:"Out",acao:"P4 Letramento IA Estratégica em andamento",responsavel:"Larysa+Renard+Koru",status:"planejado"},
-    {mes:"Nov",acao:"P4 Letramento IA Estratégica em andamento",responsavel:"Larysa+Renard+Koru",status:"planejado"},
-    {mes:"Dez",acao:"P4 Letramento IA Estratégica: finalização",responsavel:"Larysa+Renard+Koru",status:"planejado"},
-    {mes:"Dez",acao:"P5 Fórum LiderAI e IA Day: celebração e certificação",responsavel:"Larysa+Renard+Koru+Dani",status:"planejado"}
+  {id:"evp",name:"EVP",meta:14,subtitle:"Employer Value Proposition",lead:"Dani",support:"Gabrielly+Dasio",actions:[
+    {mes:"Out",acao:"Estruturação da proposta de EVP",responsavel:"Dani",status:"feito"},
+    {mes:"Nov",acao:"Reunião com a Gartner para validação do EVP",responsavel:"Dani",status:"planejado"},
+    {mes:"Nov",acao:"Reunião com o Board para aprovação do EVP",responsavel:"Dani",status:"planejado"},
+    {mes:"Nov",acao:"Atualização e novas parcerias para colaboradores",responsavel:"Dasio",status:"planejado",jornada:"Qualidade de vida"},
+    {mes:"Nov",acao:"Fechamento de novo benefício: Viagem",responsavel:"Gabrielly",status:"planejado",jornada:"Qualidade de vida"},
+    {mes:"Nov",acao:"Fechamento de novo benefício: Pet",responsavel:"Gabrielly",status:"planejado",jornada:"Qualidade de vida"},
+    {mes:"Dez",acao:"Apresentação do EVP na reunião de liderança",responsavel:"Dani",status:"planejado"},
+    {mes:"Dez",acao:"Apresentação do EVP para a diretoria",responsavel:"Dani",status:"planejado"},
   ]},
-  {id:"trilhas",name:"Central IT Intelligence",meta:15,subtitle:"IA e Dados + Negócios e Accountability · Koru",lead:"Dani + Larysa+Renard",support:"UNICIT",actions:[
-    {mes:"Jul",acao:"Validação das Trilhas e Semana do Conhecimento com Board",responsavel:"Dani",status:"planejado"},
-    {mes:"Jul",acao:"Validação UNICIT + contratação de instrutores",responsavel:"Dani+Larysa+Renard+UNICIT",status:"planejado"},
-    {mes:"Ago",acao:"Gravações UNICIT",responsavel:"UNICIT",status:"planejado"},
-    {mes:"Ago",acao:"Lançamento da Semana do Conhecimento",responsavel:"Dani+Gabrielly+Larysa+Renard+UNICIT",status:"planejado"},
-    {mes:"Ago",acao:"LANÇAMENTO das trilhas IA e Dados + Negócios e Accountability",responsavel:"Dani+Larysa+Renard+UNICIT",status:"planejado"},
-    {mes:"Set",acao:"Trilhas em andamento",responsavel:"Dani+Larysa+Renard+UNICIT",status:"planejado"},
-    {mes:"Out",acao:"Trilhas em andamento",responsavel:"Dani+Larysa+Renard+UNICIT",status:"planejado"},
-    {mes:"Nov",acao:"Trilhas em andamento",responsavel:"Dani+Larysa+Renard+UNICIT",status:"planejado"},
-    {mes:"Dez",acao:"Trilhas em andamento",responsavel:"Dani+Larysa+Renard+UNICIT",status:"planejado"},
+  {id:"pdl_pdc",name:"LiderAI 2026 (PDL + PDC)",meta:15,subtitle:"77 líderes · PDL dos gestores",lead:"Dani",support:"Bruna",actions:[
+    {mes:"Mai",acao:"11/05: Kick-off oficial para os 77 líderes",responsavel:"Larysa+Bruna",status:"feito"},
+    {mes:"Mai",acao:"P1 Vendas Consultivas (Lalon): inicia 2ª quinzena, PDL SC e PDC",responsavel:"Larysa+Lalon",status:"feito"},
+    {mes:"Jun",acao:"P1 Vendas Consultivas em andamento",responsavel:"Larysa+Lalon",status:"feito"},
+    {mes:"Jul",acao:"P1 Vendas Consultivas em andamento",responsavel:"Larysa+Lalon",status:"feito"},
+    {mes:"Ago",acao:"P1 Vendas Consultivas: finalização (2ª quinzena)",responsavel:"Larysa+Lalon",status:"feito"},
+    {mes:"Set",acao:"P3 Pensamento Crítico (Numera, 6h, 3 turmas)",responsavel:"Larysa+Numera",status:"feito"},
+    {mes:"Nov",acao:"Fechamento dos indicadores do LiderAI",responsavel:"Dani+Larysa",status:"planejado"}
+  ]},
+  {id:"trilhas",name:"Central IT Intelligence",meta:15,subtitle:"Trilha Digital Skills no portal UNICIT · Koru · Digital Day 04/12",lead:"Dani + Gabrielly",support:"Koru",actions:[
+    {mes:"Set",acao:"Concepção do produto",responsavel:"Dani+Gabrielly",status:"feito"},
+    {mes:"Set",acao:"Validação do programa com o Board",responsavel:"Dani+Gabrielly",status:"feito"},
+    {mes:"Set",acao:"Lançamento do Programa (29/09)",responsavel:"Dani+Gabrielly",status:"feito"},
+    {mes:"Out",acao:"Diagnóstico de Maturidade Digital com a Koru (30/09 a 15/10)",responsavel:"Dani+Gabrielly+Koru",status:"feito"},
+    {mes:"Out",acao:"Encaminhar o regulamento do programa para o Jurídico (20/10)",responsavel:"Dani+Gabrielly",status:"feito"},
+    {mes:"Out",acao:"Lembrete de contagem regressiva: “A capacidade já existe. O próximo salto é enxergar e conectar.” (20/10)",responsavel:"Dani+Gabrielly",status:"feito"},
+    {mes:"Out",acao:"Lembrete “É hoje” no dia do lançamento da trilha (21/10)",responsavel:"Dani+Gabrielly",status:"feito"},
+    {mes:"Out",acao:"Lançamento: e-mail e Teams com abertura da Trilha (6h), publicação do Regulamento, premiações e início dos 50 primeiros (21/10)",responsavel:"Dani+Gabrielly",status:"feito"},
+    {mes:"Out",acao:"Trilha Digital Skills: abertura (21/10)",responsavel:"Dani+Gabrielly+Koru",status:"feito"},
+    {mes:"Out",acao:"Comunicação nos contratos: como acessar a Trilha no portal da UNICIT, onde ler o Regulamento e como registrar ciência (22/10)",responsavel:"Dani+Gabrielly",status:"feito"},
+    {mes:"Out",acao:"Painel semanal de adesão para gestores: inscritos, concluintes e canvas por área e contrato (a partir de 26/10)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Out",acao:"Pílula 1: “Defina o problema antes de escolher a ferramenta” (28/10)",responsavel:"Dani+Gabrielly",status:"feito"},
+    {mes:"Out",acao:"E-mail de ativação para quem não iniciou a Trilha: “Uma oportunidade real como entrega” (30/10)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Envio do Kit do Gestor: roteiro para apresentar o programa à equipe e regra de reconhecimento",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Pílula: “Como transformar uma dor em um canvas nota 10” (10/11)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Visitas presenciais aos contratos: tira-dúvidas sobre canvas e exemplos de oportunidades reais (10/11 a 30/11)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Comunicar a data do Digital Day (04/12) e o prazo final dos canvas (30/11) (até 13/11)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Encaminhar e-mail ao DP sobre a premiação",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Orçar os brindes do Digital Day",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Contratar espaço para o Digital Day com transmissão ao vivo",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Bloquear a agenda de gestores, diretores e Board para o Digital Day (04/12)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Pílula 2: “Como provar o resultado”: linha de base, ganho estimado e critério de sucesso (16/11)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"E-mail “Meio da Jornada”: canvas no portfólio, 50 primeiros projetos e depoimento (18/11)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"E-mail “Reta Final de Submissões”: prazo final dos canvas e vagas restantes nos 50 primeiros (23/11)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Último painel para gestores: quem concluiu a Trilha e ainda não enviou o canvas (25/11)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Teams Card “Último Chamado”: encerramento do envio dos canvas na Plataforma 360° (30/11)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Nov",acao:"Trilha Digital Skills e envio dos canvas: encerramento (30/11)",responsavel:"Dani+Gabrielly+Koru",status:"planejado"},
+    {mes:"Dez",acao:"E-mail de encerramento do envio: agradecimento, total de canvas, como funciona a avaliação e datas (01/12)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Triagem e avaliação dos canvas: TOP 30 e TOP 5, Comissão Avaliadora (01/12 a 02/12)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Convocação do Digital Day: resultado preliminar, prazo de recurso e orientações (02/12)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Devolutiva para autores não classificados: canvas no portfólio e como apresentar recurso (02/12)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Agenda do Digital Day: 5 momentos, logística, traje e transmissão ao vivo (02/12)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Publicação do resultado final após os recursos (03/12)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Digital Day (04/12), que substitui o Fórum LiderAI e IA Day",responsavel:"Dani+Gabrielly+Koru",status:"planejado"},
+    {mes:"Dez",acao:"Divulgação do roadmap 2027 com projetos priorizados, responsáveis e próximos passos (07/12)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Início do acompanhamento da execução do Roadmap 2027 (a partir de 08/12)",responsavel:"Dani+Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Retrospectiva do ciclo: números, depoimentos e publicação externa",responsavel:"Dani+Gabrielly",status:"planejado"},
   ]},
   {id:"desc_cargo",name:"Descrições de Cargo",meta:15,subtitle:"Fluxo de 5 etapas por grupo",lead:"Mayara",support:"Dionísia",actions:[
     {mes:"Abr",acao:"Produtos · Etapa 1: Escuta com colaboradores",responsavel:"Mayara",status:"feito"},
@@ -1334,12 +1401,16 @@ const TDATA = {projects:[
     {mes:"Jun",acao:"Revisão do framework com metodologia Gartner e SFIA",responsavel:"Dani+Mayara",status:"feito"},
     {mes:"Jun",acao:"Competências mapeadas: CIOTI",responsavel:"Dani+Mayara",status:"feito"},
     {mes:"Jul",acao:"Competências mapeadas: Áreas Internas",responsavel:"Dani+Mayara",status:"feito"},
-    {mes:"Set",acao:"Diagnóstico de gaps por área e nível",responsavel:"Dani+Mayara",status:"planejado"},
-    {mes:"Out",acao:"Plano de T&D vinculado às trilhas UNICIT",responsavel:"Dani+Mayara",status:"planejado"},
     {mes:"Set",acao:"Definição de competências organizacionais",responsavel:"Dani+Mayara",status:"feito"},
-    {mes:"Set",acao:"Validação com Board",responsavel:"Dani+Mayara",status:"planejado"},
+    {mes:"Nov",acao:"Validação com Board",responsavel:"Dani+Mayara",status:"planejado"},
   ]},
-  {id:"av180",name:"Avaliação 180°",meta:15,subtitle:"1º ciclo · Out–Jan",lead:"Dani",support:"Larysa+Renard+Mayara",actions:[
+  {id:"av180",name:"Avaliação de Competências",meta:15,subtitle:"Monitoria FDC Ago · alinhamento Set · estruturação Out · validação Nov",lead:"Dani",support:"Mayara",actions:[
+    {mes:"Ago",acao:"Monitoria FDC com Pedro · Encontro 1, sessão I (14/08): validação do foco da monitoria, conhecer o grupo de trabalho, situação atual e desejada, conexão estratégica",responsavel:"Dani",status:"feito"},
+    {mes:"Ago",acao:"Monitoria FDC com Pedro · Encontro 1, sessão II (28/08)",responsavel:"Dani",status:"feito"},
+    {mes:"Set",acao:"1º encontro de monitoria: alinhamento (25/09)",responsavel:"Dani",status:"feito"},
+    {mes:"Out",acao:"2º encontro de monitoria: estruturação do programa (16/10)",responsavel:"Dani",status:"feito"},
+    {mes:"Nov",acao:"Reunião com o Board para validar o objetivo do mapeamento de competências",responsavel:"Dani",status:"planejado"},
+    {mes:"Nov",acao:"3º encontro de monitoria: entrega do objetivo validado do mapeamento de competências",responsavel:"Dani",status:"planejado"},
     {mes:"Out",acao:"Etapa 01: Desenho do processo, metodologia, critérios e ferramenta",responsavel:"Dani",status:"planejado"},
     {mes:"Out",acao:"Etapa 02: Comunicação e capacitação dos avaliadores",responsavel:"Dani",status:"planejado"},
     {mes:"Nov",acao:"Etapa 03: Execução, autoavaliação + avaliação do gestor",responsavel:"Dani",status:"planejado"},
@@ -1348,16 +1419,18 @@ const TDATA = {projects:[
   ]}
   ],
 team:{
-  "Dani":{role:"CHRO / Diretora de Pessoas",specialty:"Validação + BI + Trilhas + Agentes (governança)"},
-  "Gabrielly":{role:"Clima e Cultura",specialty:"GP em Ação, Viva Mais, De Mãos Dadas, Onboarding, CISSA, eNPS"},
-  "Larysa":{role:"T&D",specialty:"PDL/PDC, Trilhas, Manuais (redação), 180°"},
-  "Mayara":{role:"C&S",specialty:"PILAR,  CitElas salarial, Manual Gestor"},
-  "Dani":{role:"IA / Tecnologia",specialty:"Arquitetura digital + 5 agentes cognitivos"},
-  
-  "Bruna":{role:"Apoio transversal",specialty:"Campo + Plataforma + Triagem"},
-  "Dionísia":{role:"Apoio C&S → analista jul",specialty:"Operacional Mayara: PILAR,  CitElas"},
-  "Kennedy":{role:"People Ops / Dados",specialty:"Dashboard semanal · alertas"},
-  "Renard":{role:"T&D",specialty:"PDL/PDC, Trilhas, Manuais (redação), 180°"}
+  "Dani":{role:"CHRO / Diretora de Pessoas",specialty:"Validação, BI, trilhas e agentes cognitivos"},
+  "Gabrielly":{role:"Clima e Cultura",specialty:"GP em Ação, Viva Mais, De Mãos Dadas, Onboarding, eNPS, Manuais, CitElas"},
+  "Stefanie":{role:"Gestão de Pessoas",specialty:"CitElas"},
+  "Mayara":{role:"C&S",specialty:"PILAR, Descrições de Cargo, Framework de Competências"},
+  "Larysa":{role:"Recrutamento e Seleção",specialty:"Apoio no fechamento dos indicadores do LiderAI"},
+  "Dasio":{role:"Recrutamento e Seleção",specialty:"Parcerias para colaboradores (EVP)"},
+  "Jennifer":{role:"Recrutamento e Seleção",specialty:""},
+  "Jessica":{role:"Recrutamento e Seleção",specialty:""},
+  "Dany":{role:"Recrutamento e Seleção",specialty:""},
+  "Pablo":{role:"Gestão de Pessoas",specialty:""},
+  "Bruna":{role:"Apoio transversal",specialty:"Campo, plataforma e triagem"},
+  "Kennedy":{role:"People Ops / Dados",specialty:"Dashboard semanal e alertas"}
 }};
 
 const STATUS_LABEL={feito:'✓ feito',em_andamento:'→ andamento',planejado:'○ planejado',atrasado:'✗ atrasado',parcial:'~ parcial'};
@@ -1367,6 +1440,47 @@ const MESES_TAT=["Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez","Jan"];
  * STATE — marcações compartilhadas via Cloudflare KV (/api)
  * Em modo local, usa localStorage do navegador.
  * ============================================================ */
+
+/* ============================================================
+ * ETIQUETAS · Jornada do Colaborador e Endomarketing
+ * Cada ação mora em um único projeto; as etiquetas só criam visões.
+ * ============================================================ */
+const JORNADA_PROJ = {
+  citelas:'Atração', onboarding_digital:'Onboarding', manual_gestor:'Onboarding', manual_colab:'Onboarding',
+  pdl_pdc:'T&D', sucessao:'T&D', trilhas:'T&D', framework:'T&D',
+  maos_dadas:'Qualidade de vida', nr1:'Qualidade de vida', enps:'Clima', evp:'Atração'
+};
+const ENDO_ACOES = [
+  ['enps','1ª rodada eNPS'],
+  ['pdl_pdc','P3 Pensamento Crítico (Numera, 6h, 3 turmas)'],
+  ['trilhas','Lançamento do Programa (29/09)'],
+  ['sucessao','Lançamento do programa']
+];
+const JORNADA_FASES = [
+  {fase:'Conheço',  etapas:['Atração']},
+  {fase:'Conecto',  etapas:['Pré-onboarding','Onboarding']},
+  {fase:'Evoluo',   etapas:['T&D','Comunicação Interna','Endomarketing','Qualidade de vida','Clima']},
+  {fase:'Impacto',  etapas:['Reconhecimento','Retenção/Realocação','Offboarding']}
+];
+const JORNADA_ROTINAS = [
+  {etapa:'Atração',nome:'Cards de vagas'},{etapa:'Atração',nome:'Vídeos de vagas'},
+  {etapa:'Atração',nome:'Comunicação com candidatos'},{etapa:'Atração',nome:'Rodas de conversa com gestores sobre diversidade'},
+  {etapa:'Pré-onboarding',nome:'Central 360º'},
+  {etapa:'Onboarding',nome:'Integração D1'},{etapa:'Onboarding',nome:'Treinamentos obrigatórios'},
+  {etapa:'Onboarding',nome:'Kit boas-vindas'},{etapa:'Onboarding',nome:'Padrinho ou madrinha'},{etapa:'Onboarding',nome:'Apresentação ao time'},
+  {etapa:'T&D',nome:'PDI'},{etapa:'T&D',nome:'One a one'},{etapa:'T&D',nome:'CIT Talks'},
+  {etapa:'Comunicação Interna',nome:'Canal interno no WhatsApp'},
+  {etapa:'Qualidade de vida',nome:'Calendário de qualidade de vida'},
+  {etapa:'Reconhecimento',nome:'Kit de tempo de casa'},{etapa:'Reconhecimento',nome:'Café com o CEO'},
+  {etapa:'Retenção/Realocação',nome:'Vagas internas'},{etapa:'Retenção/Realocação',nome:'Realocação por desmobilização'},
+  {etapa:'Offboarding',nome:'Entrevista de desligamento'},{etapa:'Offboarding',nome:'Apoio à recolocação'}
+];
+const MESES_ENDO = ["Jan/26","Fev/26","Mar/26","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez","Jan"];
+function allProjectLists(){ return [TDATA.projects, (typeof EST_PROJECTS!=='undefined'?EST_PROJECTS:[]), (typeof ROT_PROJECTS!=='undefined'?ROT_PROJECTS:[])]; }
+function findProject(id){ for(const l of allProjectLists()){ const p=l.find(x=>x.id===id); if(p) return p; } return null; }
+function etiquetaJornada(p,a){ return a.jornada || p.jornada || JORNADA_PROJ[p.id] || ''; }
+function etiquetaEndo(p,a){ return !!(a.endo || p.endo || ENDO_ACOES.some(([pid,t])=>pid===p.id && t===a.acao)); }
+
 let completed = {};
 const ST_KEY='ci_rh_2026_completed_v2';
 let syncTimer = null;
@@ -1378,7 +1492,7 @@ function slugTxt(t){
     .toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80);
 }
 function actionId(projId, mes, idx){
-  const proj = TDATA.projects.find(p=>p.id===projId);
+  const proj = findProject(projId);
   if(!proj || !proj.actions[idx]) return `${projId}__${mes}__${idx}`;
   const slug = slugTxt(proj.actions[idx].acao);
   let occ = 0;
@@ -1387,7 +1501,7 @@ function actionId(projId, mes, idx){
 }
 
 function seedFromPlan(){
-  TDATA.projects.forEach(p=>{
+  allProjectLists().flat().forEach(p=>{
     p.actions.forEach((a,i)=>{
       if(a.status==='feito'){
         const id = actionId(p.id, a.mes, i);
@@ -1439,7 +1553,7 @@ async function loadState(){
 
 function startSync(){
   stopSync();
-  syncTimer = setInterval(async ()=>{ await loadState(); renderAll(); }, 60000);
+  syncTimer = setInterval(async ()=>{ await loadState(); renderEverything(); }, 60000);
 }
 function stopSync(){ if(syncTimer){ clearInterval(syncTimer); syncTimer = null; } }
 
@@ -1451,8 +1565,18 @@ function canMark(action){
   return String(action.responsavel||'').split('+').some(n=>slugTxt(n)===me);
 }
 
+
+function renderEverything(){
+  renderAll();
+  try{
+    if(!document.getElementById('view-estruturante').hidden){ renderEstProj(); renderEstMes(); renderEstResp(); }
+    if(!document.getElementById('view-unificado').hidden){
+      const b=document.querySelector('.unif-nav-btn.active'); renderUnifView(b?b.dataset.tab:'gantt', b);
+    }
+  }catch(e){ console.error(e); }
+}
 async function toggleAction(projId, mes, idx, btn){
-  const proj = TDATA.projects.find(p=>p.id===projId);
+  const proj = findProject(projId);
   const action = proj.actions[idx];
   if(action.status==='feito') return;
   if(!canMark(action)){
@@ -1464,7 +1588,7 @@ async function toggleAction(projId, mes, idx, btn){
   // atualização otimista
   if(newVal) completed[id] = {by:currentUser, at:new Date().toISOString()};
   else delete completed[id];
-  renderAll();
+  renderEverything();
   if(useLocal || !authToken){
     try{ localStorage.setItem(ST_KEY, JSON.stringify(completed)); }catch(e){}
     return;
@@ -1478,13 +1602,13 @@ async function toggleAction(projId, mes, idx, btn){
     const d = await r.json();
     if(d.done) completed = d.done;
     seedFromPlan();
-    renderAll();
+    renderEverything();
     showToast(newVal ? '✓ Ação marcada como concluída. Todos já podem ver.' : 'Marcação removida.');
   }catch(e){
     if(e.message === '401') return;
     // desfaz a atualização otimista
     if(newVal) delete completed[id]; else completed[id] = {by:currentUser, at:''};
-    renderAll();
+    renderEverything();
     showToast('Não foi possível salvar: ' + e.message);
   }
 }
@@ -1509,7 +1633,7 @@ function isDone(projId, mes, idx){
 }
 
 function checkTitle(projId, mes, idx){
-  const proj = TDATA.projects.find(p=>p.id===projId);
+  const proj = findProject(projId);
   const a = proj && proj.actions[idx];
   if(a && a.status==='feito') return 'Já concluído (status original do plano)';
   const info = completed[actionId(projId,mes,idx)];
@@ -1525,12 +1649,74 @@ function checkTitle(projId, mes, idx){
 /* ============================================================
  * BUILD TÁTICA
  * ============================================================ */
+
+/* ============================================================
+ * AUDITORIA — histórico de marcações (Dani e Kennedy)
+ * ============================================================ */
+let auditLog = [];
+function actionIndex(){
+  const map = {};
+  allProjectLists().flat().forEach(p=>p.actions.forEach((a,i)=>{
+    map[actionId(p.id,a.mes,i)] = {proj:p.name, acao:a.acao, resp:a.responsavel, mes:a.mes};
+  }));
+  return map;
+}
+async function loadAudit(){
+  const body = document.getElementById('audit-body');
+  if(!body) return;
+  if(!ADMINS.includes(currentUser)){ body.innerHTML='<div class="audit-empty">Acesso restrito a Dani e Kennedy.</div>'; return; }
+  if(useLocal || !authToken){ body.innerHTML='<div class="audit-empty">O histórico só fica disponível no endereço publicado.</div>'; return; }
+  body.innerHTML='<div class="audit-empty">Carregando...</div>';
+  try{
+    const r = await apiFetch('/log');
+    const d = await r.json();
+    auditLog = d.log || [];
+    const sel = document.getElementById('audit-filter-user');
+    const atual = sel.value;
+    const pessoas = [...new Set(auditLog.map(x=>x.by))].sort();
+    sel.innerHTML = '<option value="">Todas as pessoas</option>' + pessoas.map(u=>`<option value="${u}">${USER_NAMES[u]||u}</option>`).join('');
+    sel.value = atual;
+    renderAudit();
+  }catch(e){
+    if(e.message!=='401') body.innerHTML='<div class="audit-empty">Não foi possível carregar o histórico.</div>';
+  }
+}
+function auditRows(){
+  const idx = actionIndex();
+  const f = (document.getElementById('audit-filter-user')||{}).value || '';
+  return auditLog.filter(x=>!f || x.by===f).map(x=>{
+    const a = idx[x.id] || {proj:'(ação removida ou renomeada)', acao:x.id, resp:'', mes:''};
+    return {quando:new Date(x.at), quem:USER_NAMES[x.by]||x.by, acaoTipo:x.done?'Marcou':'Desmarcou', done:x.done, ...a};
+  });
+}
+function renderAudit(){
+  const body = document.getElementById('audit-body');
+  const rows = auditRows();
+  if(!rows.length){ body.innerHTML='<div class="audit-empty">Nenhuma marcação registrada ainda.</div>'; return; }
+  body.innerHTML = `<table class="audit-table"><thead><tr><th>Data e hora</th><th>Quem</th><th>Movimento</th><th>Projeto</th><th>Ação</th><th>Responsável</th></tr></thead><tbody>${
+    rows.map(r=>`<tr><td>${r.quando.toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})}</td><td><strong>${r.quem}</strong></td><td><span class="audit-tag ${r.done?'on':'off'}">${r.acaoTipo}</span></td><td>${r.proj}</td><td>${r.acao}</td><td>${r.resp}</td></tr>`).join('')
+  }</tbody></table>`;
+}
+function exportAudit(){
+  const rows = auditRows();
+  if(!rows.length){ showToast('Não há registros para baixar. Clique em Atualizar primeiro.'); return; }
+  const esc = v => '"' + String(v==null?'':v).replace(/"/g,'""') + '"';
+  const linhas = [['Data e hora','Quem','Movimento','Projeto','Mês','Ação','Responsável'].map(esc).join(';')];
+  rows.forEach(r=>linhas.push([r.quando.toLocaleString('pt-BR'), r.quem, r.acaoTipo, r.proj, r.mes, r.acao, r.resp].map(esc).join(';')));
+  const blob = new Blob(['\ufeff'+linhas.join('\r\n')], {type:'text/csv;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'historico_marcacoes_painel_' + new Date().toISOString().slice(0,10) + '.csv';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
 function showTatTab(name,btn){
   ['mes','proj','resp','ken'].forEach(t=>{
     document.getElementById('t-tab-'+t).classList.toggle('active',t===name);
   });
   document.querySelectorAll('.t-nav').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+  if(name==='ken') loadAudit();
 }
 
 function computeStats(){
@@ -1684,7 +1870,7 @@ function renderResp(stats){
       respMap[r].push({...a,projName:p.name,projId:p.id,idx:i});
     });
   }));
-  const priority=['Dani','Gabrielly','Larysa','Renard','Mayara','Bruna','Dionísia','Kennedy'];
+  const priority=['Dani','Gabrielly','Stefanie','Mayara','Larysa','Dasio','Jennifer','Jessica','Dany','Pablo','Bruna','Kennedy','Guilherme','Vinicius','Geraldo','Carol','Jaime','Freitas','Emauri','Renard','Dionísia'];
   // Visão por responsável mostra APENAS membros do time interno (exclui apoios externos)
   const sorted=priority.filter(n=>respMap[n]);
   sorted.forEach(name=>{
@@ -1730,13 +1916,13 @@ function renderKen(){
   const f={
     'Mai':{i:'Cobertura visitas (% contratos), 1ª eNPS adesão, atraso PILAR semanal, Manual Gestor com Guilherme, orçamento finalizado 17/05, gravações Onboarding (4-8/05)',m:'Lançamento Onboarding 11/05 · Lançamento PDL/PDC 11/05 · CISSA arquitetura'},
     'Jun':{i:'1ª quinzena: orçado vs realizado, % cobertura PILAR, CISSA v1, Manual Gestor 3 validações',m:'Guardiões ATIVOS · CISSA v1 · Manual Gestor publicado'},
-    'Jul':{i:'Adesão PDL P1+P2, gravações UNICIT, curadoria palestras, Roda CIOTI',m:'Semana do Conhecimento · 3ª Onda GP · PDL Pilar 3'},
+    'Jul':{i:'Adesão PDL P1, curadoria palestras, Roda CIOTI',m:'Semana do Conhecimento · 3ª Onda GP · PDL Pilar 3'},
     'Ago':{i:'Lançamento Trilhas (adesão), CORA v1, Reporte Lei 14.611, Mid-year Viva Mais, Descrições 100%, Framework workshops',m:'CORA v1 · Trilhas lançam · Manual Colab · Início prospecção'},
     'Set':{i:'1ª eNPS relatório+indicadores, CitElas aceleração',m:'1ª eNPS concluída · Diagnóstico gap framework'},
-    'Out':{i:'Avaliação 180° desenho+capacitação, PILAR entregue, De Mãos Dadas Fase 4 (Licença)',m:'180° inicia · PILAR v1 · De Mãos Dadas Fase 4'},
-    'Nov':{i:'Avaliação 180° execução (auto+gestor), 2ª Pulso, pais e parceiros, case comercial',m:'Negócio Central IT fechado · 2ª Pulso'},
-    'Dez':{i:'Avaliação 180° consolidação+calibração+devolutivas+PDIs, Balanço orçamentário ROI, framework consolidado',m:'180° consolidação · Portfólio agentes · Balanço CitElas+Viva Mais+GP'},
-    'Jan':{i:'Avaliação 180° resultados ao Board, 2ª eNPS relatório comparativo anual, planejamento 2027',m:'180° Board · 2ª eNPS concluída · Planejamento 2027'}
+    'Out':{i:'Avaliação de Competências desenho+capacitação, PILAR entregue, De Mãos Dadas Fase 4 (Licença)',m:'Avaliação de Competências inicia · PILAR v1 · De Mãos Dadas Fase 4'},
+    'Nov':{i:'Avaliação de Competências execução (auto+gestor), 2ª Pulso, pais e parceiros, case comercial',m:'Negócio Central IT fechado · 2ª Pulso'},
+    'Dez':{i:'Avaliação de Competências consolidação+calibração+devolutivas+PDIs, Balanço orçamentário ROI, framework consolidado',m:'Avaliação de Competências consolidação · Portfólio agentes · Balanço CitElas+Viva Mais+GP'},
+    'Jan':{i:'Avaliação de Competências resultados ao Board, 2ª eNPS relatório comparativo anual, planejamento 2027',m:'Avaliação de Competências Board · 2ª eNPS concluída · Planejamento 2027'}
   };
   tbody.innerHTML=Object.entries(f).map(([m,d])=>`<tr><td><strong>${m}</strong></td><td>${d.i}</td><td>${d.m}</td></tr>`).join('');
 }
@@ -1834,20 +2020,97 @@ function renderAll(){
  * ============================================================ */
 const EST_PROJECTS = [
   {id:"puts",      name:"Programa Puts",              lead:"",support:"",desc:"Programa de reconhecimento e valorização de pessoas",actions:[]},
-  {id:"endo",      name:"Endomarketing",               lead:"",support:"",desc:"Comunicação interna e engajamento",actions:[]},
+  {id:"endo",name:"Endomarketing",lead:"Gabrielly",support:"",desc:"Calendário de ações de endomarketing de Gestão de Pessoas",endo:true,actions:[
+    {mes:"Jan/26",acao:"Gestão de Pessoas em Ação: Visitas presenciais e reuniões via Teams com todos os colaboradores (05/01 a 31/01)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Endomarketing"},
+    {mes:"Jan/26",acao:"Trilhas de aprendizado em IA e Reinvenção do Profissional: Lançamento e disponibilização dos treinamentos na plataforma Unicit On (22/01)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"T&D"},
+    {mes:"Jan/26",acao:"Citcast Eu Sou Central IT: O Futuro Começa Aqui: Episódio com Lucas Julião (21/01 a 28/01)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Endomarketing"},
+    {mes:"Jan/26",acao:"Janeiro Branco: Saúde mental: Campanha de divulgação da live de conscientização sobre saúde mental (23/01 a 27/01)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Fev/26",acao:"Dia Mundial de Combate ao Câncer: Comunicação de conscientização aos colaboradores (29/01 a 04/02)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Fev/26",acao:"Pessoas que Inspiram: Episódio com colaborador interno compartilhando uma história inspiradora (19/02 a 26/02)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Endomarketing"},
+    {mes:"Mar/26",acao:"Pessoas que Inspiram: Especial Dia da Mulher: Episódio com colaboradora PCD sobre trajetória, força e protagonismo feminino (06/03 a 12/03)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Endomarketing"},
+    {mes:"Mar/26",acao:"Programa Saúde Integral: NR-1 e riscos psicossociais: Visitas presenciais aos contratos e reuniões online (30/03 a 31/03)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Abr",acao:"Continuidade do Programa Saúde Integral: Continuidade das visitas aos contratos e régua de comunicação (01/04 a 30/04)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Abr",acao:"Central IT + BTG Pactual: Saúde financeira: Live sobre os serviços e formas de utilização do BTG Pactual (23/04 a 29/04)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Abr",acao:"Dicas de bem-estar: Post com dicas sobre hidratação, postura e ergonomia, saúde mental no cotidiano, alimentação e energia (24/04 a 30/04)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Abr",acao:"Portfólio de serviços do CITSmart X Gestão de Pessoas: Apresentação ao vivo do catálogo de serviços (08/04 a 15/04)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Comunicação Interna"},
+    {mes:"Abr",acao:"Lembrete dos treinamentos obrigatórios: Comunicado sobre a conclusão dos treinamentos em até 90 dias (17/04 a 22/04)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Onboarding"},
+    {mes:"Abr",acao:"BTG Pactual: Formulário de interesse em investimento: Comunicação sobre ação de benefícios e educação financeira, com formulário de interesse (24/04 a 28/04)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Abr",acao:"Prevenção de ISTs e câncer: Comunicação de prevenção (23/04 a 30/04)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Mai",acao:"Escuta ativa na prática: Live/webinar sobre escuta ativa (13/05 a 21/05)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"T&D"},
+    {mes:"Jun",acao:"NR-1 na prática: Saúde mental e riscos psicossociais: Live sobre saúde mental no trabalho e gestão de riscos psicossociais (18/06 a 25/06)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Jun",acao:"Central na Copa: Ação de palpites e elogios a colegas, pares ou gestores, com participação em sorteio de camiseta oficial do Brasil (18/06 a 29/06)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Endomarketing"},
+    {mes:"Ago",acao:"Dia dos Pais: Campanha lançada em 05/08: colaboradores enviaram fotos com os filhos em momentos importantes; sorteio de gift card/voucher (30/07 a 05/08)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Endomarketing"},
+    {mes:"Ago",acao:"Central Escuta: Lembrete da pesquisa NPS: Lembrete para participação na pesquisa lançada em julho (06/08 a 11/08)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Clima"},
+    {mes:"Ago",acao:"Bate-papo com gestores: Pesquisa PCD: Reunião sobre lançamento da pesquisa PCD, orientação aos gestores e próximos passos (17/08)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Atração"},
+    {mes:"Ago",acao:"Manual da Liderança: Atualização: Atualização do conteúdo e reformulação do design/layout (20/08)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Comunicação Interna"},
+    {mes:"Ago",acao:"Campanha TotalPass: Lançamento de campanha com desconto em um dos planos (31/08)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Set",acao:"Dia de Valorização da Vida: Post de abertura do tema Setembro Amarelo e divulgação da live de 22/09 (10/09)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Set",acao:"Live Setembro Amarelo: Live realizada em 22/09, divulgada na comunicação de 10/09 (22/09)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Out",acao:"Outubro Rosa: Post informativo com checklist de saúde e incentivo a exames periódicos; live sobre Outubro Rosa (01/10 a 08/10)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Out",acao:"Dia das Crianças: Atividade lúdica e mensagem da liderança (01/10 a 15/10)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Endomarketing"},
+    {mes:"Out",acao:"Dia Mundial da Saúde Mental: Vídeo sobre a importância da saúde mental e reforço das informações sobre plano de saúde, acesso a psicólogos, psiquiatras e rede de apoio (05/10 a 10/10)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Out",acao:"Dia do Técnico em Informática: Mural com depoimentos e ação de reconhecimento da equipe técnica (21/10 a 29/10)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Endomarketing"},
+    {mes:"Out",acao:"Gestão de Pessoas em Ação: Retorno aos contratos: Visitas aos contratos para abordar entendimento do negócio (05/10 a 31/10)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Endomarketing"},
+    {mes:"Nov",acao:"Novembro Azul: Post informativo e live (29/10 a 02/11)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Nov",acao:"Dia da Consciência Racial: TI e diversidade: Vídeo ou post (formato a definir) (11/11 a 20/11)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Atração"},
+    {mes:"Nov",acao:"Palestra ou post sobre finanças pessoais: Palestra ou post sobre finanças pessoais, incluindo uso do crédito consignado do trabalhador (12/11 a 19/12)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"T&D"},
+    {mes:"Nov",acao:"Prêmio Anual Central IT: Premiação com categorias de Inovação, Colaboração, Entrega e Cultura (16/11 a 26/11)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Reconhecimento"},
+    {mes:"Dez",acao:"Calendário do Advento de TI: Conteúdo diário de 01 a 24/12: curiosidades de tecnologia, cases internos, dicas de ferramentas, meme técnico ou mensagem de liderança (01/12 a 24/12)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Endomarketing"},
+    {mes:"Dez",acao:"Pesquisa de bem-estar: Pulso de dezembro: Pesquisa anônima com perguntas sobre como os colaboradores encerram o ano (01/12 a 07/12)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Qualidade de vida"},
+    {mes:"Dez",acao:"Carta para o eu do futuro: Cartas escritas pelos colaboradores, guardadas pelo RH e reenviadas em 27/12 (27/12)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Endomarketing"},
+    {mes:"Dez",acao:"Mensagem de Natal da liderança: Vídeo curto com mensagem do CEO e CTO (15/12 a 24/12)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Endomarketing"},
+    {mes:"Dez",acao:"Ação de Ano Novo: Planejamento 2027: Planner para planejamento das metas e ações de 2027 (21/12 a 31/12)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Endomarketing"}
+  ]},
   {id:"comgp",     name:"Comunicação Interna GP",      lead:"",support:"",desc:"Comunicação interna da área de Gestão de Pessoas",actions:[]},
   {id:"smartops",  name:"SmartOps",                    lead:"",support:"",desc:"Otimização de processos e operações de RH",actions:[]},
-  {id:"educacao",  name:"Educação Central",            lead:"",support:"",desc:"Programa de educação corporativa Central IT",actions:[]},
-  {id:"gov",       name:"Governança",                  lead:"",support:"",desc:"Governança de RH e conformidade",actions:[]},
-  {id:"empexp",    name:"Employee Experience",         lead:"",support:"",desc:"Programa de experiência do colaborador",actions:[]},
-  {id:"evp",       name:"EVP",                         lead:"",support:"",desc:"Employer Value Proposition — proposta de valor ao colaborador",actions:[]},
-  {id:"citpeople", name:"Plataforma CITPeople",        lead:"",support:"",desc:"Plataforma digital de gestão de pessoas Central IT",actions:[]},
-  {id:"dpgpnap",   name:"DP e GP na Prática",          lead:"",support:"",desc:"Programa de capacitação em DP e boas práticas de GP",actions:[]},
+  {id:"educacao",name:"Educação Central",lead:"",support:"",desc:"Programa de educação corporativa Central IT",actions:[
+    {mes:"Jan/26",acao:"Projeto Educação Central: Lançamento do projeto de apoio financeiro com bolsas de graduação e pós-graduação (07/01 a 14/01)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"T&D"},
+    {mes:"Fev/26",acao:"Resultados do Projeto Educação Central: Comunicação dos resultados aos colaboradores participantes (29/01 a 03/02)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"T&D"},
+    {mes:"Nov",acao:"Análise dos resultados da edição 2025/2026",responsavel:"A definir",status:"planejado",jornada:"T&D"},
+    {mes:"Nov",acao:"Preparação de apresentação para o Board",responsavel:"A definir",status:"planejado",jornada:"T&D"},
+    {mes:"Nov",acao:"Planejamento do lançamento da edição 2026/2027",responsavel:"A definir",status:"planejado",jornada:"T&D"},
+    {mes:"Dez",acao:"Lançamento da edição 2026/2027",responsavel:"A definir",status:"planejado",jornada:"T&D",endo:true}
+  ]},
+  {id:"gov",name:"Governança",lead:"Dani",support:"",desc:"Governança de RH e conformidade: revisão e atualização dos processos documentados de Gestão de Pessoas",actions:[
+    {mes:"Dez",acao:"Revisar e publicar a política de saúde corporativa",responsavel:"Dani",status:"planejado"},
+    {mes:"Dez",acao:"Revisar e publicar o Programa de Indicações",responsavel:"Dani",status:"planejado"},
+    {mes:"Dez",acao:"Revisar e publicar o Programa de Talentos",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo PO-019 Recrutamento e Seleção",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo PO-021 Plano de Excelência",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo PO-041 Plano de Evolução Profissional",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo PO-112 Programa de Integração de Novos Colaboradores",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo PO-114 Programa de Desenvolvimento de Líderes",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo PO-209 Escuta Organizacional",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo PO-214 Comunicação Interna da Gestão de Pessoas",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo IT-190 Monitoramento dos Treinamentos de Integração de Colaboradores",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo PL-008 Política de Diversidade, Equidade e Inclusão",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo MA-066 Manual do Colaborador",responsavel:"Dani",status:"planejado"},
+    {mes:"Jan",acao:"Revisão e atualização do processo FO-374 Ficha de Observação de Entrevista",responsavel:"Dani",status:"planejado"}
+  ]},
+  {id:"peoplenews",name:"People News",lead:"Gabrielly",support:"",desc:"Publicação mensal People News",jornada:"Comunicação Interna",endo:true,actions:[
+    {mes:"Nov",acao:"Criar, validar e publicar o People News de novembro",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"Criar, validar e publicar o People News de dezembro",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"Criar, validar e publicar o People News de janeiro",responsavel:"Gabrielly",status:"planejado"}
+  ]},
+  {id:"empexp",name:"Jornada do Colaborador",lead:"Gabrielly",support:"Dasio",desc:"Jornada do colaborador: Conheço, Conecto, Evoluo e Impacto. As rotinas em operação aparecem na aba Jornada do Plano 2026.",actions:[
+    {mes:"Dez",acao:"Divulgação dos novos colaboradores nas redes",responsavel:"Gabrielly+Dasio",status:"planejado",jornada:"Onboarding",endo:true},
+    {mes:"Dez",acao:"Depoimentos dos novos colaboradores",responsavel:"Gabrielly+Dasio",status:"planejado",jornada:"Onboarding",endo:true},
+    {mes:"Jan",acao:"Estruturação do PertenSER",responsavel:"Gabrielly+Dasio",status:"planejado",jornada:"Reconhecimento"},
+    {mes:"Jan",acao:"Estruturação do reconhecimento contínuo",responsavel:"Gabrielly+Dasio",status:"planejado",jornada:"Reconhecimento"}
+  ]},
+  {id:"citpeople",name:"Plataforma CITPeople",lead:"",support:"",desc:"Plataforma digital de gestão de pessoas Central IT",actions:[
+    {mes:"Out",acao:"CITSmart People: Apresentação do sistema aos gestores da Central IT (25/09 a 02/10)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Comunicação Interna"}
+  ]},
+  {id:"dpgpnap",name:"DP e GP na Prática",lead:"",support:"",desc:"Programa de capacitação em DP e boas práticas de GP",actions:[
+    {mes:"Set",acao:"DP e RH na Prática: 1º encontro: Encontro sobre o sistema HCM Compliance: férias, contracheque e ponto eletrônico. Lançamento divulgado em 11/09; encontro realizado em 16/09 (11/09 a 16/09)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Comunicação Interna"}
+  ]},
   {id:"pilulas",   name:"Pílulas de Liderança",        lead:"",support:"",desc:"Conteúdos de desenvolvimento contínuo para lideranças",actions:[]},
 ];
 
 const ROT_PROJECTS = [
-  {id:"movim",     name:"Movimentações",               lead:"",support:"",desc:"Promoções, transferências e desligamentos",actions:[]},
+  {id:"movim",name:"Movimentações",lead:"",support:"",desc:"Promoções, transferências e desligamentos",actions:[
+    {mes:"Fev/26",acao:"Lançamento do Portal de Movimentações para Gestores: Lançamento com régua de comunicação (27/02 a 05/03)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Comunicação Interna"}
+  ]},
   {id:"mapeaperf", name:"Mapeamento de Perfis Comportamentais", lead:"",support:"",desc:"Mapeamento e análise de perfis comportamentais da equipe",actions:[]},
   {id:"planoexc",  name:"Plano de Excelência",         lead:"",support:"",desc:"Acompanhamento de indicadores e plano de melhoria contínua",actions:[]},
 ];
@@ -1856,7 +2119,7 @@ const ROT_PROJECTS = [
 /* ============================================================
  * PROJETOS ESTRUTURANTES — renderização
  * ============================================================ */
-const MESES_EST = ["Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez","Jan"];
+const MESES_EST = ["Jan/26","Fev/26","Mar/26","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez","Jan"];
 const ST_BG_EST = {feito:"#D1FAE5",andamento:"#FEF3C7",planejado:"#EFF6FF",atrasado:"#FEE2E2"};
 const ST_TC_EST = {feito:"#065F46",andamento:"#92400E",planejado:"#1E40AF",atrasado:"#991B1B"};
 const ST_PT_EST = {feito:"Feito",andamento:"Em andamento",planejado:"Planejado",atrasado:"Atrasado"};
@@ -1873,6 +2136,11 @@ function showEstTab(tab, btn){
   if(tab==='resp') renderEstResp();
 }
 
+
+function estChk(pid,a,i){
+  const done=isDone(pid,a.mes,i), locked=a.status==='feito';
+  return `<div class="m-check${done?' checked':''}${locked?' locked':''}" onclick="toggleAction('${pid}','${a.mes}',${i},this)" title="${checkTitle(pid,a.mes,i)}"></div>`;
+}
 function renderEstProj(){
   const root = document.getElementById('est-proj-cards');
   if(!root) return;
@@ -1880,21 +2148,21 @@ function renderEstProj(){
   let totalAcoes=0, totalFeito=0;
   EST_PROJECTS.forEach((p,pi)=>{
     totalAcoes += p.actions.length;
-    totalFeito += p.actions.filter(a=>a.status==='feito').length;
+    totalFeito += p.actions.filter((a,i)=>isDone(p.id,a.mes,i)).length;
     const card = document.createElement('div');
     card.className = 'est-proj-card';
-    const feito = p.actions.filter(a=>a.status==='feito').length;
+    const feito = p.actions.filter((a,i)=>isDone(p.id,a.mes,i)).length;
     const pct = p.actions.length ? Math.round(feito/p.actions.length*100) : 0;
     let rowsHtml = '';
     if(p.actions.length===0){
       rowsHtml = '<div class="est-empty"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Sem ações cadastradas · aguardando preenchimento</div>';
     } else {
-      rowsHtml = '<div style="overflow-x:auto;padding:0 20px 16px"><table class="est-table"><thead><tr><th>Mês</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>';
+      rowsHtml = '<div style="overflow-x:auto;padding:0 20px 16px"><table class="est-table"><thead><tr><th></th><th>Mês</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>';
       p.actions.forEach((a,i)=>{
         const bg = i%2===0?'#fff':'#FAFAFA';
         const sBg = ST_BG_EST[a.status]||'#EFF6FF';
         const sTc = ST_TC_EST[a.status]||'#1E40AF';
-        rowsHtml += `<tr style="background:${bg}"><td>${a.mes}</td><td>${a.acao}</td><td>${a.responsavel}</td><td><span class="badge-status" style="background:${sBg};color:${sTc}">${ST_PT_EST[a.status]||a.status}</span></td></tr>`;
+        const st=isDone(p.id,a.mes,i)?'feito':a.status; rowsHtml += `<tr style="background:${bg}"><td style="width:28px">${estChk(p.id,a,i)}</td><td>${a.mes}</td><td>${a.acao}</td><td>${a.responsavel}</td><td><span class="badge-status" style="background:${ST_BG_EST[st]||'#EFF6FF'};color:${ST_TC_EST[st]||'#1E40AF'}">${ST_PT_EST[st]||st}</span></td></tr>`;
       });
       rowsHtml += '</tbody></table></div>';
     }
@@ -1924,7 +2192,7 @@ function renderRotProj(){
   if(!root) return;
   root.innerHTML = '';
   ROT_PROJECTS.forEach((p,pi)=>{
-    const feito = p.actions.filter(a=>a.status==='feito').length;
+    const feito = p.actions.filter((a,i)=>isDone(p.id,a.mes,i)).length;
     const pct = p.actions.length ? Math.round(feito/p.actions.length*100) : 0;
     const card = document.createElement('div');
     card.className = 'rot-proj-card';
@@ -1932,12 +2200,12 @@ function renderRotProj(){
     if(p.actions.length===0){
       rowsHtml = '<div class="est-empty">Sem ações cadastradas · aguardando preenchimento</div>';
     } else {
-      rowsHtml = '<div style="overflow-x:auto;padding:0 20px 16px"><table class="est-table"><thead><tr><th>Mês</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>';
+      rowsHtml = '<div style="overflow-x:auto;padding:0 20px 16px"><table class="est-table"><thead><tr><th></th><th>Mês</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>';
       p.actions.forEach((a,i)=>{
         const bg = i%2===0?'#fff':'#FAFAFA';
         const sBg = ST_BG_EST[a.status]||'#EFF6FF';
         const sTc = ST_TC_EST[a.status]||'#1E40AF';
-        rowsHtml += `<tr style="background:${bg}"><td>${a.mes}</td><td>${a.acao}</td><td>${a.responsavel}</td><td><span class="badge-status" style="background:${sBg};color:${sTc}">${ST_PT_EST[a.status]||a.status}</span></td></tr>`;
+        const st=isDone(p.id,a.mes,i)?'feito':a.status; rowsHtml += `<tr style="background:${bg}"><td style="width:28px">${estChk(p.id,a,i)}</td><td>${a.mes}</td><td>${a.acao}</td><td>${a.responsavel}</td><td><span class="badge-status" style="background:${ST_BG_EST[st]||'#EFF6FF'};color:${ST_TC_EST[st]||'#1E40AF'}">${ST_PT_EST[st]||st}</span></td></tr>`;
       });
       rowsHtml += '</tbody></table></div>';
     }
@@ -1963,7 +2231,7 @@ function renderEstMes(){
   MESES_EST.forEach(mes=>{
     const items = [];
     EST_PROJECTS.forEach(p=>{
-      p.actions.forEach(a=>{ if(a.mes===mes) items.push({...a, projName:p.name}); });
+      p.actions.forEach((a,i)=>{ if(a.mes===mes) items.push({...a, status:(isDone(p.id,a.mes,i)?'feito':a.status), projName:p.name}); });
     });
     if(!items.length) return;
     const block = document.createElement('div');
@@ -1989,12 +2257,12 @@ function renderEstResp(){
   root.innerHTML = '';
   const byResp = {};
   EST_PROJECTS.forEach(p=>{
-    p.actions.forEach(a=>{
+    p.actions.forEach((a,i)=>{
       const resps = a.responsavel.split('+');
       resps.forEach(r=>{
         r = r.trim();
         if(!byResp[r]) byResp[r] = [];
-        byResp[r].push({...a, projName:p.name});
+        byResp[r].push({...a, status:(isDone(p.id,a.mes,i)?'feito':a.status), projName:p.name});
       });
     });
   });
@@ -2039,8 +2307,8 @@ function getAllActions(){
     const metaNum = p.meta;
     p.actions.forEach((a,i)=>{
       all.push({
-        mes:a.mes, acao:a.acao, responsavel:a.responsavel, status:(isDone(p.id,a.mes,i)?'feito':a.status),
-        projId:p.id, projName:p.name, origem:'bsc', meta:metaNum,
+        mes:a.mes, acao:a.acao, responsavel:a.responsavel, status:(isDone(p.id,a.mes,i)?'feito':a.status), planStatus:a.status,
+        projId:p.id, projName:p.name, origem:'bsc', meta:metaNum, jornada:etiquetaJornada(p,a), endo:etiquetaEndo(p,a),
         srcLabel:'M'+metaNum, srcColor:META_COR[metaNum]||'#185FA5', idx:i
       });
     });
@@ -2049,8 +2317,8 @@ function getAllActions(){
   EST_PROJECTS.forEach(p=>{
     p.actions.forEach((a,i)=>{
       all.push({
-        mes:a.mes, acao:a.acao, responsavel:a.responsavel||'—', status:a.status||'planejado',
-        projId:p.id, projName:p.name, origem:'est', meta:null,
+        mes:a.mes, acao:a.acao, responsavel:a.responsavel||'—', status:(isDone(p.id,a.mes,i)?'feito':(a.status||'planejado')), planStatus:a.status,
+        projId:p.id, projName:p.name, origem:'est', meta:null, jornada:etiquetaJornada(p,a), endo:etiquetaEndo(p,a),
         srcLabel:'EST', srcColor:EST_COR, idx:i
       });
     });
@@ -2059,8 +2327,8 @@ function getAllActions(){
   ROT_PROJECTS.forEach(p=>{
     p.actions.forEach((a,i)=>{
       all.push({
-        mes:a.mes, acao:a.acao, responsavel:a.responsavel||'—', status:a.status||'planejado',
-        projId:p.id, projName:p.name, origem:'rot', meta:null,
+        mes:a.mes, acao:a.acao, responsavel:a.responsavel||'—', status:(isDone(p.id,a.mes,i)?'feito':(a.status||'planejado')), planStatus:a.status,
+        projId:p.id, projName:p.name, origem:'rot', meta:null, jornada:etiquetaJornada(p,a), endo:etiquetaEndo(p,a),
         srcLabel:'ROT', srcColor:'#0F6E56', idx:i
       });
     });
@@ -2105,6 +2373,59 @@ function renderUnifView(tab, btn){
   if(tab==='projeto')   renderUnifProjeto(root);
   if(tab==='meta')      renderUnifMeta(root);
   if(tab==='responsavel') renderUnifResp(root);
+  if(tab==='jornada') renderUnifJornada(root);
+  if(tab==='endo') renderUnifEndo(root);
+}
+
+
+/* ── JORNADA DO COLABORADOR e ENDOMARKETING (visões por etiqueta) ── */
+function chkHtml(a){
+  const done=isDone(a.projId,a.mes,a.idx), locked=a.planStatus==='feito';
+  return `<div class="m-check${done?' checked':''}${locked?' locked':''}" onclick="toggleAction('${a.projId}','${a.mes}',${a.idx},this)" title="${checkTitle(a.projId,a.mes,a.idx)}"></div>`;
+}
+function linhaTabela(a,i,cols){
+  const bg=i%2===0?'#fff':'#FAFAFA';
+  const sBg=ST_BG_U[a.status]||'#EFF6FF', sTc=ST_TC_U[a.status]||'#1E40AF';
+  return `<tr style="background:${bg}"><td style="width:28px">${chkHtml(a)}</td>${cols(a)}<td><span class="unif-status" style="background:${sBg};color:${sTc}">${ST_PT_U[a.status]||a.status}</span></td></tr>`;
+}
+function ordemMes(m){ const i=MESES_ENDO.indexOf(m==='Mar'?'Mar/26':m); return i<0?99:i; }
+function renderUnifJornada(root){
+  const all=getAllActions().filter(a=>a.jornada);
+  const feito=all.filter(a=>a.status==='feito').length;
+  let html=`<div style="background:#F0FDFA;border:1px solid #99F6E4;border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:13px;color:#0F766E">
+    <strong>${all.length} ações</strong> da jornada, vindas de vários projetos · <strong>${feito}</strong> concluídas · <strong>${JORNADA_ROTINAS.length}</strong> rotinas em operação. Cada ação mora no seu projeto; aqui ela aparece pela etapa da jornada. As rotinas são listadas para consulta e não entram na contagem.</div>`;
+  JORNADA_FASES.forEach(f=>{
+    const daFase=all.filter(a=>f.etapas.includes(a.jornada));
+    html+=`<div class="unif-origem-header" style="background:#0B2B5C">${f.fase}<span class="cnt">${daFase.length} ações · ${daFase.filter(a=>a.status==='feito').length} concluídas</span></div>`;
+    f.etapas.forEach(et=>{
+      const itens=all.filter(a=>a.jornada===et).sort((x,y)=>ordemMes(x.mes)-ordemMes(y.mes));
+      html+=`<div style="margin:8px 0 14px;padding:8px 14px;background:#F9FAFB;border-radius:8px;border-left:3px solid #1FA5A0">
+        <div style="font-size:13px;font-weight:700;color:#0B2B5C;margin-bottom:6px">${et} <span style="font-size:11px;font-weight:400;color:#6B7280">· ${itens.length} ações</span></div>`;
+      const rot=JORNADA_ROTINAS.filter(r=>r.etapa===et);
+      const rotHtml=rot.length?`<div style="margin-top:8px;font-size:11px;color:#6B7280"><strong style="color:#0F766E">Rotinas em operação:</strong> ${rot.map(r=>`<span style="display:inline-block;background:#E6FFFA;color:#0F766E;border-radius:10px;padding:2px 8px;margin:2px 4px 2px 0">${r.nome}</span>`).join('')}</div>`:'';
+      if(!itens.length){ html+=(rot.length?'':'<div style="font-size:11px;color:#9CA3AF;font-style:italic;padding:4px 0">Nenhuma ação cadastrada nesta etapa ainda</div>')+rotHtml+'</div>'; return; }
+      html+='<div style="overflow-x:auto"><table class="unif-table"><thead><tr><th></th><th>Mês</th><th>Projeto</th><th>Ação</th><th>Responsável</th><th>Status</th></tr></thead><tbody>';
+      itens.forEach((a,i)=>{ html+=linhaTabela(a,i,x=>`<td>${x.mes}</td><td><span class="unif-src-badge" style="background:${x.srcColor}20;color:${x.srcColor}">${x.srcLabel}</span> <span style="font-size:11px;font-weight:600;color:#0B2B5C">${x.projName}</span></td><td>${x.acao}</td><td style="font-size:11px">${x.responsavel}</td>`); });
+      html+='</tbody></table></div>'+rotHtml+'</div>';
+    });
+  });
+  root.innerHTML=html;
+}
+function renderUnifEndo(root){
+  const all=getAllActions().filter(a=>a.endo);
+  const feito=all.filter(a=>a.status==='feito').length;
+  let html=`<div style="background:#F5F3FF;border:1px solid #DDD6FE;border-radius:10px;padding:12px 16px;margin-bottom:18px;font-size:13px;color:#5B21B6">
+    <strong>${all.length} ações</strong> de endomarketing · <strong>${feito}</strong> concluídas. Inclui as ações do projeto Endomarketing e as de outros projetos marcadas como endomarketing.</div>`;
+  MESES_ENDO.forEach(mes=>{
+    const itens=all.filter(a=>(a.mes==='Mar'?'Mar/26':a.mes)===mes);
+    if(!itens.length) return;
+    html+=`<div style="margin-bottom:22px"><div style="background:#F4F6F9;border-left:4px solid #7C3AED;padding:8px 16px;border-radius:0 8px 8px 0;margin-bottom:8px">
+      <span style="font-size:15px;font-weight:800;color:#0B2B5C">${mes}</span><span style="font-size:12px;color:#6B7280;margin-left:10px">${itens.length} ações · ${itens.filter(a=>a.status==='feito').length} concluídas</span></div>
+      <div style="overflow-x:auto"><table class="unif-table"><thead><tr><th></th><th>Projeto</th><th>Ação</th><th>Etapa da jornada</th><th>Status</th></tr></thead><tbody>`;
+    itens.forEach((a,i)=>{ html+=linhaTabela(a,i,x=>`<td style="font-size:11px;font-weight:600;color:#0B2B5C">${x.projName}</td><td>${x.acao}</td><td style="font-size:11px">${x.jornada||'—'}</td>`); });
+    html+='</tbody></table></div></div>';
+  });
+  root.innerHTML=html;
 }
 
 /* ── GANTT UNIFICADO ── */
@@ -2222,7 +2543,7 @@ function renderUnifProjeto(root){
   const allProjs = getAllProjects();
   let html = '';
   allProjs.forEach(p=>{
-    const feito = p.actions.filter(a=>a.status==='feito').length;
+    const feito = p.actions.filter((a,i)=>isDone(p.id,a.mes,i)).length;
     const pct = p.actions.length ? Math.round(feito/p.actions.length*100) : 0;
     html += `<div style="margin-bottom:20px;border:1px solid #E2E8F0;border-radius:10px;overflow:hidden">
       <div style="background:linear-gradient(90deg,${p.srcColor}18,#fff);border-bottom:2px solid ${p.srcColor};padding:12px 18px;display:flex;align-items:center;gap:10px">
@@ -2422,11 +2743,13 @@ renderAll();
 
     <!-- Navegação -->
     <div class="unif-nav">
-      <button class="unif-nav-btn active" onclick="renderUnifView('gantt',this)"><span class="dot" style="background:#00B6BE"></span>Gantt Unificado</button>
-      <button class="unif-nav-btn" onclick="renderUnifView('mes',this)"><span class="dot" style="background:#185FA5"></span>Por mês</button>
-      <button class="unif-nav-btn" onclick="renderUnifView('projeto',this)"><span class="dot" style="background:#0F6E56"></span>Por projeto</button>
-      <button class="unif-nav-btn" onclick="renderUnifView('meta',this)"><span class="dot" style="background:#534AB7"></span>Por meta / origem</button>
-      <button class="unif-nav-btn" onclick="renderUnifView('responsavel',this)"><span class="dot" style="background:#854F0B"></span>Por responsável</button>
+      <button class="unif-nav-btn active" data-tab="gantt" onclick="renderUnifView('gantt',this)"><span class="dot" style="background:#00B6BE"></span>Gantt Unificado</button>
+      <button class="unif-nav-btn" data-tab="mes" onclick="renderUnifView('mes',this)"><span class="dot" style="background:#185FA5"></span>Por mês</button>
+      <button class="unif-nav-btn" data-tab="projeto" onclick="renderUnifView('projeto',this)"><span class="dot" style="background:#0F6E56"></span>Por projeto</button>
+      <button class="unif-nav-btn" data-tab="meta" onclick="renderUnifView('meta',this)"><span class="dot" style="background:#534AB7"></span>Por meta / origem</button>
+      <button class="unif-nav-btn" data-tab="responsavel" onclick="renderUnifView('responsavel',this)"><span class="dot" style="background:#854F0B"></span>Por responsável</button>
+      <button class="unif-nav-btn" data-tab="jornada" onclick="renderUnifView('jornada',this)"><span class="dot" style="background:#1FA5A0"></span>Jornada do Colaborador</button>
+      <button class="unif-nav-btn" data-tab="endo" onclick="renderUnifView('endo',this)"><span class="dot" style="background:#7C3AED"></span>Endomarketing</button>
     </div>
 
     <div id="unif-content"></div>
