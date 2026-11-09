@@ -595,7 +595,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;ba
         <div class="home-card-desc">Projetos estratégicos que sustentam a operação de RH e não pertencem às metas do BSC, mas são fundamentais para a execução do plano.</div>
         <ul class="home-card-list">
           <li>Programa Puts · Endomarketing · Comunicação Interna GP</li>
-          <li>SmartOps · Educação Central · Governança</li>
+          <li>Educação Central · Governança · Jornada do Colaborador</li>
           <li>Visão por mês · por projeto · por responsável</li>
         </ul>
         <div class="home-card-cta">Abrir projetos estruturantes <span class="home-card-cta-arrow">→</span></div>
@@ -2061,8 +2061,11 @@ const EST_PROJECTS = [
     {mes:"Dez",acao:"Mensagem de Natal da liderança: Vídeo curto com mensagem do CEO e CTO (15/12 a 24/12)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Endomarketing"},
     {mes:"Dez",acao:"Ação de Ano Novo: Planejamento 2027: Planner para planejamento das metas e ações de 2027 (21/12 a 31/12)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Endomarketing"}
   ]},
-  {id:"comgp",     name:"Comunicação Interna GP",      lead:"",support:"",desc:"Comunicação interna da área de Gestão de Pessoas",actions:[]},
-  {id:"smartops",  name:"SmartOps",                    lead:"",support:"",desc:"Otimização de processos e operações de RH",actions:[]},
+  {id:"comgp",name:"Comunicação Interna GP",lead:"Gabrielly",support:"",desc:"Comunicação interna da área de Gestão de Pessoas",jornada:"Comunicação Interna",endo:true,actions:[
+    {mes:"Nov",acao:"People News | Criar, validar e publicar o People News de novembro",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Dez",acao:"People News | Criar, validar e publicar o People News de dezembro",responsavel:"Gabrielly",status:"planejado"},
+    {mes:"Jan",acao:"People News | Criar, validar e publicar o People News de janeiro",responsavel:"Gabrielly",status:"planejado"}
+  ]},
   {id:"educacao",name:"Educação Central",lead:"",support:"",desc:"Programa de educação corporativa Central IT",actions:[
     {mes:"Jan/26",acao:"Projeto Educação Central: Lançamento do projeto de apoio financeiro com bolsas de graduação e pós-graduação (07/01 a 14/01)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"T&D"},
     {mes:"Fev/26",acao:"Resultados do Projeto Educação Central: Comunicação dos resultados aos colaboradores participantes (29/01 a 03/02)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"T&D"},
@@ -2087,19 +2090,70 @@ const EST_PROJECTS = [
     {mes:"Jan",acao:"Revisão e atualização do processo MA-066 Manual do Colaborador",responsavel:"Dani",status:"planejado"},
     {mes:"Jan",acao:"Revisão e atualização do processo FO-374 Ficha de Observação de Entrevista",responsavel:"Dani",status:"planejado"}
   ]},
-  {id:"peoplenews",name:"People News",lead:"Gabrielly",support:"",desc:"Publicação mensal People News",jornada:"Comunicação Interna",endo:true,actions:[
-    {mes:"Nov",acao:"Criar, validar e publicar o People News de novembro",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Dez",acao:"Criar, validar e publicar o People News de dezembro",responsavel:"Gabrielly",status:"planejado"},
-    {mes:"Jan",acao:"Criar, validar e publicar o People News de janeiro",responsavel:"Gabrielly",status:"planejado"}
-  ]},
   {id:"empexp",name:"Jornada do Colaborador",lead:"Gabrielly",support:"Dasio",desc:"Jornada do colaborador: Conheço, Conecto, Evoluo e Impacto. As rotinas em operação aparecem na aba Jornada do Plano 2026.",actions:[
     {mes:"Dez",acao:"Divulgação dos novos colaboradores nas redes",responsavel:"Gabrielly+Dasio",status:"planejado",jornada:"Onboarding",endo:true},
     {mes:"Dez",acao:"Depoimentos dos novos colaboradores",responsavel:"Gabrielly+Dasio",status:"planejado",jornada:"Onboarding",endo:true},
     {mes:"Jan",acao:"Estruturação do PertenSER",responsavel:"Gabrielly+Dasio",status:"planejado",jornada:"Reconhecimento"},
     {mes:"Jan",acao:"Estruturação do reconhecimento contínuo",responsavel:"Gabrielly+Dasio",status:"planejado",jornada:"Reconhecimento"}
   ]},
-  {id:"citpeople",name:"Plataforma CITPeople",lead:"",support:"",desc:"Plataforma digital de gestão de pessoas Central IT",actions:[
-    {mes:"Out",acao:"CITSmart People: Apresentação do sistema aos gestores da Central IT (25/09 a 02/10)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Comunicação Interna"}
+  {id:"citpeople",name:"Plataforma CITPeople",lead:"Pablo",support:"Dani+Kennedy",desc:"Plataforma digital de gestão de pessoas Central IT (CITSmart People). Roadmap com vencimento em janeiro.",actions:[
+    {mes:"Out",acao:"CITSmart People: Apresentação do sistema aos gestores da Central IT (25/09 a 02/10)",responsavel:"Gabrielly",status:"planejado",endo:true,jornada:"Comunicação Interna"},
+    {mes:"Jan",acao:"Colaboradores – Falhas na exclusão de registros, atualização por importação com IA (card 92138)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Recrutamento - Criar filtro de vaga Em Aprovação (card 96044)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Out",acao:"Adicionar uma Visão Colaborador e Visão Gestor (card 91360)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Recrutamento - Enviar e-mail ao Gestor quando o candidato é movido de etapa (card 91881)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Recrutamento - Desativar criar cargo por IA e alteração da descrição pelo Solicitante (card 97518)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Gestor e Candidato avaliarem o Recrutador (card 91363)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Inclusão de campo para incluir o nome do colaborador substituído, quando a vaga for de substituição. (card 90292) [bloqueado/suspenso]",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Set",acao:"Adicionar rolagem da tela ara arrastar candidato horizontalmente (card 90762)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Dashboard - Clicar em vagas abertas e ele abrir as vagas em recrutamento (card 97516)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Gestor não consegue compartilhar vaga (card 98658)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Out",acao:"Recrutamento - Publicar vagas direto no site da CIT (card 97568)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Gestão de candidatos (card 90286) [bloqueado/suspenso]",responsavel:"Dani+Pablo+Kennedy",status:"planejado"},
+    {mes:"Set",acao:"Inclusão da quantidade de posições disponíveis no momento da abertura; (card 90289)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Set",acao:"Subir Login dos gestores para abertura de vagas (card 90291)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Set",acao:"Revisão da estrutura de permissões conforme o perfil de cada usuário. (card 90339)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Set",acao:"Mostrar a pretensão salarial por candidato (card 90505)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Set",acao:"Desenvolvimento de um módulo de admissão (card 90288)",responsavel:"Dani+Pablo+Kennedy",status:"feito"},
+    {mes:"Out",acao:"Envio de e-mail no módulo de Admissão (card 97432)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Set",acao:"Colocar campo de observações da vaga (card 90788)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Adicionar campo para que os gestores façam indicações de candidatos para as vagas (card 90791)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Out",acao:"Inverter Fluxo - Aprovado - Oferta (card 97430)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Gestão de acessos e estrutura (card 90285) [bloqueado/suspenso]",responsavel:"Dani+Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Contar SLA apenas após a vag ser aprovada (card 97437) [bloqueado/suspenso]",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Out",acao:"Apresentação da Carta oferta para o profissional do DP (card 97439)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Out",acao:"Criação de Vaga para Banco de Talentos (card 97438)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Encerrar a vaga automaticamente ao alcançar o numero de posições na etapa de Aprovado (card 99592)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Out",acao:"Gestor não consegue editar rascunha de vaga solicitada (card 95795)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Out",acao:"Admissão - Adicionar botão para baixar carta oferta em PDF (card 97445)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Criar filtro para vagas canceladas (card 99593)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Alimentar banco de talentos My Talent (card 91574)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Out",acao:"Recrutamento - Permitir visualização e edição da data de nascimento no perfil do candidato. (card 98779)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Recrutamento - Melhorar o parecer gerado pela IA - Fit Cultural (card 98034)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Admissão - Não está aceitando aprovar documentos (card 98816) [bloqueado/suspenso]",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Admissão - Preenchimento de dados obrigatórios antes do envio de documentação (card 97446) [bloqueado/suspenso]",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Admissão - Enviar cópia de e-mail para o recrutador e para o DP (card 96797) [bloqueado/suspenso]",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Comunicação e Inteligência Artificial (card 90287) [bloqueado/suspenso]",responsavel:"Dani+Pablo+Kennedy",status:"planejado"},
+    {mes:"Out",acao:"Admissão - No Aceite da carta proposta, condicionar a preencher dados básicos (card 98587)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Set",acao:"Em Unidades - Colocar apenas as 4 unidades e todos contratos dentro delas (card 91361)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Out",acao:"Recrutamento - Botão para baixar parecer gerado pela IA e Currículo do Candidato (card 97843)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Out",acao:"Mostrar Justificativa da solicitação da vaga, mesmo após a aprovação (card 96753)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Mudar o Fluxo de Aprovação - RH primeiro (card 96039) [bloqueado/suspenso]",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Out",acao:"Mostrar o nome do contrato e solicitante da vaga na visualização externa da vaga (card 96038)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Set",acao:"Atualização de Dasboards e controle de tempo por etapa (card 91367)",responsavel:"Pablo+Kennedy",status:"feito"},
+    {mes:"Set",acao:"Fluxo de vagas e aprovações (card 90284)",responsavel:"Dani+Pablo+Kennedy",status:"feito"},
+    {mes:"Jan",acao:"Cargos – Não atualiza por importação com IA (card 100601)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Cargos - Ter a opção de baixar o cargo em PDF (card 100600)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Opção de cancelar envio de e-mail para reprovação de candidatos que não participaram das etapas do p (card 102922)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Criar um módulo de one a one (card 90789)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Recrutamento - SLA da vaga só correr após a publicação da vaga (card 97517)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Recrutamento - Destacar o Parecer Gerado pela IA do CitPeople (card 97832)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Restrição de acesso às vagas para o perfil Entrevistador Técnico (card 103038)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Aprovador da vaga ter também o botão de compartilhar link (card 103042)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Criação do módulo de Onboarding (card 97487)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Saúde Organizacional (card 91573)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Elaborar Dicionário de Competências da Central IT (card 97818)",responsavel:"Pablo+Kennedy",status:"planejado"},
+    {mes:"Jan",acao:"Criar módulo de Offboarding (card 97500)",responsavel:"Pablo+Kennedy",status:"planejado"}
   ]},
   {id:"dpgpnap",name:"DP e GP na Prática",lead:"",support:"",desc:"Programa de capacitação em DP e boas práticas de GP",actions:[
     {mes:"Set",acao:"DP e RH na Prática: 1º encontro: Encontro sobre o sistema HCM Compliance: férias, contracheque e ponto eletrônico. Lançamento divulgado em 11/09; encontro realizado em 16/09 (11/09 a 16/09)",responsavel:"Gabrielly",status:"feito",endo:true,jornada:"Comunicação Interna"}
@@ -2684,7 +2738,7 @@ renderAll();
 
     <!-- Stats globais -->
     <div class="est-stats" style="background:#fff;border:1px solid #E2E8F0;border-radius:10px;margin-bottom:20px">
-      <div class="est-stat"><div class="est-stat-val" id="est-stat-proj">11</div><div class="est-stat-lbl">Projetos</div></div>
+      <div class="est-stat"><div class="est-stat-val" id="est-stat-proj">9</div><div class="est-stat-lbl">Projetos</div></div>
       <div class="est-stat"><div class="est-stat-val" id="est-stat-acoes">0</div><div class="est-stat-lbl">Ações</div></div>
       <div class="est-stat"><div class="est-stat-val teal" id="est-stat-feito">0</div><div class="est-stat-lbl">Concluídas</div></div>
     </div>
